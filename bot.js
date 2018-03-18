@@ -18,8 +18,6 @@ client.on('message', msg => {
   color: 3447003,
   description: "this is an embed!"
 }});
-
   }
 });
-
 client.login(process.env.BOT_TOKEN);
