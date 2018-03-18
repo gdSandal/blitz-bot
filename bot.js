@@ -19,7 +19,4 @@ client.on('message', msg => {
   description: "this is an embed!"
 }});
 
-  }
-});
-
 client.login(process.env.BOT_TOKEN);
