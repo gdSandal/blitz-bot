@@ -1,8 +1,8 @@
 {
-  "name": "blitz-bot"
-  "description": "blitz-bot"
-  "version": 0.0.0
-  "main": "bot.js"
+  "name": "blitz-bot",
+  "description": "blitz-bot",
+  "version": "0.0.0",
+  "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
    },
