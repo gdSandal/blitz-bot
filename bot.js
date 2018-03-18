@@ -20,13 +20,6 @@ client.on('message', msg => {
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: "BlitzBot v0.0.2",
-    description: "Made by Sandal",
-    fields: [{
-        name: "Bot created: 3/17/18",
-        value: "Last update: 3/18/18"
-      },
-      {
         name: "Made for Geometry Blitz",
         value: "[Invite Here](https://discord.gg/XSKx36y)."
       },
