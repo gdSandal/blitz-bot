@@ -6,24 +6,22 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'b!embed') {
-    msg.reply({embed: {
-  color: 3447003,
-  description: "pong"
-}});
+  if (msg.content === 'b!ping') {
+    msg.reply('pong');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'b!info') {
+    msg.reply('**BlitzBot // v0.0.1** -Made by Sandal-');
+  }
+});
 
 client.on('message', msg => {
   if (msg.content === 'b!embed') {
     msg.reply({embed: {
   color: 3447003,
-  description: "Blitz-Bot v0.1.1"
-}});
-
-client.on('message', msg => {
-  if (msg.content === 'b!embed') {
-    msg.reply({embed: {
-  color: 3447003,
-  description: "A very simple Embed!"
+  description: "This is an embed!"
 }});
 
   }
