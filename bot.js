@@ -16,6 +16,15 @@ client.on('message', msg => {
     msg.reply('**BlitzBot // v0.0.1** -Made by Sandal-');
   }
 });
- 
+
+client.on('message', msg => {
+  if (msg.content === 'b!embed') {
+    msg.reply({embed: {
+  color: 3447003,
+  description: "A very simple Embed!"
+}});
+
+  }
+});
 
 client.login(process.env.BOT_TOKEN);
