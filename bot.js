@@ -7,13 +7,35 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === 'b!ping') {
-    msg.reply('pong');
-  }
-});
+    msg.reply({embed: {
+  color: 3447003,
+  description: "pong"
+}});
 
 client.on('message', msg => {
   if (msg.content === 'b!info') {
-    msg.reply('**BlitzBot // v0.0.1** -Made by Sandal-');
+    msg.reply({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "BlitzBot v0.0.2",
+    description: "Made by Sandal",
+    fields: [{
+        name: "Bot created: 3/17/18",
+        value: "Last update: 3/18/18"
+      },
+      {
+        name: "Made for Geometry Blitz",
+        value: "[Invite Here](https://discord.gg/XSKx36y)."
+      },
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© Blitz-Bot"
+    }
   }
 });
 
@@ -21,7 +43,7 @@ client.on('message', msg => {
   if (msg.content === 'b!embed') {
     msg.reply({embed: {
   color: 3447003,
-  description: "A very simple Embed!"
+  description: "this is an embed!"
 }});
 
   }
