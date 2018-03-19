@@ -7,26 +7,18 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === 'b!ping') {
-    msg.reply('pong');
-  }
-});
+    msg.reply({embed: {
+  color: 3447003,
+  description: "pong"
+}});
 
 client.on('message', msg => {
   if (msg.content === 'b!info') {
-const embed = new Discord.RichEmbed()
-  .setTitle("Blitz-Bot Info")
-  .setAuthor("BlitzBot")
-
-  .setColor(0x00AE86)
-  .setDescription("Made: 3/17/18, Last updated: 3/18/18")
-  .setFooter("Made by Sandal")
-
-  .addField("sample text", "sample text", true)
-
-  message.channel.send({embed});
-  }
-});
-      
+    msg.reply({embed: {
+  color: 3447003,
+  description: "v0.1.2!"
+}});
+    
 client.on('message', msg => {
   if (msg.content === 'b!embed') {
     msg.reply({embed: {
