@@ -7,16 +7,21 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === 'b!ping') {
-    msg.reply({embed: {
-  color: 3447003,
-  description: "pong"
-}});
+    msg.reply('pong');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'b!info') {
+    msg.reply('`v0.1.2`');
+  }
+});
 
 client.on('message', msg => {
   if (msg.content === 'b!embed') {
     msg.reply({embed: {
   color: 3447003,
-  description: "this is an embed!"
+  description: "This is an embed!"
 }});
 
   }
