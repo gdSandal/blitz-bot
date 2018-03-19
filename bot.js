@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const RichEmbed = Discord.RichEmbed();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -13,21 +14,20 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 'b!info') {
-    msg.reply({embed: {
-    color: 3447003,
-    title: "BlitzBot v0.1.2",
-    fields: [{
-        name: "Created by Sandal",
-        value: "Made 3/17/18. Previous Update 3/18/18."
-      },
-      {
-        name: "Geometry Blitz",
-        value: "Invite [here](https://discord.gg/XSKx36y)."
-      }
-    ],
+const embed = new Discord.RichEmbed()
+  .setTitle("Blitz-Bot Info")
+  .setAuthor("BlitzBot")
 
+  .setColor(0x00AE86)
+  .setDescription("Made: 3/17/18, Last updated: 3/18/18")
+  .setFooter("Made by Sandal")
+
+  .addField("sample text", "sample text", true)
+
+  message.channel.send({embed});
+  }
 });
-
+      
 client.on('message', msg => {
   if (msg.content === 'b!embed') {
     msg.reply({embed: {
