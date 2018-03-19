@@ -31,11 +31,6 @@ client.on('message', msg => {
         value: "[Invite Here](https://discord.gg/XSKx36y)."
       },
     ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "© Blitz-Bot"
-    }
   }
 }});
 
