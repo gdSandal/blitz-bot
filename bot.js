@@ -6,19 +6,19 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'b!ping') {
+  if (msg.content === 's!ping') {
     msg.reply('pong');
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'b!info') {
-    msg.reply('`v0.1.2`');
+  if (msg.content === 's!info') {
+    msg.reply('`v0.1.3`');
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'b!embed') {
+  if (msg.content === 's!embed') {
     msg.reply({embed: {
   color: 3447003,
   description: "This is an embed!"
