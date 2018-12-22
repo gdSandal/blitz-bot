@@ -21,8 +21,7 @@ client.on('message', msg => {
   if (msg.content === 's!embed') {
     msg.reply({embed: {
   color: F2237B,
-  description: sample,
-  file: http://imgur.com/PofzIuj,
+  description: sample
 }});
 
   }
