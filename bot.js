@@ -20,8 +20,8 @@ client.on('message', msg => {
 client.on('message', msg => {
   if (msg.content === 's!embed') {
     msg.reply({embed: {
-  color: 3447003,
-  description: "This is an embed!"
+  color: F2237B,
+  file: "http://imgur.com/PofzIuj"
 }});
 
   }
