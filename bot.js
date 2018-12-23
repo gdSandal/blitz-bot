@@ -21,7 +21,6 @@ client.on('message', msg => {
   if (msg.content === 's!img') {
     msg.reply({embed: {
   color: 15868795,
-  description: "WELCOME",
   image: {
   url: "http://imgur.com/PofzIuj"
   }
