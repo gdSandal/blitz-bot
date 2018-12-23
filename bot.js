@@ -14,8 +14,8 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's/outpost') {
-    msg.reply({embed: {
+  if (msg.content === 's/op1') {
+    msg.channel.send({embed: {
   color: 15868795,
   image: {
   url: "http://i.imgur.com/PofzIuj.jpg"
