@@ -1,25 +1,20 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.on("ready", () => {
-  console.log(`online`); 
-  client.user.setActivity(`SANCTUM`);
-});
-
 client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
+  if (msg.content === 's/ping') {
+    msg.channel.send('pong');
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'info') {
-    msg.reply('`v0.2.0`');
+  if (msg.content === 's/info') {
+    msg.channel.send('`v0.2.0`');
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'img') {
+  if (msg.content === 's/outpost') {
     msg.reply({embed: {
   color: 15868795,
   image: {
