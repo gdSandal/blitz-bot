@@ -2,14 +2,14 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('message', msg => {
-  if (msg.content === 's!ping') {
-    msg.reply('pong');
+  if (msg.content === '///ready?') {
+    msg.reply('requiem online');
   }
 });
 
 client.on('message', msg => {
   if (msg.content === 's!info') {
-    msg.reply('`v0.1.3`');
+    msg.reply('`v0.2.0`');
   }
 });
 
@@ -18,7 +18,7 @@ client.on('message', msg => {
     msg.reply({embed: {
   color: 15868795,
   image: {
-  url: "https://m.imgur.com/gallery/PofzIuj"
+  url: "http://i.imgur.com/PofzIuj.jpg"
   }
 }});
   }
