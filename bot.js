@@ -46,9 +46,8 @@ client.on('message', msg => {
   if (msg.content === 's/op3') {
     msg.channel.send({embed: {
   color: 15868795,
-  description: "↣Thank you for coming!↢" +
-      "Below are the rules and server info" +
-      "Please read these before chats/shrines!"
+  description: "↣Thank you for coming!↢\ntest"
+      
 }});
   }
 });
