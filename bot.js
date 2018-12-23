@@ -7,6 +7,8 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', msg => {
+  if (msg.content === 's!bet') {
   client.user.setActivity(`Sanctum bot`);
 });
 
