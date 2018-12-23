@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('message', msg => {
   if (msg.content === 's!ping') {
-    print('pong');
+    msg.reply('pong');
   }
 });
 
@@ -11,6 +11,10 @@ client.on('message', msg => {
   if (msg.content === 's!info') {
     msg.reply('`v0.1.3`');
   }
+});
+
+client.on("ready", () => {
+    client.user.setActivity("my code", { type: "WATCHING"})
 });
 
 client.on('message', msg => {
