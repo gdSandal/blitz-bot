@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-
 client.on('message', msg => {
   if (msg.content === 's!ping') {
     msg.reply('pong');
@@ -19,7 +18,7 @@ client.on('message', msg => {
     msg.reply({embed: {
   color: 15868795,
   image: {
-  url: "http://imgur.com/PofzIuj"
+  url: http://imgur.com/PofzIuj
   }
 }});
 
