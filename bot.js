@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('message', msg => {
   if (msg.content === 's!ping') {
-    msg.reply('pong');
+    msg.send('pong');
   }
 });
 
