@@ -24,4 +24,23 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', msg => {
+  if (msg.content === 's/op2') {
+    msg.channel.send({embed: {
+  color: 15868795,
+  description:
+      "`𝕨𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝕞𝕪 𝕤𝕖𝕣𝕧𝕖𝕣!`"
+"━━━━━━━━━━━━━━━━━━"
+   "↣ Thank you for coming! ↢
+"Below there will be rules and channel info!"
+   "↣ Please read these things below before jumping into the chats and shrines!"
+"━━━━━━━━━━━━━━━━━━"
+    }}}});
+    client.on('message', msg => {
+  if (msg.content === 's/op3') {
+    msg.channel.send({embed: {
+  color: 15868795,
+  description: "3"
+    }}}});
+
 client.login(process.env.BOT_TOKEN);
