@@ -62,29 +62,21 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+  if (msg.content === 's/op5') {
+    msg.channel.send({embed: {
+  color: 15868795,
+  description: "`𝕣𝕠𝕝𝕖𝕤 & 𝕤𝕥𝕦𝕗𝕗`\n━━━━━━━━━━━━━━━━━━\nYou can find **color roles** in the\nrole shrine, These are self-assignable.\n \nYou can unlock more roles when you reach\nrank 10 amari levels."
+}});
+  }
+});
+
+client.on('message', msg => {
   if (msg.content === 's/op6') {
     msg.channel.send({embed: {
   color: 15868795,
-  description: "`𝕨𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝕞𝕪 𝕤𝕖𝕣𝕧𝕖𝕣!`"
+  description: "`𝕙𝕒𝕧𝕖 𝕗𝕦𝕟!`\n━━━━━━━━━━━━━━━━━━\nIf you have any questions just ask me!\n**Enjoy the Server!\nFor more rules and info, check #new"
 }});
   }
 });
 
-client.on('message', msg => {
-  if (msg.content === 's/op7') {
-    msg.channel.send({embed: {
-  color: 15868795,
-  description: "`𝕨𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝕞𝕪 𝕤𝕖𝕣𝕧𝕖𝕣!`"
-}});
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 's/op8') {
-    msg.channel.send({embed: {
-  color: 15868795,
-  description: "`𝕨𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝕞𝕪 𝕤𝕖𝕣𝕧𝕖𝕣!`"
-}});
-  }
-});
 client.login(process.env.BOT_TOKEN);
