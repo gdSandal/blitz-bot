@@ -46,7 +46,7 @@ client.on('message', msg => {
   if (msg.content === 's/op3') {
     msg.channel.send({embed: {
   color: 15868795,
-  description: "↣Thank you for coming!↢\ntest"
+  description: "↣Thank you for coming!↢\nt"
       
 }});
   }
