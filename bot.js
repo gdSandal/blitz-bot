@@ -31,11 +31,12 @@ client.on('message', msg => {
   description:
       "`𝕨𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝕞𝕪 𝕤𝕖𝕣𝕧𝕖𝕣!`"
 "━━━━━━━━━━━━━━━━━━"
-   "↣ Thank you for coming! ↢
+   "↣ Thank you for coming! ↢"
 "Below there will be rules and channel info!"
    "↣ Please read these things below before jumping into the chats and shrines!"
 "━━━━━━━━━━━━━━━━━━"
     }}}});
+    
     client.on('message', msg => {
   if (msg.content === 's/op3') {
     msg.channel.send({embed: {
