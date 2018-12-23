@@ -22,7 +22,7 @@ client.on('message', msg => {
     msg.reply({embed: {
   color: 15868795,
   description: "WELCOME",
-  file: "http://imgur.com/PofzIuj"
+  image: "http://imgur.com/PofzIuj"
 }});
 
   }
