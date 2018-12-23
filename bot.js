@@ -8,11 +8,6 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's!bet') {
-  client.user.setActivity(`Sanctum bot`);
-});
-
-client.on('message', msg => {
   if (msg.content === 's!info') {
     msg.reply('`v0.1.3`');
   }
@@ -23,7 +18,7 @@ client.on('message', msg => {
     msg.reply({embed: {
   color: 15868795,
   image: {
-  url: "http://imgur.com/PofzIuj"
+  url: "https://m.imgur.com/gallery/PofzIuj"
   }
 }});
   }
