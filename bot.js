@@ -13,8 +13,9 @@ client.on('message', msg => {
   }
 });
 
-client.on("ready", () => {
-    client.user.setActivity("my code", { type: "WATCHING"})
+client.on('message', msg => {
+  if (msg.content === 's!status') {
+    client.user.setActivity("SANCTUM", { type: "WATCHING"})
 });
 
 client.on('message', msg => {
