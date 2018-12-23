@@ -7,6 +7,9 @@ client.on('message', msg => {
   }
 });
 
+  client.user.setActivity(`Sanctum bot`);
+});
+
 client.on('message', msg => {
   if (msg.content === 's!info') {
     msg.reply('`v0.1.3`');
