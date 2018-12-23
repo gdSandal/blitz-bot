@@ -74,7 +74,7 @@ client.on('message', msg => {
   if (msg.content === 's/op6') {
     msg.channel.send({embed: {
   color: 15868795,
-  description: "`𝕙𝕒𝕧𝕖 𝕗𝕦𝕟!`\n━━━━━━━━━━━━━━━━━━\nIf you have any questions just ask me!\n**Enjoy the Server!\nFor more rules and info, check #new"
+  description: "`𝕙𝕒𝕧𝕖 𝕗𝕦𝕟!`\n━━━━━━━━━━━━━━━━━━\nIf you have any questions just ask me!\n**Enjoy the Server!**\nFor more rules and info, check #new"
 }});
   }
 });
