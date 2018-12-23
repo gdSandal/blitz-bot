@@ -18,11 +18,13 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's!embed') {
+  if (msg.content === 's!img') {
     msg.reply({embed: {
   color: 15868795,
   description: "WELCOME",
-  image: http://imgur.com/PofzIuj
+  image: {
+  url: "http://imgur.com/PofzIuj"
+  }
 }});
 
   }
