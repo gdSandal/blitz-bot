@@ -14,11 +14,6 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's!status') {
-    client.user.setActivity("SANCTUM", { type: "WATCHING"})
-});
-
-client.on('message', msg => {
   if (msg.content === 's!img') {
     msg.reply({embed: {
   color: 15868795,
@@ -26,7 +21,6 @@ client.on('message', msg => {
   url: "http://imgur.com/PofzIuj"
   }
 }});
-
   }
 });
 
