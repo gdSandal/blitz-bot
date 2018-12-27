@@ -35,7 +35,11 @@ client.on('message', msg => {
     name: "Joined:",
     value: msg.author.createdAt
   },
-  ]
+  ],
+      timestamp: new Date(),
+      footer: {
+        text: user + " Information | Sanctum 2018"
+      }
 }});
   }
 });
