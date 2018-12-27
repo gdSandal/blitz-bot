@@ -38,7 +38,7 @@ client.on('message', msg => {
   ],
       timestamp: new Date(),
       footer: {
-        text: user + " Information | Sanctum 2018"
+        text: user + " | Sanctum 2018"
       }
 }});
   }
