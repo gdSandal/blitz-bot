@@ -20,7 +20,7 @@ client.on('message', msg => {
   },
   fields: [{
     name: "User:",
-    value: msg.author
+    value: msg.author.username
   },
   ]
 }});
