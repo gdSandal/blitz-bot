@@ -23,10 +23,6 @@ client.on('message', msg => {
     name: "User:",
     value: user
   },
-  {
-    name: "Status:",
-    value: user.presence
-  },
   ]
 }});
   }
