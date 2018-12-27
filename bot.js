@@ -14,12 +14,14 @@ client.on('message', msg => {
   if (msg.content === 's/userinfo') {
     msg.channel.send({embed: {
   color: 15868795,
-  title: "user.username",
+  title: "User Information",
   thumbnail: {
   url: msg.author.avatarURL,
   },
-  description: "ok"
-  
+  fields: [{
+    name: '${user.username}#${user.discriminator}'
+  },
+  ]
 }});
   }
 });
