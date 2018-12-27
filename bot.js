@@ -9,7 +9,10 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 's/info') {
-    msg.channel.send('`v0.2.0`');
+    msg.channel.send({embed: {
+  color: 15868795,
+  description: "this is an embed"
+}});
   }
 });
 
