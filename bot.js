@@ -14,7 +14,6 @@ client.on('message', msg => {
   if (msg.content === 's/userinfo') {
     msg.channel.send({embed: {
   color: 15868795,
-  thumbnail: "msg.author.avatarURL",
   title: "test",
   description: "test"
 }});
