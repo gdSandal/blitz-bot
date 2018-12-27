@@ -14,7 +14,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's/op1') {
+  if (msg.content === 's/text') {
     msg.channel.send({embed: {
   color: 15868795,
   description: "z"
