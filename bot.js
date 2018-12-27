@@ -18,7 +18,9 @@ client.on('message', msg => {
     msg.channel.send({embed: {
   color: 15868795,
   description: "z"
-    }
+    
 }});
+}
+});
 
 client.login(process.env.BOT_TOKEN);
