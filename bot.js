@@ -20,12 +20,16 @@ client.on('message', msg => {
   url: msg.author.avatarURL,
   },
   fields: [{
-    name: "User:",
+    name: "Name:",
     value: user
   },
   {
-    name: "ID:",
-    value: msg.author.discriminator
+    name: "User:",
+    value: user + msg.author.discriminator
+  },
+  {
+    name: "Status:",
+    value: msg.author.presence
   },
   ]
 }});
