@@ -13,9 +13,9 @@ client.on('message', msg => {
 client.on('message', msg => {
   if (msg.content === 's/userinfo') {
     msg.channel.send({embed: {
-  color: "RANDOM",
-  thumbnail: "message.author.avatarURL",
-  title: "user.username",
+  color: 15868795,
+  thumbnail: msg.author.avatarURL,
+  title: "test",
   description: "test"
 }});
   }
