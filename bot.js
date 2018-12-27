@@ -12,7 +12,6 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 's/userinfo') {
-    const user = msg.author;
     msg.channel.send({embed: {
   color: 15868795,
   title: "User Information",
@@ -21,7 +20,7 @@ client.on('message', msg => {
   },
   fields: [{
     name: "User:",
-    value: user
+    value: msg.author
   },
   ]
 }});
