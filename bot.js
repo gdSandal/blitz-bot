@@ -15,7 +15,7 @@ client.on('message', msg => {
     const user = msg.author.username;
     msg.channel.send({embed: {
   color: 15868795,
-  title: "User Information",
+  title: "User Information - " + user,
   thumbnail: {
   url: msg.author.avatarURL,
   },
@@ -25,7 +25,7 @@ client.on('message', msg => {
   },
   {
     name: "User:",
-    value: user + msg.author.discriminator
+    value: "@" + user + "#" + msg.author.discriminator
   },
   {
     name: "ID:",
