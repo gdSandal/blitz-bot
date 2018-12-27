@@ -23,6 +23,10 @@ client.on('message', msg => {
     name: "User:",
     value: user
   },
+  {
+    name: "ID:",
+    value: user.id
+  },
   ]
 }});
   }
