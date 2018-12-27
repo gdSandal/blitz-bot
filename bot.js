@@ -15,6 +15,7 @@ client.on('message', msg => {
     msg.channel.send({embed: {
   color: 15868795,
   title: "test",
+  thumbnail: msg.author.avatarURL,
   description: "test"
 }});
   }
