@@ -11,14 +11,6 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's/say') {
-let botmessage = args.join(" ");
-message.delete().catch();
-msg.channel.send(botmessage);
-}
-});
-
-client.on('message', msg => {
   if (msg.content === 's/info') {
     msg.channel.send({embed: {
   color: 15868795,
