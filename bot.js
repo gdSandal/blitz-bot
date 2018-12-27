@@ -13,11 +13,8 @@ client.on('message', msg => {
 client.on('message', msg => {
   if (msg.startsWith('s/clear')) {
     msg.delete();
-    msg.channel.send({embed: {
-      color: RANDOM,
-      title: "Cleared"
-    }
-   }});
+    msg.channel.send('clear');
+  }
 
 client.on('message', msg => {
   if (msg.content === 's/info') {
