@@ -13,12 +13,11 @@ client.on('message', msg => {
   }
 });
 
-client.on('message', msg => {
-  if (msg.content === 's/say') {
-    msg.delete()
-    msg.channel.send(msg.content);
+  if(command === "say") {
+    const sayMessage = args.join(" ");
+    message.delete().catch(O_o=>{});
+    message.channel.send(sayMessage);
   }
-});
 
 client.on('message', msg => {
   if (msg.content === 's/embed') {
