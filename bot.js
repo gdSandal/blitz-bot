@@ -11,7 +11,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.startsWith('s/clear')) {
+  if (msg.content === 's/clear') {
     msg.delete();
     msg.channel.send({embed: {
    color: 15868795,
