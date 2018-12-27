@@ -17,6 +17,7 @@ client.on('message', msg => {
   title: "Requiem - by Sandal",
   image: {
   url: "http://i.imgur.com/akzRJIF.jpg",
+  },
   description: "Version **0.3.0** | Since 12/27/18",
   fields: [{
     name: "A bot designed for Sanctum",
@@ -35,7 +36,7 @@ client.on('message', msg => {
       footer: {
         text: "Sanctum 2018"
       }
-  }
+  
 }});
   }
 });
