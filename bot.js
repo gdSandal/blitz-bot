@@ -19,7 +19,7 @@ client.on('message', msg => {
   url: msg.author.avatarURL,
   },
   fields: [{
-    name: msg.author
+    name: msg.author,
   },
   ]
 }});
