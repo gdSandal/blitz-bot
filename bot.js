@@ -8,18 +8,10 @@ const command = args.shift().toLowerCase();
     if(command === 'say') {
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{});
-    message.channel.send(sayMessage);
-  }}
-
-client.on('message', msg => {
-  if (msg.content === 's/embed') {
-    msg.delete()
-    msg.channel.send({embed: {
-  color: 15868795,
-  description: "text"
-    
-}});
-}
+    message.channel.send({embed: {
+        color: 15868795,
+        description: (sayMessage);
+    }});
 });
 
 client.login(process.env.BOT_TOKEN);
