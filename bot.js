@@ -13,8 +13,12 @@ client.on('message', msg => {
 client.on('message', msg => {
   if (msg.startsWith('s/clear')) {
     msg.delete();
-    msg.channel.send('clear');
+    msg.channel.send({embed: {
+   color: 15868795,
+   title: "Message Cleared"
+}});
   }
+});
 
 client.on('message', msg => {
   if (msg.content === 's/info') {
