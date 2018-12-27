@@ -14,10 +14,11 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's/embed' + (msg.content)) {
+  if (msg.content === 's/embed') {
+    msg.delete()
     msg.channel.send({embed: {
   color: 15868795,
-  description: "msg.content"
+  description: ""
     
 }});
 }
