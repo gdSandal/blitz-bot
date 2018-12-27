@@ -16,7 +16,6 @@ client.on('message', msg => {
     msg.channel.send({embed: {
   color: 15868795,
   title: "User Information - " + user,
-  description: "View username | tag | ID",
   thumbnail: {
   url: msg.author.avatarURL,
   },
@@ -31,6 +30,10 @@ client.on('message', msg => {
   {
     name: "ID:",
     value: msg.author.id
+  },
+  {
+    name: "Joined:",
+    value: msg.author.createdAt
   },
   ]
 }});
