@@ -14,11 +14,13 @@ client.on('message', msg => {
   if (msg.content === 's/userinfo') {
     msg.channel.send({embed: {
   color: 15868795,
-  title: "test",
+  title: user.username,
   thumbnail: {
   url: msg.author.avatarURL,
   },
-  description: "test"
+  status: user.presence.status,
+  description: "ok"
+  
 }});
   }
 });
