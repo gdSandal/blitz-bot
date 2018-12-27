@@ -16,6 +16,7 @@ let botmessage = args.join(" ");
 message.delete().catch();
 msg.channel.send(botmessage);
 }
+});
 
 client.on('message', msg => {
   if (msg.content === 's/info') {
