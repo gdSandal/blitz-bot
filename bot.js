@@ -25,7 +25,7 @@ client.on('message', msg => {
   },
   {
     name: "ID:",
-    value: user.discriminator
+    value: msg.author.discriminator
   },
   ]
 }});
