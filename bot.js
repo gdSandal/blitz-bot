@@ -28,8 +28,8 @@ client.on('message', msg => {
     value: user + msg.author.discriminator
   },
   {
-    name: "Status:",
-    value: msg.author.presence
+    name: "ID:",
+    value: msg.author.id
   },
   ]
 }});
