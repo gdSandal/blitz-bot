@@ -15,8 +15,9 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 's/say') {
-    var text = msg.content.split(' ').slice(1).join(' ')
-    msg.channel.send(text);
+    let say = args.join(' ');
+    msg.delete()
+    msg.channel.send(say);
   }
 });
 
