@@ -11,18 +11,6 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's/kick') {
-    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-    if(!member)
-      return message.reply("Failed - No member mentioned");
-    if(!member.kickable) 
-      return message.reply("Failed - Insufficient roles");
-    else (member.kick);
-  }
-}
-
-
-client.on('message', msg => {
   if (msg.content === 's/info') {
     msg.channel.send({embed: {
   color: 15868795,
