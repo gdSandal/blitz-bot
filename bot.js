@@ -14,7 +14,6 @@ client.on('message', msg => {
   if (msg.content === 's/info') {
     msg.channel.send({embed: {
   color: 15868795,
-  image: "http://i.imgur.com/SaLTLUM.jpg",
   title: "Requiem - by Sandal",
   description: "Version **0.3.0** | Since 12/27/18",
   fields: [{
