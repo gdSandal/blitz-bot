@@ -19,7 +19,7 @@ client.on('message', msg => {
   url: msg.author.avatarURL,
   },
   fields: [{
-    name: '${user.username}#${user.discriminator}'
+    name: {user.username}
   },
   ]
 }});
