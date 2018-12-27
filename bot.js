@@ -12,6 +12,9 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 's/userinfo') {
+    let memberuse = msg.mentions.members.first() || msg.author
+    const joindiscord = moment(memberuse.user.createdAt).format('1111')
+    const joinserver = moment(memberuse.joinedAt).format('1111')
     msg.channel.send({embed: {
   color: 15868795,
   title: "User Information",
@@ -19,7 +22,13 @@ client.on('message', msg => {
   url: msg.author.avatarURL,
   },
   fields: [{
-    name: msg.author,
+    name: memberuse.id,
+  },
+  {
+    name: joindiscord,
+  },
+  {
+    name: joinserver,
   },
   ]
 }});
