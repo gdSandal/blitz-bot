@@ -14,7 +14,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's/' (message)) {
+  if (msg.content === 's/embed' + (msg.content)) {
     msg.channel.send({embed: {
   color: 15868795,
   description: "msg.content"
