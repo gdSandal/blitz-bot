@@ -18,7 +18,6 @@ client.on('message', msg => {
   thumbnail: {
   url: msg.author.avatarURL,
   },
-  status: user.presence.status,
   description: "ok"
   
 }});
