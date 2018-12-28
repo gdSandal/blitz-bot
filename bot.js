@@ -7,7 +7,6 @@ client.on('ready', () => {
         name: 'Type s/help for commands!',
         type: 0
     }
-  console.log(`Requiem initilized.`);
 }});
 
 client.on('message', msg => {
