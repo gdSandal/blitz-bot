@@ -64,11 +64,10 @@ client.on('message', msg => {
     value: "Recieve self information page."
   },
   {
-    name: "s/coin",
+    name: "**s/coin**",
     value: "Flip a coin."
   },
   ],
-      timestamp: new Date(),
       footer: {
         text: "Message user - Sandal#8314 for details"
       }
