@@ -16,6 +16,12 @@ client.on('guildMemberAdd', member => {
   channel.send(`Welcome to the server, ${member}`);
 });
 
+client.on('message', msg => {
+  if (msg.content.startsWith('s/clear')) {
+    const amount = parseInt(args[0]);
+    msg.channel.bulkDelete(amount);
+  }
+
 
 client.on('message', msg => {
   if (msg.content === 's/userinfo') {
