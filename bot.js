@@ -6,9 +6,8 @@ client.on('message', msg => {
     msg.channel.send({embed: {
   color: 15868795,
   description: "PONG",
-  timestamp: new Date(),
   footer: {
-  text: "Latency:" + client.ping + ".00 ms"
+  text: "Latency: " + client.ping + ".00 ms"
   }
 }});
   }
