@@ -13,16 +13,7 @@ client.on('message', msg => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'sanctum');
   if (!channel) return;
-  channel.send(`Welcome to the server, ${member}`);
-});
-
-client.on('message', msg => {
-  if (msg.content.startsWith('s/clear')) {
-    const prefix = 's/clear';
-    const args = msg.content.slice(prefix.length).split(' ');
-    const amount = parseInt(args[0]);
-    msg.channel.bulkDelete(amount);
-  }
+  channel.send('Welcome to' + client.guild + '${member}');
 });
 
 
