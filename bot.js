@@ -7,7 +7,8 @@ client.on('ready', () => {
         name: 'Type s/help for commands!',
         type: 0
     }
-}});
+});
+});
 
 client.on('message', msg => {
   if (msg.content === 's/ping') {
