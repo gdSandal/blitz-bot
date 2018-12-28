@@ -10,6 +10,14 @@ client.on('message', msg => {
   }
 });
   
+client.on('message', msg => {
+  if (msg.content === 's/latency') {
+    msg.channel.send("pinging..").then(msg => {
+      msg.edit(Math.abs((new Date().getMilliseconds()/1000+ new Date().getSeconds()) - (dk.getMilliseconds()/1000+dk.getSeconds())));
+    });
+    return;
+  }
+    
 
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'sanctum');
