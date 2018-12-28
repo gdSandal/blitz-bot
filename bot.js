@@ -18,25 +18,6 @@ client.on('guildMemberAdd', member => {
 
 
 client.on('message', msg => {
-  if (msg.content.startsWith('s/kick')) {
-    const user = msg.mentions.users.first();
-    // If we have a user mentioned
-    if (user) {
-      // Now we get the member from the user
-      const member = msg.guild.member(user);
-      // If the member is in the guild
-      if (member) {
-        member.kick('Member Kicked Rsn').then(() => {
-          msg.reply(`Successfully kicked ${user.tag}`);
-        }).catch(err => {
-          msg.reply('I was unable to kick the member');
-          console.error(err);
-        });
-  }}
-});
-
-
-client.on('message', msg => {
   if (msg.content === 's/userinfo') {
     const user = msg.author.username;
     msg.channel.send({embed: {
