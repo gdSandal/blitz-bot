@@ -17,7 +17,11 @@ client.on('message', msg => {
   if (msg.content === 's/coin') {
      let outcomes = ["Heads", "Tails"];
     let outcomesIndex = Math.round(Math.random() * outcomes.length);
-    msg.channel.send(outcomes[outcomesIndex]);
+    msg.channel.send({embed: {
+      color: 15868795,
+      description: outcomes[outcomesIndex]
+   }
+}});
   }
 });
     
