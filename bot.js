@@ -17,26 +17,22 @@ client.on('guildMemberAdd', member => {
 });
 
 
-client.on('message', message => {
-  // Ignore messages that aren't from a guild
-  if (!message.guild) return;
-  // If the message content starts with "!kick"
-  if (message.content.startsWith('s/kick')) {
-    const user = message.mentions.users.first();
+client.on('message', msg => {
+  if (msg.content.startsWith('s/kick')) {
+    const user = msg.mentions.users.first();
     // If we have a user mentioned
     if (user) {
       // Now we get the member from the user
-      const member = message.guild.member(user);
+      const member = msg.guild.member(user);
       // If the member is in the guild
       if (member) {
         member.kick('Member Kicked Rsn').then(() => {
-          // We let the message author know we were able to kick the person
-          message.reply(`Successfully kicked ${user.tag}`);
+          msg.reply(`Successfully kicked ${user.tag}`);
         }).catch(err => {
-          message.reply('I was unable to kick the member');
+          msg.reply('I was unable to kick the member');
           console.error(err);
         });
-  }
+  }}
 });
 
 
