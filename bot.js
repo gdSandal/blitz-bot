@@ -15,7 +15,7 @@ client.on('message', msg => {
     msg.channel.send("pinging..").then(msg => {
       msg.edit(Math.abs((new Date().getMilliseconds()/1000+ new Date().getSeconds()) - (dk.getMilliseconds()/1000+dk.getSeconds())));
     }
-    });
+    }});
     
 
 client.on('guildMemberAdd', member => {
