@@ -5,7 +5,7 @@ client.on('message', msg => {
   if (msg.content === 's/ping') {
     msg.channel.send({embed: {
   color: 15868795,
-  description: guild.name
+  description: `${guild.name}`
 }});
   }
 });
