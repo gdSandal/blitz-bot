@@ -21,6 +21,7 @@ client.on('message', msg => {
     const amount = parseInt(args[0]);
     msg.channel.bulkDelete(amount);
   }
+});
 
 
 client.on('message', msg => {
