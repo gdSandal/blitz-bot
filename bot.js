@@ -12,7 +12,7 @@ client.on('message', msg => {
   
 client.on('message', msg => {
   if (msg.content === 's/latency') {
-    msg.channel.send(${client.ping})
+    msg.channel.send(client.ping + "ms");
     }});
     
 
