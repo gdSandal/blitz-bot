@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-  client.user.setGame('s/help for commands!');
+  client.user.setActivity('s/help for commands!');
   console.log(`Requiem initilized.`);
 });
 
