@@ -10,6 +10,15 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', msg => {
+  if (msg.content.startsWith('s/role')) {
+  let userToModify = msg.mentions.members.first();
+  let roleToAdd = msg.mentions.roles.first();
+userToModify.addRole(roleToAdd);
+  }
+});
+  
+
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'sanctum');
   if (!channel) return;
