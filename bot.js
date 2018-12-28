@@ -13,7 +13,7 @@ client.on('message', msg => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'sanctum');
   if (!channel) return;
-  channel.send('Welcome to the server! ${member}');
+  channel.send(`Welcome to the server! ${member}`);
 });
 
 
