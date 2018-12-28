@@ -64,7 +64,7 @@ client.on('message', msg => {
     value: "Recieve self information page."
   },
   {
-    name: "**s/coin**",
+    name: "**s/coin:**",
     value: "Flip a coin."
   },
   ],
