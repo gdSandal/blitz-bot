@@ -12,6 +12,14 @@ client.on('message', msg => {
 }});
   }
 });
+
+client.on('message', msg => {
+  if (msg.content === 's/coin') {
+     let outcomes = ["Heads", "Tails"];
+    let outcomesIndex = Math.round(Math.random() * outcomes.length);
+    msg.channel.send(outcomes[outcomesIndex]);
+  }
+});
     
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'sanctum');
