@@ -5,16 +5,8 @@ client.on('message', msg => {
   if (msg.content === 's/ping') {
     msg.channel.send({embed: {
   color: 15868795,
-  description: "PONG"
+  description: guild.name
 }});
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content.startsWith('s/role')) {
-  let userToModify = msg.mentions.members.first();
-  let roleToAdd = msg.mentions.roles.first();
-userToModify.addRole(roleToAdd);
   }
 });
   
