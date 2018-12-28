@@ -18,6 +18,8 @@ client.on('guildMemberAdd', member => {
 
 client.on('message', msg => {
   if (msg.content.startsWith('s/clear')) {
+    const prefix = 's/clear';
+    const args = msg.content.slice(prefix.length).split(' ');
     const amount = parseInt(args[0]);
     msg.channel.bulkDelete(amount);
   }
