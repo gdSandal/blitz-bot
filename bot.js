@@ -5,17 +5,14 @@ client.on('message', msg => {
   if (msg.content === 's/ping') {
     msg.channel.send({embed: {
   color: 15868795,
-  description: "PONG"
+  description: "PONG",
+  timestamp: new Date(),
+  footer: {
+  text: "Latency:" client.ping + ".00 ms"
 }});
   }
 });
-  
-client.on('message', msg => {
-  if (msg.content === 's/latency') {
-    msg.channel.send(client.ping + "ms");
-    }});
     
-
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'sanctum');
   if (!channel) return;
