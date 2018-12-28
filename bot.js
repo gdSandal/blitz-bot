@@ -45,7 +45,7 @@ client.on('message', msg => {
   ],
       timestamp: new Date(),
       footer: {
-        text: user + " | Sanctum 2018"
+        text: user + " | " + msg.guild.name + " 2018"
       }
 }});
   }
@@ -59,10 +59,10 @@ client.on('message', msg => {
   image: {
   url: "http://i.imgur.com/akzRJIF.jpg",
   },
-  description: "Version **0.3.0** | Since 12/27/18",
+  description: "Version **0.4.2** | Since 12/27/18",
   fields: [{
-    name: "A bot designed for Sanctum",
-    value: "Server run since 7/21/18"
+    name: "A bot designed for " + msg.guild.name,
+    value: "Host server run since 7/21/18"
   },
   {
     name: "View the bot code:",
@@ -75,7 +75,7 @@ client.on('message', msg => {
   ],
       timestamp: new Date(),
       footer: {
-        text: "Sanctum 2018"
+        text: msg.guild.name + " 2018"
       }
   
 }});
