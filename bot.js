@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
  client.user.setPresence({
     game: {
-        name: 'Type s/help for commands!',
+        name: '-> Type s/help for commands!',
         type: 0
     }
 });
@@ -28,7 +28,7 @@ client.on('message', msg => {
     let outcomesIndex = Math.round(Math.random() * outcomes.length);
     msg.channel.send({embed: {
       color: 15868795,
-      description: outcomes[outcomesIndex]
+      description: "Result: " + outcomes[outcomesIndex]
 }});
   }
 });
