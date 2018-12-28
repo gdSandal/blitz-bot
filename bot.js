@@ -5,7 +5,7 @@ client.on('message', msg => {
   if (msg.content === 's/ping') {
     msg.channel.send({embed: {
   color: 15868795,
-  description: msg.guild.name
+  description: "PONG"
 }});
   }
 });
@@ -35,7 +35,7 @@ client.on('message', msg => {
     value: "@" + user + "#" + msg.author.discriminator
   },
   {
-    name: "ID:",
+    name: "User ID:",
     value: msg.author.id
   },
   {
