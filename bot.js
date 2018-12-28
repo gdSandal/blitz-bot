@@ -8,7 +8,8 @@ client.on('message', msg => {
   description: "PONG",
   timestamp: new Date(),
   footer: {
-  text: "Latency:" client.ping + ".00 ms"
+  text: "Latency:" + client.ping + ".00 ms"
+  }
 }});
   }
 });
