@@ -7,7 +7,7 @@ client.on('message', msg => {
   color: 15868795,
   description: "PONG",
   footer: {
-  text: "Latency: " + client.ping + ".00 ms"
+  text: "Latency: " + client.ping + " ms"
   }
 }});
   }
