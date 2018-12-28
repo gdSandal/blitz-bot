@@ -17,27 +17,6 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's/help') {
-    msg.channel.send("sample");
-const collector = msg.createReactionCollector((reaction, user) => 
-    user.id === msg.author.id &&
-    reaction.emoji.name === "⏪" ||
-    reaction.emoji.name === "⏩" ||
-    reaction.emoji.name === "⏹"
-).once("collect", reaction => {
-    const chosen = reaction.emoji.name;
-    if(chosen === "⏪"){
-        // Prev page
-    }else if(chosen === "⏩"){
-        // Next page
-    }else{
-        // Stop navigating pages
-    }
-    collector.stop();
-}
-});
-
-client.on('message', msg => {
   if (msg.content === 's/userinfo') {
     const user = msg.author.username;
     msg.channel.send({embed: {
