@@ -39,6 +39,43 @@ client.on('guildMemberAdd', member => {
   channel.send(`Welcome to the server! ${member}`);
 });
 
+
+client.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find(ch => ch.name === 'sanctum');
+  if (!channel) return;
+  channel.send(`Welcome to the server! ${member}`);
+});
+
+client.on('message', msg => {
+  if (msg.content === 's/help') {
+    msg.channel.send({embed: {
+  color: 15868795,
+  title: "s/help | Commands List",
+  fields: [{
+    name: "**s/ping:**",
+    value: "Retrieve bot latency."
+  },
+  {
+    name: "**s/info:**",
+    value: "Recieve bot information page."
+  },
+  {
+    name: "**s/userinfo:**",
+    value: "Recieve self information page."
+  },
+  {
+    name: "s/coin",
+    value: "Flip a coin."
+  },
+  ],
+      timestamp: new Date(),
+      footer: {
+        text: "Message user - Sandal#8314 for details"
+      }
+}});
+  }
+});
+
 client.on('message', msg => {
   if (msg.content === 's/userinfo') {
     const user = msg.author.username;
