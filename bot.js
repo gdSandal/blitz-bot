@@ -20,7 +20,7 @@ client.on('message', msg => {
 
 
 client.on('message', msg => {
- if (msg.content.startsWith('s/sayembed')) {
+ if (msg.content.startsWith('s/embed')) {
  let args = msg.content.split(" ").slice(1);
   msg.delete();
   msg.channel.send({embed: {
