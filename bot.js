@@ -11,12 +11,10 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  let messageArray = msg.content.split(" ");
-  let args = messageArray.slice(1);
-  if (msg.content.startsWith('s/clear')) {
-      msg.channel.bulkDelete(args[0]).then(() => {
-      msg.channel.send("cleared"));
-}}
+  if (msg.content === 's/clear 10') {
+      msg.channel.bulkDelete(10);
+      msg.channel.send("cleared");
+}
 });
 
 client.on('message', msg => {
