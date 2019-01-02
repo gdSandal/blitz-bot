@@ -11,7 +11,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.startsWith === 's/ping') {
+  if (msg.content.startsWith === 's/ping') {
     msg.channel.send({embed: {
   color: 15868795,
   description: "PONG",
