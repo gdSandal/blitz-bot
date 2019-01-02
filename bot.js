@@ -20,7 +20,7 @@ client.on('message', msg => {
 
 
 client.on('message', msg => {
- if (msg.content.startsWith('s/embed')) {
+ if (msg.content.startsWith('s/embedsay')) {
  let args = msg.content.split(" ").slice(1);
   msg.delete();
   msg.channel.send({embed: {
@@ -29,8 +29,20 @@ client.on('message', msg => {
 }});
  }
 });
-  
 
+client.on('message', msg => {
+ if (msg.content.startsWith('s/embedimage')) {
+ let args = msg.content.split(" ").slice(1);
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   image: {
+   url: args.join(" ")
+   }
+}});
+ }
+});
+  
 client.on('message', msg => {
   if (msg.content === 's/clear') {
       msg.channel.bulkDelete(10);
