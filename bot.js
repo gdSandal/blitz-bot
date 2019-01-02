@@ -19,6 +19,13 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+ if (msg.content.startsWith('s/jojowiki')) {
+ let args = msg.content.split(" ").slice(1);
+  msg.channel.send("[args.join(" ")]('http://jojo.wikia.com/wiki/' + args.join(" "))");
+ }
+});
+
+client.on('message', msg => {
  if (msg.content.startsWith('s/embedsay')) {
  let args = msg.content.split(" ").slice(1);
   msg.delete();
