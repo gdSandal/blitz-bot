@@ -4,14 +4,14 @@ const client = new Discord.Client();
 client.on('ready', () => {
  client.user.setPresence({
     game: {
-        name: '-> Type s/help for commands!',
+        name: 'HAPPY 2019!',
         type: 0
     }
 });
 });
 
 client.on('message', msg => {
-  if (msg.content === 's/ping') {
+  if (msg.startsWith === 's/ping') {
     msg.channel.send({embed: {
   color: 15868795,
   description: "PONG",
