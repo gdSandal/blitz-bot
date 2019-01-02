@@ -11,6 +11,14 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+ if (msg.content.startsWith('s/say')) {
+ let args = msg.content.split(" ").slice(1);
+  msg.channel.send(args.join(" "));
+ }
+});
+  
+
+client.on('message', msg => {
   if (msg.content === 's/clear') {
       msg.channel.bulkDelete(10);
       msg.channel.send("Cleared").then(msg => msg.delete(2000));
