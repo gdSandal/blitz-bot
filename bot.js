@@ -11,7 +11,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content.startsWith('s/ping')) {
+  if (msg.content === 's/ping') {
     msg.channel.send({embed: {
   color: 15868795,
   description: "PONG",
@@ -33,6 +33,17 @@ client.on('message', msg => {
   }
 });
     
+client.on('message', msg => {
+  if (msg.content.startsWith('s/8ball')) {
+    let outcomes = ["yes", "no", "maybe", "it is possible", "perhaps", "absolutely not", "it is likely", "it is unlikely"];
+    let outcomesIndex = Math.round(Math.random() * outcomes.length);
+    msg.channel.send({embed: {
+      color: 15868795,
+      description: outcomes[outcomesIndex]
+}});
+  }
+});
+
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'sanctum');
   if (!channel) return;
