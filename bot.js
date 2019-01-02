@@ -18,7 +18,6 @@ client.on('message', msg => {
  }
 });
 
-
 client.on('message', msg => {
  if (msg.content.startsWith('s/embedsay')) {
  let args = msg.content.split(" ").slice(1);
@@ -26,19 +25,6 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    description: args.join(" ")
-}});
- }
-});
-
-client.on('message', msg => {
- if (msg.content.startsWith('s/embedimage')) {
- let args = msg.content.split(" ").slice(1);
-  msg.delete();
-  msg.channel.send({embed: {
-   color: 15868795,
-   image: {
-   url: args.join(" ")
-   }
 }});
  }
 });
