@@ -25,7 +25,7 @@ client.on('message', msg => {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
-   description: (args.join(" "));
+   description: args.join(" ")
 }});
  }
 });
