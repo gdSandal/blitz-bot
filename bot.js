@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
  client.user.setPresence({
     game: {
-        name: 'use "s/help"',
+        name: 'use s/help',
         type: 0
     }
 });
@@ -21,7 +21,7 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content.startsWith('s/jojowiki')) {
  let args = msg.content.split(" ");
-  msg.channel.send('http://jojo.wikia.com/wiki/' + args.join(""));
+  msg.channel.send('http://jojo.wikia.com/wiki/' + args.join("-"));
  }
 });
 
