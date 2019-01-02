@@ -20,8 +20,11 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/jojowiki')) {
- let args = msg.content.split(" ").slice(1).val.charAt(0).toUppercase();
-  msg.channel.send('http://jojo.wikia.com/wiki/' + args.join("_"));
+ let args = msg.content.split(" ").slice(1)
+  msg.channel.send({embed: {
+   title: "Jojo's Bizzare Adventure Wiki",
+   description: 'http://jojo.wikia.com/wiki/' + args.join("_"));
+}});
  }
 });
 
