@@ -39,13 +39,6 @@ client.on('guildMemberAdd', member => {
   channel.send(`Welcome to the server! ${member}`);
 });
 
-
-client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find(ch => ch.name === 'sanctum');
-  if (!channel) return;
-  channel.send(`Welcome to the server! ${member}`);
-});
-
 client.on('message', msg => {
   if (msg.content === 's/help') {
     msg.channel.send({embed: {
@@ -103,7 +96,7 @@ client.on('message', msg => {
   ],
       timestamp: new Date(),
       footer: {
-        text: user + " | " + msg.guild.name + " 2018"
+        text: user + " | " + msg.guild.name + " 2019"
       }
 }});
   }
@@ -117,9 +110,9 @@ client.on('message', msg => {
   image: {
   url: "http://i.imgur.com/akzRJIF.jpg",
   },
-  description: "Version **0.4.2** | Since 12/27/18",
+  description: "Version **0.5.1** | Since 12/27/18",
   fields: [{
-    name: "A bot designed for " + msg.guild.name,
+    name: "Currently hosted on " + msg.guild.name,
     value: "Host server run since 7/21/18"
   },
   {
@@ -133,7 +126,7 @@ client.on('message', msg => {
   ],
       timestamp: new Date(),
       footer: {
-        text: msg.guild.name + " 2018"
+        text: msg.guild.name + " 2019"
       }
   
 }});
