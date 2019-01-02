@@ -20,8 +20,8 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content === 's/random') {
   msg.channel.send({embed: {
-   color: RANDOM,
-   description: "RNG COLOR"
+   color: "RANDOM",
+   description: "Here is a random color"
 }});
   }
 });
