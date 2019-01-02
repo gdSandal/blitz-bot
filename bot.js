@@ -10,10 +10,10 @@ client.on('ready', () => {
 });
 });
 
-client.on('message',msg => {
+client.on('message', msg => {
   let args = messageArray.slice(1);
   if (msg.content.startsWith('s/clear') {
-      msg.channel.bulkDelete(args[0]);
+      msg.channel.bulkDelete(args[1]);
 }
 });
 
