@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
  client.user.setPresence({
     game: {
-        name: 'HAPPY 2019!',
+        name: 'use "s/help"',
         type: 0
     }
 });
@@ -20,8 +20,8 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/jojowiki')) {
- let args = msg.content.split(" ").slice(1, 2, 3);
-  msg.channel.send('http://jojo.wikia.com/wiki/' + args.join(" "));
+ let args = msg.content.split(" ");
+  msg.channel.send('http://jojo.wikia.com/wiki/' + args.join(""));
  }
 });
 
