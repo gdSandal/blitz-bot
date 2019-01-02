@@ -19,7 +19,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content === 's/rcolor') {
-  let randomcolor = Math.floor(Math.random() * 10000000 + 1);
+  let randomcolor = Math.floor(Math.random() * 100000000 + 1);
   msg.channel.send({embed: {
    color: randomcolor,
    description: randomcolor
