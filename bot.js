@@ -16,7 +16,7 @@ client.on('message', msg => {
   if (msg.content.startsWith('s/clear')) {
       msg.channel.bulkDelete(args[0]).then(() => {
       msg.channel.send("cleared"));
-}
+}}
 });
 
 client.on('message', msg => {
