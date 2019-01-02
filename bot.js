@@ -11,9 +11,9 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's/clear 10') {
+  if (msg.content === 's/clear10') {
       msg.channel.bulkDelete(10);
-      msg.channel.send("cleared");
+      msg.channel.send("cleared").then(msg => msg.delete(2000));
 }
 });
 
