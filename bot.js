@@ -12,7 +12,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   let args = messageArray.slice(1);
-  if (msg.content.startsWith('s/clear') {
+  if (msg.content.startsWith('s/clear')) {
       msg.channel.bulkDelete(args[1]);
 }
 });
