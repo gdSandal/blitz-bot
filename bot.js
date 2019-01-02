@@ -51,33 +51,33 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 's/janken') {
-    let outcomes = ["Paper", "Rock", "Scissors"];
-    let outcomesIndex = Math.round(Math.random() * outcomes.length);
+    let results = ["Paper", "Rock", "Scissors"];
+    let resultsIndex = Math.round(Math.random() * results.length);
     msg.channel.send({embed: {
       color: 15868795,
-      description: "Janken Result: " + outcomes[outcomesIndex]
+      description: "Janken Result: " + results[resultsIndex]
 }});
   }
 });
 
 client.on('message', msg => {
   if (msg.content === 's/coin') {
-    let outcomes = ["Heads", "Tails"];
-    let outcomesIndex = Math.round(Math.random() * outcomes.length);
+    let outcome = ["Heads", "Tails"];
+    let outcomeIndex = Math.round(Math.random() * outcome.length);
     msg.channel.send({embed: {
       color: 15868795,
-      description: "Coinflip Result: " + outcomes[outcomesIndex]
+      description: "Coinflip Result: " + outcome[outcomeIndex]
 }});
   }
 });
     
 client.on('message', msg => {
   if (msg.content.startsWith('s/8ball')) {
-    let outcomes = ["yes", "no", "maybe", "it is possible", "perhaps", "absolutely not", "it is likely", "it is unlikely"];
-    let outcomesIndex = Math.round(Math.random() * outcomes.length);
+    let ball = ["yes", "no", "maybe", "it is possible", "perhaps", "absolutely not", "it is likely", "it is unlikely"];
+    let ballIndex = Math.round(Math.random() * ball.length);
     msg.channel.send({embed: {
       color: 15868795,
-      description: "8 ball says: " + outcomes[outcomesIndex]
+      description: "8 ball says: " + ball[ballIndex]
 }});
   }
 });
