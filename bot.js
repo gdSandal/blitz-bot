@@ -22,6 +22,7 @@ client.on('message', msg => {
  if (msg.content.startsWith('s/jojowiki')) {
  let args = msg.content.split(" ").slice(1)
   msg.channel.send({embed: {
+   color: 15868795,
    title: "Jojo's Bizzare Adventure Wiki",
    description: 'http://jojo.wikia.com/wiki/' + args.join("_"));
 }});
