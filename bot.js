@@ -19,10 +19,20 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content === 's/rcolor') {
-  let randomcolor = Math.floor(Math.random() * 100000000 + 1);
+  let randomcolor = Math.floor(Math.random() * 10000000);
   msg.channel.send({embed: {
    color: randomcolor,
-   description: randomcolor
+   description: "Random color [decimal]: " + randomcolor
+}});
+  }
+});
+
+client.on('message', msg => {
+ if (msg.content === 's/rnumber') {
+  let randomnumber = Math.floor(Math.random() * 10 + 1);
+  msg.channel.send({embed: {
+   color: 15868795,
+   description: "RNG Result: " + randomnumber
 }});
   }
 });
@@ -40,12 +50,23 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+  if (msg.content === 's/janken') {
+    let outcomes = ["Paper", "Rock", "Scissors"];
+    let outcomesIndex = Math.round(Math.random() * outcomes.length);
+    msg.channel.send({embed: {
+      color: 15868795,
+      description: "Janken Result: " + outcomes[outcomesIndex]
+}});
+  }
+});
+
+client.on('message', msg => {
   if (msg.content === 's/coin') {
     let outcomes = ["Heads", "Tails"];
     let outcomesIndex = Math.round(Math.random() * outcomes.length);
     msg.channel.send({embed: {
       color: 15868795,
-      description: "Result: " + outcomes[outcomesIndex]
+      description: "Coinflip Result: " + outcomes[outcomesIndex]
 }});
   }
 });
@@ -56,7 +77,7 @@ client.on('message', msg => {
     let outcomesIndex = Math.round(Math.random() * outcomes.length);
     msg.channel.send({embed: {
       color: 15868795,
-      description: outcomes[outcomesIndex]
+      description: "8 ball says: " + outcomes[outcomesIndex]
 }});
   }
 });
