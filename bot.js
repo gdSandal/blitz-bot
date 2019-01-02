@@ -11,10 +11,19 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's/clear10') {
+  if (msg.content === 's/clear') {
       msg.channel.bulkDelete(10);
-      msg.channel.send("cleared").then(msg => msg.delete(2000));
+      msg.channel.send("Cleared").then(msg => msg.delete(2000));
 }
+});
+
+client.on('message', msg => {
+ if (msg.content === 's/random') {
+  msg.channel.send({embed: {
+   color: RANDOM,
+   description: "RNG COLOR"
+}});
+  }
 });
 
 client.on('message', msg => {
