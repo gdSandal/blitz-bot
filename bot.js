@@ -18,10 +18,11 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
- if (msg.content === 's/random') {
+ if (msg.content === 's/rcolor') {
+  let randomcolor = Math.floor(Math.random() * 10 + 1);
   msg.channel.send({embed: {
-   color: "RANDOM",
-   description: "Here is a random color"
+   color: randomcolor,
+   description: randomcolor
 }});
   }
 });
