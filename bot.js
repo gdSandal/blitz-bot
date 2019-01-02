@@ -10,6 +10,13 @@ client.on('ready', () => {
 });
 });
 
+client.on('message',msg => {
+  let args = messageArray.slice(1);
+  if (msg.content.startsWith('s/clear') {
+      msg.channel.bulkDelete(args[0]);
+}
+});
+
 client.on('message', msg => {
   if (msg.content === 's/ping') {
     msg.channel.send({embed: {
