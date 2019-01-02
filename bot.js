@@ -20,7 +20,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/jojowiki')) {
- let args = msg.content.split(" ").slice(2);
+ let args = msg.content.split(" ");
   msg.channel.send('http://jojo.wikia.com/wiki/' + args.join(" "));
  }
 });
