@@ -14,7 +14,8 @@ client.on('message', msg => {
   let messageArray = msg.content.split(" ");
   let args = messageArray.slice(1);
   if (msg.content.startsWith('s/clear')) {
-      msg.channel.bulkDelete(args[0]);
+      msg.channel.bulkDelete(args[0]).then(() => {
+      msg.channel.send("cleared"));
 }
 });
 
