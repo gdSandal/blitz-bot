@@ -13,7 +13,20 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.content.startsWith('s/say')) {
  let args = msg.content.split(" ").slice(1);
+  msg.delete();
   msg.channel.send(args.join(" "));
+ }
+});
+
+
+client.on('message', msg => {
+ if (msg.content.startsWith('s/sayembed')) {
+ let args = msg.content.split(" ").slice(1);
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   description: (args.join(" "));
+}});
  }
 });
   
