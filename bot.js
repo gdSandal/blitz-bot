@@ -16,7 +16,7 @@ client.on('message', msg => {
  msg.delete();
  if (msg.content.includes('strike')) {
  msg.channel.send('yes');
- else msg.channel.send('error');
+ return msg.channel.send('error');
  }
  }});
 
