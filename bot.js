@@ -123,39 +123,37 @@ client.on('message', msg => {
     let eIndex = Math.round(Math.random() * e.length);
     let f = ["A₅", "B₄", "C₃", "D₂", "E₁",];
     let fIndex = Math.round(Math.random() * f.length);
-    let g = ["", "", "", "", "", "", "ˢ",];
-    let gIndex = Math.round(Math.random() * g.length);
     msg.channel.send({embed: {
       color: 15868795,
       title: "Stand Stats Generator:",
       fields: [{
      name: "**POWER :**",
-     value: "   **»**   " + a[aIndex] + g[gIndex],
+     value: "   **»**   " + a[aIndex],
      inline: true
      },
      {
      name: "**SPEED :**",
-     value: "   **»**   " + b[bIndex] + g[gIndex],
+     value: "   **»**   " + b[bIndex],
      inline: true
      },
      {
      name: "**RANGE :**",
-     value: "   **»**   " + c[cIndex] + g[gIndex],
+     value: "   **»**   " + c[cIndex],
      inline: true
      },
      {
      name: "**DURABILITY :**",
-     value: "   **»**   " + d[dIndex] + g[gIndex],
+     value: "   **»**   " + d[dIndex],
      inline: true
      },
      {
      name: "**PRECISION :**",
-     value: "   **»**   " + e[eIndex] + g[gIndex],
+     value: "   **»**   " + e[eIndex],
      inline: true
      },
      {
      name: "**POTENTIAL :**",
-     value: "   **»**   " + f[fIndex] + g[gIndex],
+     value: "   **»**   " + f[fIndex],
      inline: true
      },
      ],
