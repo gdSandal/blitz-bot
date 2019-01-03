@@ -139,6 +139,9 @@ client.on('message', msg => {
     msg.channel.send({embed: {
       color: 15868795,
       title: "Stand Stats Generator:",
+      thumbnail: {
+       url: "http://i.imgur.com/4FB8XRp.jpg"
+      },
       fields: [{
      name: "**POWER :**",
      value: "   **»**   " + a[aIndex],
