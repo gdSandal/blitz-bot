@@ -29,7 +29,15 @@ client.on('message', msg => {
    },
    description: "http://jojo.wikia.com/wiki/" + args.join("_"),
    image: {
-    url: "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join() + "AvAnim.png"
+    url: "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png"
+   },
+   fields: [{
+    name: "Stand name:",
+    value: args.join(" ")
+   },
+   ],
+   footer: {
+    text: "s/standhelp for troubleshooting"
    }
 }});
  }
