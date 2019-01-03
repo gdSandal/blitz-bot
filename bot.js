@@ -118,7 +118,7 @@ client.on('message', msg => {
       title: "Stand Stats Generator:",
       fields: [{
      name: "POWER",
-     value: stat[statIndex]
+     value: new.stat[statIndex]
      },
      {
      name: "SPEED",
