@@ -14,12 +14,12 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.content.startsWith('s/test')) {
  const filter = m => m.author.id === msg.author.id;
- msg.channel.send("reply wait 3s").then(r => r.delete(3000));
+ msg.channel.send("Send a message | expires in 3 seconds...").then(r => r.delete(3000));
  msg.channel.awaitMessages(filter, {
   max: 1,
   time: 3000
  }).then(collected => {
-  msg.channel.send(collected.first().content);
+  msg.channel.send("success!");
  });
 }});
   
