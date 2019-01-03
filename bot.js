@@ -53,7 +53,7 @@ client.on('message', msg => {
    },
    {
     name: "**Images:**",
-    value: "[wiki](wikilink)" + " | " + "[google](googlelink)
+    value: "[wiki](wikilink)" + " | " + "[google](googlelink)"
    },
    ],
    footer: {
