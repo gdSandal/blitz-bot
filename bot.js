@@ -20,7 +20,7 @@ client.on('message', msg => {
   time: 3000
  }).then(collected => {
   if (collected.first().content === 's1') {
-  return msg.channel.send("success!");
+  msg.channel.send("success!");
  });
  }
 }});
