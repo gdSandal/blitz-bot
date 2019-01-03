@@ -24,7 +24,7 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    title: "Jojo's Bizzare Adventure Wiki",
-   description: 'http://jojo.wikia.com/wiki/' + args.join("_"));
+   description: 'http://jojo.wikia.com/wiki/' + args.join("_")
 }});
  }
 });
