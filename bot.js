@@ -11,6 +11,13 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+ if (msg.content.startsWith('s/iii')) {
+  let args = msg.content.split(" ").slice(1);
+  msg.channel.send("http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png");
+ }
+});
+
+client.on('message', msg => {
  if (msg.content.startsWith('s/say')) {
  let args = msg.content.split(" ").slice(1);
   msg.delete();
@@ -27,9 +34,6 @@ client.on('message', msg => {
    thumbnail: {
     url: "http://i.imgur.com/Vqypytw.jpg"
    },
-   image: {
-    url: "http://jojo.wikia.com/wiki/" + args.join("")
-   },
    fields: [{
     name: "Stand name:",
     value: args.join(" ")
@@ -40,7 +44,7 @@ client.on('message', msg => {
    },
    {
     name: "Image:",
-    value: "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png"
+    value: "Click here: " + "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png"
    },
    ],
    footer: {
