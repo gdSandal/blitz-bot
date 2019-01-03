@@ -19,7 +19,6 @@ client.on('message', msg => {
   max: 1,
   time: 3000
  }).then(collected => {
-  if (collected.first().content === 's1') {
   msg.channel.send("success!");
  });
  }
