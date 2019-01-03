@@ -111,34 +111,44 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 's/rstand') {
-    let stat = ["S", "A", "B", "C", "D", "E",];
-    let statIndex = Math.round(Math.random() * stat.length);
+    let a = ["S", "A", "B", "C", "D", "E",];
+    let aIndex = Math.round(Math.random() * a.length);
+    let b = ["S", "A", "B", "C", "D", "E",];
+    let bIndex = Math.round(Math.random() * b.length);
+    let c = ["S", "A", "B", "C", "D", "E",];
+    let cIndex = Math.round(Math.random() * c.length);
+    let d = ["S", "A", "B", "C", "D", "E",];
+    let dIndex = Math.round(Math.random() * d.length);
+    let e = ["S", "A", "B", "C", "D", "E",];
+    let eIndex = Math.round(Math.random() * e.length);
+    let f = ["S", "A", "B", "C", "D", "E",];
+    let fIndex = Math.round(Math.random() * f.length);
     msg.channel.send({embed: {
       color: 15868795,
       title: "Stand Stats Generator:",
       fields: [{
-     name: "POWER",
-     value: new.stat[statIndex]
+     name: "**POWER**",
+     value: a[aIndex]
      },
      {
-     name: "SPEED",
-     value: stat[statIndex]
+     name: "**SPEED**",
+     value: b[bIndex]
      },
      {
-     name: "RANGE",
-     value: stat[statIndex]
+     name: "**RANGE**",
+     value: c[cIndex]
      },
      {
-     name: "DURABILITY",
-     value: stat[statIndex]
+     name: "**DURABILITY**",
+     value: d[dIndex]
      },
      {
-     name: "PRECISION",
-     value: stat[statIndex]
+     name: "**PRECISION**",
+     value: e[eIndex]
      },
      {
-     name: "POTENTIAL",
-     value: stat[statIndex]
+     name: "**POTENTIAL**",
+     value: f[fIndex]
      },
      ],
 }});
