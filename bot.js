@@ -128,32 +128,32 @@ client.on('message', msg => {
       title: "Stand Stats Generator:",
       fields: [{
      name: "**POWER**",
-     value: a[aIndex],
+     value: "   **»**   " + a[aIndex],
      inline: true
      },
      {
      name: "**SPEED**",
-     value: b[bIndex],
+     value: "   **»**   " + b[bIndex],
      inline: true
      },
      {
      name: "**RANGE**",
-     value: c[cIndex],
+     value: "   **»**   " + c[cIndex],
      inline: true
      },
      {
      name: "**DURABILITY**",
-     value: d[dIndex],
+     value: "   **»**   " + d[dIndex],
      inline: true
      },
      {
      name: "**PRECISION**",
-     value: e[eIndex],
+     value: "   **»**   " + e[eIndex],
      inline: true
      },
      {
      name: "**POTENTIAL**",
-     value: f[fIndex],
+     value: "   **»**   " + f[fIndex],
      inline: true
      },
      ],
