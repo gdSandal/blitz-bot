@@ -125,17 +125,17 @@ client.on('message', msg => {
 client.on('message', msg => {
   if (msg.content === 's/rstand') {
     let a = ["A₅", "B₄", "C₃", "D₂", "E₁",];
-    let aIndex = Math.round(Math.random() * a.length);
+    let aIndex = Math.floor(Math.random() * a.length);
     let b = ["A₅", "B₄", "C₃", "D₂", "E₁",];
-    let bIndex = Math.round(Math.random() * b.length);
+    let bIndex = Math.floor(Math.random() * b.length);
     let c = ["A₅", "B₄", "C₃", "D₂", "E₁",];
-    let cIndex = Math.round(Math.random() * c.length);
+    let cIndex = Math.floor(Math.random() * c.length);
     let d = ["A₅", "B₄", "C₃", "D₂", "E₁",];
-    let dIndex = Math.round(Math.random() * d.length);
+    let dIndex = Math.floor(Math.random() * d.length);
     let e = ["A₅", "B₄", "C₃", "D₂", "E₁",];
-    let eIndex = Math.round(Math.random() * e.length);
+    let eIndex = Math.floor(Math.random() * e.length);
     let f = ["A₅", "B₄", "C₃", "D₂", "E₁",];
-    let fIndex = Math.round(Math.random() * f.length);
+    let fIndex = Math.floor(Math.random() * f.length);
     msg.channel.send({embed: {
       color: 15868795,
       title: "Stand Stats Generator:",
