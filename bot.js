@@ -21,7 +21,6 @@ client.on('message', msg => {
  }).then(collected => {
   msg.channel.send("success!");
  });
- }
 }});
   
 
