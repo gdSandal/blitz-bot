@@ -28,7 +28,7 @@ client.on('message', msg => {
     url: "http://i.imgur.com/Vqypytw.jpg"
    },
    image: {
-    url: "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png"
+    url: "http://jojo.wikia.com/wiki/" + args.join("")
    },
    fields: [{
     name: "Stand name:",
