@@ -10,12 +10,6 @@ client.on('ready', () => {
 });
 });
 
-client.on('message', msg => {
- if (msg.content.startsWith('s/iii')) {
-  let args = msg.content.split(" ").slice(1);
-  msg.channel.send("http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png");
- }
-});
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/say')) {
