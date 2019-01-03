@@ -38,7 +38,7 @@ client.on('message', msg => {
  let args = msg.content.split(" ").slice(1)
  let wikilink = "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png";
  let googlelink = "https://www.google.com/search?q=" + args.join("+") + "&client=safari&hl=en";
-  if (args.join(" ") = in standlist) {
+  if (args.join(" ").in standlist) {
   msg.channel.send({embed: {
    color: 15868795,
    title: "__| JJBA Stand Stats |__",
