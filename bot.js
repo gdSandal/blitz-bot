@@ -37,21 +37,21 @@ client.on('message', msg => {
  let args = msg.content.split(" ").slice(1)
   msg.channel.send({embed: {
    color: 15868795,
-   title: "s/stand | JJBA Stand Stats",
+   title: "__| JJBA Stand Stats |__",
    thumbnail: {
     url: "http://i.imgur.com/Vqypytw.jpg"
    },
    fields: [{
-    name: "Stand name:",
+    name: "**Stand name:**",
     value: args.join(" ")
    },
    {
-    name: "Wiki Page:",
+    name: "**Wiki Page:**",
     value: "Click here: " + "http://jojo.wikia.com/wiki/" + args.join("_")
    },
    {
-    name: "Image:",
-    value: "Click here: " + "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png"
+    name: "**Images:**",
+    value: "[wiki]('http://jojo.wikia.com/wiki/List_of_Stands?file=' + args.join("") + 'AvAnim.png')" + " | " + "[google]('https://www.google.com/search?q=' + args.join("+") + '&client=safari&hl=en')"
    },
    ],
    footer: {
