@@ -111,49 +111,51 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 's/rstand') {
-    let a = ["S", "A", "B", "C", "D", "E",];
+    let a = ["A", "B", "C", "D", "E",];
     let aIndex = Math.round(Math.random() * a.length);
-    let b = ["S", "A", "B", "C", "D", "E",];
+    let b = ["A", "B", "C", "D", "E",];
     let bIndex = Math.round(Math.random() * b.length);
-    let c = ["S", "A", "B", "C", "D", "E",];
+    let c = ["A", "B", "C", "D", "E",];
     let cIndex = Math.round(Math.random() * c.length);
-    let d = ["S", "A", "B", "C", "D", "E",];
+    let d = ["A", "B", "C", "D", "E",];
     let dIndex = Math.round(Math.random() * d.length);
-    let e = ["S", "A", "B", "C", "D", "E",];
+    let e = ["A", "B", "C", "D", "E",];
     let eIndex = Math.round(Math.random() * e.length);
-    let f = ["S", "A", "B", "C", "D", "E",];
+    let f = ["A", "B", "C", "D", "E",];
     let fIndex = Math.round(Math.random() * f.length);
+    let g = ["", "", "", "", "", "", "ˢ",];
+    let gIndex = Math.round(Math.random() * g.length);
     msg.channel.send({embed: {
       color: 15868795,
       title: "Stand Stats Generator:",
       fields: [{
-     name: "**POWER**",
-     value: "   **»**   " + a[aIndex],
+     name: "**POWER :**",
+     value: "   **»**   " + a[aIndex] + g[gIndex],
      inline: true
      },
      {
-     name: "**SPEED**",
-     value: "   **»**   " + b[bIndex],
+     name: "**SPEED :**",
+     value: "   **»**   " + b[bIndex] + g[gIndex],
      inline: true
      },
      {
-     name: "**RANGE**",
-     value: "   **»**   " + c[cIndex],
+     name: "**RANGE :**",
+     value: "   **»**   " + c[cIndex] + g[gIndex],
      inline: true
      },
      {
-     name: "**DURABILITY**",
-     value: "   **»**   " + d[dIndex],
+     name: "**DURABILITY :**",
+     value: "   **»**   " + d[dIndex] + g[gIndex],
      inline: true
      },
      {
-     name: "**PRECISION**",
-     value: "   **»**   " + e[eIndex],
+     name: "**PRECISION :**",
+     value: "   **»**   " + e[eIndex] + g[gIndex],
      inline: true
      },
      {
-     name: "**POTENTIAL**",
-     value: "   **»**   " + f[fIndex],
+     name: "**POTENTIAL :**",
+     value: "   **»**   " + f[fIndex] + g[gIndex],
      inline: true
      },
      ],
