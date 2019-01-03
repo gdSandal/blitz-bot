@@ -27,7 +27,6 @@ client.on('message', msg => {
    thumbnail: {
     url: "http://i.imgur.com/Vqypytw.jpg"
    },
-   description: "http://jojo.wikia.com/wiki/" + args.join("_"),
    image: {
     url: "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png"
    },
@@ -35,9 +34,17 @@ client.on('message', msg => {
     name: "Stand name:",
     value: args.join(" ")
    },
+   {
+    name: "Wiki Page:",
+    value: "Click here: " + "http://jojo.wikia.com/wiki/" + args.join("_")
+   },
+   {
+    name: "Image:",
+    value: "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png"
+   },
    ],
    footer: {
-    text: "s/standhelp for troubleshooting"
+    text: "type - **s/standhelp** for troubleshooting"
    }
 }});
  }
