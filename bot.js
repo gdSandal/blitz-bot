@@ -28,7 +28,7 @@ client.on('message', msg => {
     url: "http://i.imgur.com/Vqypytw.jpg"
    },
    image: {
-    url: "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png"
+    url: args.join("") + ".jpg"
    },
    fields: [{
     name: "Stand name:",
@@ -44,7 +44,7 @@ client.on('message', msg => {
    },
    ],
    footer: {
-    text: "type - **s/standhelp** for troubleshooting"
+    text: "type - s/standhelp for troubleshooting"
    }
 }});
  }
