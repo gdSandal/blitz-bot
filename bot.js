@@ -110,6 +110,42 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+  if (msg.content === 's/rstand') {
+    let stat = ["S", "A", "B", "C", "D", "E",];
+    let statIndex = Math.round(Math.random() * stat.length);
+    msg.channel.send({embed: {
+      color: 15868795,
+      title: "Stand Stats Generator:",
+      fields: [{
+     name: "POWER",
+     value: stat[statIndex]
+     },
+     {
+     name: "SPEED",
+     value: stat[statIndex]
+     },
+     {
+     name: "RANGE",
+     value: stat[statIndex]
+     },
+     {
+     name: "DURABILITY",
+     value: stat[statIndex]
+     },
+     {
+     name: "PRECISION",
+     value: stat[statIndex]
+     },
+     {
+     name: "POTENTIAL",
+     value: stat[statIndex]
+     },
+     ],
+}});
+  }
+});
+
+client.on('message', msg => {
   if (msg.content === 's/coin') {
     let outcome = ["Heads", "Tails"];
     let outcomeIndex = Math.round(Math.random() * outcome.length);
