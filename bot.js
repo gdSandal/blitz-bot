@@ -21,7 +21,6 @@ client.on('message', msg => {
  }).then(collected => {
   if (collected.first().content === 's1','s2','s3') {
   msg.channel.send("success!");
-  }
  });
  }
 }});
