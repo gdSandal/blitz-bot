@@ -19,12 +19,18 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
- if (msg.content.startsWith('s/jojowiki')) {
+ if (msg.content.startsWith('s/stand')) {
  let args = msg.content.split(" ").slice(1)
   msg.channel.send({embed: {
    color: 15868795,
-   title: "Jojo's Bizzare Adventure Wiki",
-   description: 'http://jojo.wikia.com/wiki/' + args.join("_")
+   title: "s/stand | JJBA Stand Stats",
+   thumbnail: {
+    url: "http://i.imgur.com/Vqypytw.jpg"
+   },
+   description: "http://jojo.wikia.com/wiki/" + args.join("_"),
+   image: {
+    url: "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png"
+   }
 }});
  }
 });
