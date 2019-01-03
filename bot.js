@@ -111,17 +111,17 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 's/rstand') {
-    let a = ["A", "B", "C", "D", "E",];
+    let a = ["A₅", "B₄", "C₃", "D₂", "E₁",];
     let aIndex = Math.round(Math.random() * a.length);
-    let b = ["A", "B", "C", "D", "E",];
+    let b = ["A₅", "B₄", "C₃", "D₂", "E₁",];
     let bIndex = Math.round(Math.random() * b.length);
-    let c = ["A", "B", "C", "D", "E",];
+    let c = ["A₅", "B₄", "C₃", "D₂", "E₁",];
     let cIndex = Math.round(Math.random() * c.length);
-    let d = ["A", "B", "C", "D", "E",];
+    let d = ["A₅", "B₄", "C₃", "D₂", "E₁",];
     let dIndex = Math.round(Math.random() * d.length);
-    let e = ["A", "B", "C", "D", "E",];
+    let e = ["A₅", "B₄", "C₃", "D₂", "E₁",];
     let eIndex = Math.round(Math.random() * e.length);
-    let f = ["A", "B", "C", "D", "E",];
+    let f = ["A₅", "B₄", "C₃", "D₂", "E₁",];
     let fIndex = Math.round(Math.random() * f.length);
     let g = ["", "", "", "", "", "", "ˢ",];
     let gIndex = Math.round(Math.random() * g.length);
