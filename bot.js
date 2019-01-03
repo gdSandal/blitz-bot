@@ -21,6 +21,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/stand ' + 't1','t2')) {
+ else return msg.channel.send("error");
  let args = msg.content.split(" ").slice(1)
   msg.channel.send({embed: {
    color: 15868795,
