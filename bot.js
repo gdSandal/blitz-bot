@@ -114,7 +114,7 @@ client.on('message', msg => {
 client.on('message', msg => {
   if (msg.content === 's/janken') {
     let results = ["Paper", "Rock", "Scissors"];
-    let resultsIndex = Math.round(Math.random() * results.length);
+    let resultsIndex = Math.floor(Math.random() * results.length);
     msg.channel.send({embed: {
       color: 15868795,
       description: "Janken Result: " + results[resultsIndex]
@@ -124,17 +124,17 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 's/rstand') {
-    let a = ["A₅", "B₄", "C₃", "D₂", "E₁",];
+    let a = ["A₅", "B₄", "C₃", "D₂", "E₁", "**S**",];
     let aIndex = Math.floor(Math.random() * a.length);
-    let b = ["A₅", "B₄", "C₃", "D₂", "E₁",];
+    let b = ["A₅", "B₄", "C₃", "D₂", "E₁", "**S**",];
     let bIndex = Math.floor(Math.random() * b.length);
-    let c = ["A₅", "B₄", "C₃", "D₂", "E₁",];
+    let c = ["A₅", "B₄", "C₃", "D₂", "E₁", "**S**",];
     let cIndex = Math.floor(Math.random() * c.length);
-    let d = ["A₅", "B₄", "C₃", "D₂", "E₁",];
+    let d = ["A₅", "B₄", "C₃", "D₂", "E₁", "**S**",];
     let dIndex = Math.floor(Math.random() * d.length);
-    let e = ["A₅", "B₄", "C₃", "D₂", "E₁",];
+    let e = ["A₅", "B₄", "C₃", "D₂", "E₁", "**S**",];
     let eIndex = Math.floor(Math.random() * e.length);
-    let f = ["A₅", "B₄", "C₃", "D₂", "E₁",];
+    let f = ["A₅", "B₄", "C₃", "D₂", "E₁", "**S**",];
     let fIndex = Math.floor(Math.random() * f.length);
     msg.channel.send({embed: {
       color: 15868795,
