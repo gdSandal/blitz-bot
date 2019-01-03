@@ -12,6 +12,14 @@ client.on('ready', () => {
 
 
 client.on('message', msg => {
+ if (msg.content.startsWith('s/test')) {
+ if (msg.content.includes('strike')) {
+ msg.channel.send('yes');
+ else msg.channel.send('error');
+ }
+ }});
+
+client.on('message', msg => {
  if (msg.content.startsWith('s/say')) {
  let args = msg.content.split(" ").slice(1);
   msg.delete();
