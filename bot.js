@@ -13,10 +13,10 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/test')) {
+ msg.delete();
  if (msg.content.includes('strike')) {
  msg.channel.send('yes');
- else return;
- msg.channel.send('error');
+ else msg.channel.send('error');
  }
  }});
 
