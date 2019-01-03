@@ -140,15 +140,18 @@ client.on('message', msg => {
      },
      {
      name: "**DURABILITY**",
-     value: d[dIndex]
+     value: d[dIndex],
+     inline: true
      },
      {
      name: "**PRECISION**",
-     value: e[eIndex]
+     value: e[eIndex],
+     inline: true
      },
      {
      name: "**POTENTIAL**",
-     value: f[fIndex]
+     value: f[fIndex],
+     inline: true
      },
      ],
 }});
