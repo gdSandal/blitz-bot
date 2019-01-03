@@ -15,7 +15,8 @@ client.on('message', msg => {
  if (msg.content.startsWith('s/test')) {
  if (msg.content.includes('strike')) {
  msg.channel.send('yes');
- else msg.channel.send('error');
+ else return;
+ msg.channel.send('error');
  }
  }});
 
