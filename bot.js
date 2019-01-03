@@ -64,9 +64,8 @@ client.on('message', msg => {
    ],
    footer: {
     text: "type - s/standhelp for troubleshooting"
-   }}
 }});
- }}
+ }
 });
 
 client.on('message', msg => {
