@@ -20,7 +20,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
- if (msg.content.startsWith('s/stand')) {
+ if (msg.content.startsWith('s/stand' (' test',' test 2'))) {
  let args = msg.content.split(" ").slice(1)
   msg.channel.send({embed: {
    color: 15868795,
