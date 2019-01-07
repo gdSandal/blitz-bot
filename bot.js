@@ -23,7 +23,7 @@ client.on('message', msg => {
   msg.channel.send("hello")
   .then({
         time: 3000
- }).then(msg.edit ("ok");
+ }).then(msg.edit ("ok"));
  }
 });
 
