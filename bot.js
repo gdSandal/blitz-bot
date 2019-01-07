@@ -11,17 +11,6 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.content === 's/slottest') {
-msg.channel.send('```_________\n|_______|/\n|💰🍒🍊|/\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```')
-.then((msg)=>{
-setTimeout(function(){
-msg.edit('```_________\n|_______|/\n|💰💰💰|/\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
-}, 1000);
-});
-}});
- 
-
-client.on('message', msg => {
  if (msg.content === 's/slots') {
  let s = ["💰", "🍒", "🍊", "💎", "🍀", "🍓", "💵", "🎲", "🎯",];
  let sI = Math.floor(Math.random() * s.length);
@@ -29,19 +18,19 @@ client.on('message', msg => {
  let xI = Math.floor(Math.random() * x.length);
  let y = ["💰", "🍒", "🍊", "💎", "🍀", "🍓", "💵", "🎲", "🎯",];
  let yI = Math.floor(Math.random() * y.length);
-msg.channel.send('```_________\n|_______|/\n|💰🍒🍊|/      Loading.\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```')
+msg.channel.send('```_________\n|_______|/\n|💰🍒🍊|/     Loading.\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```')
 .then((msg)=>{
 setTimeout(function(){
-msg.edit('```_________\n|_______|/\n|🎲🎯🍓|/      Loading..\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
+msg.edit('```_________\n|_______|/\n|🎲🎯🍓|/     Loading..\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
 }, 500);
 setTimeout(function(){
-msg.edit('```_________\n|_______|/\n|🍒🍊💰|/      Loading...\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
+msg.edit('```_________\n|_______|/\n|🍒🍊💰|/     Loading...\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
 }, 1000);
 setTimeout(function(){
-msg.edit('```_________\n|_______|/\n|💎🍀💵|/      Loading....\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
+msg.edit('```_________\n|_______|/\n|💎🍀💵|/     Loading....\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
 }, 1500);
 setTimeout(function(){
-msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/    RESULT: ' + s[sI] + x[xI] + y[yI] + '\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
+msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/  RESULT: [' + s[sI] + x[xI] + y[yI] + ']\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
 }, 2000);
 });
 }});
