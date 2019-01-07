@@ -13,10 +13,7 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.content === 's/edittest') {
   msg.channel.send("page neutral")
-  .then((msg) => {
-msg.edit('edited'), {
-time: 3000
-}});
+  .then(msg => msg.edit('edited')(3000));
  }
 });
 
