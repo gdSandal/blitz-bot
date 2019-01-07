@@ -12,10 +12,10 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content === 's/slots') {
-msg.channel.send('edit one')
+msg.channel.send('```_________\n|_______|/\n|💰🍒🍊|/\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```')
 .then((msg)=>{
 setTimeout(function(){
-msg.edit('edit two');
+msg.edit('```_________\n|_______|/\n|💰💰💰|/\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
 }, 1000);
 });
 }});
