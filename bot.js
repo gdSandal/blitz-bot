@@ -83,7 +83,7 @@ client.on('message', msg => {
   
 client.on('message', msg => {
   if (msg.content.startsWith('s/clear')) {
-  if (!msg.member.hasPermission("MANAGE MESSAGES")) return msg.reply("insufficient permissions");
+  if (msg.author.hasPermission("MANAGE MESSAGES")) return msg.reply("insufficient permissions");
    let args = msg.content.split(" ").slice(1);
       msg.channel.bulkDelete(args);
       msg.channel.send("Cleared " + args.join(" ") + " messages").then(msg => msg.delete(4000));
