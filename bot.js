@@ -25,7 +25,7 @@ msg.channel.send('edit one')
 setTimeout(function(){
 msg.edit('edit two');
 }, 1000)};
-}
+});
 });
 
 client.on('message', msg => {
