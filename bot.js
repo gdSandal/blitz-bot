@@ -20,9 +20,12 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content === 's/edit') {
-  msg.channel.send("hello")
-  .then(msg => msg.channel.send("hello"(3000)));
- }
+msg.channel.send('edit one')
+.then((msg)=>{
+setTimeout(function(){
+msg.edit('edit two');
+}, 1000);
+}}
 });
 
 client.on('message', msg => {
