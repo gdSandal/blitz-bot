@@ -16,7 +16,7 @@ client.on('message', msg => {
   .then((msg)=>{
 setTimeout(function(){
 msg.edit('edited');
-}, 1000)};
+}, 1000)}
  }
 });
 
