@@ -34,16 +34,24 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/  RESULT: ['
 }, 2000);
 });
 }});
+
  
 client.on('message', msg => {
- if (msg.content.startsWith('s/test')) {
- const filter = msg => msg.content.includes('hi', 'hello');
- msg.channel.send("Test Await | expires in 6 seconds...").then(r => r.delete(6000));
- msg.channel.awaitMessages(filter, {
+ if (msg.content.startsWith('s/blackjack')) {
+ const hitfilter = msg => msg.content.startsWith('hit');
+ const holdfilter = msg => msg.content.startsWith('hold');
+ msg.channel.send("Blackjack: draw - ");
+ msg.channel.awaitMessages(hitfilter, {
   max: 1,
   time: 3000
  }).then(collected => {
-  msg.channel.send("complete");
+  msg.channel.send("HIT: ");
+ });
+  msg.channel.awaitMessages(holdfilter, {
+   max: 1,
+   time: 3000
+  }).then(collected => {
+   msg.channel.send("HOLD: ");
  });
 }});
   
