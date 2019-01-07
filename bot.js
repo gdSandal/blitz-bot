@@ -12,14 +12,8 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content === 's/slots') {
-  msg.channel.send({embed: {
-  color: 15868795,
-  title: "-|[  ][  ][  ]|\n├𝕊𝕃𝕆𝕋𝕊┤\n┕┻┻┻┙"
-  }})
-  .then(msg => msg.edit({embed: {
-  color: 15868795,
-  title: "-|[  ][  ][  ]|\n├𝕊𝕃𝕆𝕋𝕊┤\n┕┻┻┻┙"
-  }}(2000))
+  msg.channel.send("-|[  ][  ][  ]|\n├𝕊𝕃𝕆𝕋𝕊┤\n┕┻┻┻┙")
+  .then(msg => msg.edit("-|[  ][  ][  ]|\n├𝕊𝕃𝕆𝕋𝕊┤\n┕┻┻┻┙")(1000));
  }
 });
 
