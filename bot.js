@@ -14,9 +14,9 @@ client.on('message', msg => {
  if (msg.content === 's/edittest') {
   msg.channel.send("page neutral")
   .then((msg) => {
-setTimeout(function(){
-msg.edit('edited');
-}, 1000)};
+msg.edit('edited'), {
+time: 1000
+}});
  }
 });
 
