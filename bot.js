@@ -24,10 +24,11 @@ msg.channel.send('edit one')
 .then((msg)=>{
 setTimeout(function(){
 msg.edit('edit two');
-}, 1000)};
+}, 1000);
+}});
 });
-});
-
+ 
+ 
 client.on('message', msg => {
  if (msg.content.startsWith('s/test')) {
  const filter = msg => msg.content.includes('hi', 'hello');
