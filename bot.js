@@ -11,11 +11,12 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.content === 's/pagetest') {
-  msg.channel.send("page neutral").then
-  ((msg) => {
-  msg.edit("new text");
-});
+ if (msg.content === 's/edittest') {
+  msg.channel.send("page neutral")
+  .then((msg)=>{
+setTimeout(function(){
+msg.edit('edited');
+}, 1000)};
  }
 });
 
