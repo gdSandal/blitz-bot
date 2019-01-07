@@ -16,8 +16,6 @@ client.on('message', msg => {
   msg.edit("new text");
  }
 });
-           
-   
 
 
 client.on('message', msg => {
@@ -84,9 +82,10 @@ client.on('message', msg => {
 });
   
 client.on('message', msg => {
-  if (msg.content === 's/clear') {
-      msg.channel.bulkDelete(10);
-      msg.channel.send("Cleared").then(msg => msg.delete(2000));
+  if (msg.content.startsWith('s/clear')) {
+   let args = msg.content.split(" ").slice(1);
+      msg.channel.bulkDelete(args.join(" "));
+      msg.channel.send("Cleared " + args.join(" ") + " messages").then(msg => msg.delete(4000));
 }
 });
 
