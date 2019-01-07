@@ -11,9 +11,9 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.content === 's/edittest') {
-  msg.channel.send("page neutral")
-  .then(msg => msg.edit('edited')(3000));
+ if (msg.content === 's/slots') {
+  msg.channel.send("[  ] [  ] [  ]\n├𝕊𝕃𝕆𝕋𝕊┤\n┕┻┻┙")
+  .then(msg => msg.edit('[  ] [  ] [  ]\n├𝕊𝕃𝕆𝕋𝕊┤\n┕┻┻┙')(2000));
  }
 });
 
