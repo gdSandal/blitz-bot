@@ -21,9 +21,9 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content === 's/edit') {
   msg.channel.send("hello")
-  .then(msg => msg.edit({
+  .then({
         time: 3000
- });      
+ }).then(msg.edit ("ok");
  }
 });
 
