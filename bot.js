@@ -13,7 +13,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/test')) {
- const filter = m => m.author.id === msg.author.id;
+ const filter = ['hello', 'hi'];
  msg.channel.send("Test Await | expires in 3 seconds...").then(r => r.delete(3000));
  msg.channel.awaitMessages(filter, {
   max: 1,
