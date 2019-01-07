@@ -10,11 +10,24 @@ client.on('ready', () => {
 });
 });
 
+client.on('message', msg => {
+ if (msg.content === 's/pagetest') {
+  let page1 = 'p1';
+  msg.channel.send("page neutral");
+  msg.edit({
+   time: 3000
+  }
+   page1);
+ }
+});
+           
+   
+
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/test')) {
- const filter = msg => msg.content.includes('hi' || 'hello');
- msg.channel.send("Test Await | expires in 3 seconds...").then(r => r.delete(3000));
+ const filter = msg => msg.content.includes('hi', 'hello');
+ msg.channel.send("Test Await | expires in 6 seconds...").then(r => r.delete(6000));
  msg.channel.awaitMessages(filter, {
   max: 1,
   time: 3000
