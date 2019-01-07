@@ -15,7 +15,7 @@ client.on('message', msg => {
   msg.channel.send("page neutral")
   .then((msg) => {
 msg.edit('edited'), {
-time: 1000
+time: 3000
 }});
  }
 });
