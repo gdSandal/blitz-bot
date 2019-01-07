@@ -12,12 +12,11 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content === 's/pagetest') {
-  let page1 = 'p1';
   msg.channel.send("page neutral");
   msg.edit({
    time: 3000
   }
-   page1);
+   "new text");
  }
 });
            
