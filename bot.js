@@ -40,18 +40,14 @@ client.on('message', msg => {
  if (msg.content.startsWith('s/blackjack')) {
  const hitfilter = msg => msg.content.startsWith('hit');
  const holdfilter = msg => msg.content.startsWith('hold');
- msg.channel.send("Blackjack: draw - ");
+ msg.channel.send("Blackjack: [?][?] type: hit or hold ");
  msg.channel.awaitMessages(hitfilter, {
   max: 1,
   time: 3000
  }).then(collected => {
   msg.channel.send("HIT: ");
- });
-  msg.channel.awaitMessages(holdfilter, {
-   max: 1,
-   time: 3000
-  }).then(collected => {
-   msg.channel.send("HOLD: ");
+ }).catch(function(){
+  msg.channel.send("Error - Invalid Anwser");
  });
 }});
   
