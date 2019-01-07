@@ -16,8 +16,14 @@ client.on('message', msg => {
   .then(msg => msg.edit("```_________\n|_______|/\n|🍓🍀💎|/\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```")(3000))
   .then(msg => msg.edit("```_________\n|_______|/\n|🍒💎💰|/\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```")(3000));
  }
-});
+});  
 
+client.on('message', msg => {
+ if (msg.content === 's/edit') {
+  msg.channel.send("hello")
+  .then(msg => msg.edit("hi")(3000));
+ }
+});
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/test')) {
