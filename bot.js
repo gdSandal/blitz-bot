@@ -45,8 +45,8 @@ client.on('message', msg => {
  }).then(collected => {
   if (msg.content.startsWith('hit'));
   msg.channel.send("HIT: ");
- });
 }});
+});
   
 
 client.on('message', msg => {
