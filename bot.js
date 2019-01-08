@@ -44,16 +44,15 @@ msg.channel.send("test message")
 const filter = (reaction, user) => {
     return ['👍', '👎'].includes(reaction.emoji.name);
 }
-function(msg){
  msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         if (reaction.emoji.name === '👍') {
-            msg.reply('you reacted with a thumbs up.');
+            msg.channel.send('you reacted with a thumbs up.');
         }
         else {
-            msg.reply('you reacted with a thumbs down.');
-        }}
+            msg.channel.send('you reacted with a thumbs down.');
+        }
     });
 }});
 
