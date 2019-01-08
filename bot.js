@@ -45,8 +45,6 @@ client.on('message', msg => {
  }).then(collected => {
   if (msg.content.startsWith('hit'));
   msg.channel.send("HIT: ");
- }).catch(function(){
-  msg.channel.send("Error - Invalid Anwser");
  });
 }});
   
