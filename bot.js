@@ -37,23 +37,26 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
-  const collector = msg.createReactionCollector((reaction, user) => 
-    user.id === msg.author.id &&
-    reaction.emoji.name === "◀" ||
-    reaction.emoji.name === "▶" ||
-    reaction.emoji.name === "❌"
-).once("collect", reaction => {
-    const chosen = reaction.emoji.name;
-    if(chosen === "◀"){
-        // Prev page
-    }else if(chosen === "▶"){
-        // Next page
-    }else{
-        // Stop navigating pages
-    }
-    collector.stop();
-  }});
-});
+  let pages = ['p1', 'p2', 'p3'];
+  let page = 1;
+  msg.react('👍').then(() => msg.react('👎'));
+  const bFilter = (reaction, user) => reaction.emoji.name === '👍' && user.id === msg.author.id;
+  const fFilter = (reaction, user) => reaction.emoji.name === '👎' && user.id === msg.author.id;
+  const backwards = msg.createReactionCollector(bFilter, {time: 60000});
+  const forwards = msg.createReactionCollector(fFilter, {time: 60000});
+  backwards.on('collect', r => {
+   if (page === 1) return;
+   page--;
+   msg.edit('page ' + pages);
+  });
+   forwards.on('collect', r => {
+    if (page = pages.length) return;
+    page ++;
+    msg.edit('page ' + pages);
+   });
+ }});
+    
+               
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/say')) {
