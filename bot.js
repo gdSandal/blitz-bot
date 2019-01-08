@@ -58,6 +58,7 @@ client.on('message', msg => {
     if (page = pages.length) return;
     page ++;
     msg.edit(embed);
+    msg.channel.send("next page!");
   });
  });
  }});
