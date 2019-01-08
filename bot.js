@@ -44,19 +44,25 @@ client.on('message', msg => {
    title: 'page ' + page + ' of ' + pages.length
   }}
   msg.channel.send(embed).then(msg => {
-  msg.react('👍').then(() => msg.react('👎'));
-  const bFilter = (reaction, user) => reaction.emoji.name === '👍' && user.id === msg.author.id;
-  const fFilter = (reaction, user) => reaction.emoji.name === '👎' && user.id === msg.author.id;
+  msg.react('⏪').then(() => msg.react('⏩'));
+  const bFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === msg.author.id;
+  const fFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === msg.author.id;
   const backwards = msg.createReactionCollector(bFilter, {time: 60000});
   const forwards = msg.createReactionCollector(fFilter, {time: 60000});
   backwards.on('collect', r => {
    if (page === 1) return;
    page--;
+   ({ embed: {
+    description: pages[page-1]
+   }});
    msg.edit(embed);
   });
    forwards.on('collect', r => {
     if (page = pages.length) return;
     page ++;
+    ({ embed: {
+     description: pages[page-1]
+    }});
     msg.edit(embed);
   });
  });
