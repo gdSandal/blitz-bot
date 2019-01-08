@@ -55,7 +55,7 @@ msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
             msg.reply('you reacted with a thumbs down.');
         }
     });
- });
+ }});
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/say')) {
