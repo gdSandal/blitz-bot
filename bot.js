@@ -52,17 +52,11 @@ client.on('message', msg => {
   backwards.on('collect', r => {
    if (page === 1) return;
    page--;
-   ({ embed: {
-    description: pages[page-1]
-   }});
    msg.edit(embed);
   });
    forwards.on('collect', r => {
     if (page = pages.length) return;
     page ++;
-    ({ embed: {
-     description: pages[page-1]
-    }});
     msg.edit(embed);
   });
  });
