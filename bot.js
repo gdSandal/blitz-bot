@@ -48,12 +48,12 @@ client.on('message', msg => {
   backwards.on('collect', r => {
    if (page === 1) return;
    page--;
-   msg.edit('page ' + pages);
+   msg.edit('page backward');
   });
    forwards.on('collect', r => {
     if (page = pages.length) return;
     page ++;
-    msg.edit('page ' + pages);
+    msg.edit('page forward');
   });
  });
  }});
