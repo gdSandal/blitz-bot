@@ -44,7 +44,8 @@ msg.channel.send("test message")
 const filter = (reaction, user) => {
     return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
-function(msg){
+msg.channel.send("hi")
+.then(function(msg){
  msg.awaitReactions(filter, { max: 1, time: 60000, })
     .then(collected => {
         const reaction = collected.first();
@@ -52,7 +53,7 @@ function(msg){
             msg.reply('you reacted with a thumbs up.');
         }else {
             msg.reply('you reacted with a thumbs down.');
-        }}
+        }});
     });
  }});
 
