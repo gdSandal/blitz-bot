@@ -38,23 +38,24 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 client.on('message', msg => {
  if (msg.content === 's/test') {
 msg.channel.send("test message")
-.then(msg){
+.then(function(msg){
  msg.react('👍').then(() => msg.react('👎'));
-}
+});
 const filter = (reaction, user) => {
-    return ['👍', '👎'].includes(reaction.emoji.name) && user.id;
+    return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
- msg.awaitReactions(filter, { max: 1, time: 60000 })
+msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
     .then(collected => {
         const reaction = collected.first();
+
         if (reaction.emoji.name === '👍') {
-            msg.channel.send('you reacted with a thumbs up.');
+            msg.reply('you reacted with a thumbs up.');
         }
         else {
-            msg.channel.send('you reacted with a thumbs down.');
+            msg.reply('you reacted with a thumbs down.');
         }
     });
-}});
+ });
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/say')) {
