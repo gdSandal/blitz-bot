@@ -37,23 +37,22 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
-const filter = (reaction, user) => {
-    return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
-}
-msg.channel.send("test")
-.then(function(msg){
- msg.react('👍').then(() => msg.react('👎'));
+  const collector = msg.createReactionCollector((reaction, user) => 
+    user.id === msg.author.id &&
+    reaction.emoji.name === "◀" ||
+    reaction.emoji.name === "▶" ||
+    reaction.emoji.name === "❌"
+).once("collect", reaction => {
+    const chosen = reaction.emoji.name;
+    if(chosen === "◀"){
+        // Prev page
+    }else if(chosen === "▶"){
+        // Next page
+    }else{
+        // Stop navigating pages
+    }
+    collector.stop();
 });
- msg.awaitReactions(filter, { max: 1, time: 60000, })
-    .then(collected => {
-        const reaction = collected.third();
-        if (reaction.emoji.name === '👍') {
-            msg.reply('you reacted with a thumbs up.');
-        }else {
-            msg.reply('you reacted with a thumbs down.');
-        }
-    });
- }});
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/say')) {
