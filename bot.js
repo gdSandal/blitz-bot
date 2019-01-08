@@ -42,8 +42,8 @@ client.on('message', msg => {
   
   const bFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === msg.author.id;
   const fFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === msg.author.id;
-  const backwards = msg.createReactionCollector(bFilter, {time: 60000});
-  const forwards = msg.createReactionCollector(fFilter, {time: 60000});
+  const backwards = msg.createReactionCollector(bFilter, { time: 60000 });
+  const forwards = msg.createReactionCollector(fFilter, { time: 60000 });
   
   const embed = {embed: {
    color: 15868795,
@@ -51,6 +51,7 @@ client.on('message', msg => {
   }}
   
   msg.channel.send(embed).then(msg => {
+   
   msg.react('⏪').then(() => msg.react('⏩'));
   
   backwards.on('collect', r => {
@@ -62,8 +63,7 @@ client.on('message', msg => {
    forwards.on('collect', r => {
     if (page = pages.length) return;
     page ++;
-    msg.edit(embed)
-    .then(msg.channel.send("next page!"));
+    msg.edit(embed);
   });
    
  });
