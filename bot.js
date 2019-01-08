@@ -55,8 +55,8 @@ client.on('message', msg => {
     page ++;
     msg.edit('page ' + pages);
   });
- }});
  });
+ }});
     
                
 
