@@ -38,15 +38,15 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 client.on('message', msg => {
  if (msg.content === 's/test') {
 msg.channel.send("test message")
-.then(function(msg){
+.then(msg){
  msg.react('👍').then(() => msg.react('👎'));
-});
+}
 const filter = (reaction, user) => {
     return ['👍', '👎'].includes(reaction.emoji.name) && user.id;
 }
  msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
-        const reaction = collected.second();
+        const reaction = collected.first();
         if (reaction.emoji.name === '👍') {
             msg.channel.send('you reacted with a thumbs up.');
         }
