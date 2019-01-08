@@ -52,6 +52,7 @@ client.on('message', msg => {
         // Stop navigating pages
     }
     collector.stop();
+  }});
 });
 
 client.on('message', msg => {
