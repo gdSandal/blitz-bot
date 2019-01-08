@@ -37,15 +37,13 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
-msg.channel.send("test message")
-.then(function(msg){
- msg.react('👍').then(() => msg.react('👎'));
-});
 const filter = (reaction, user) => {
     return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
-msg.channel.send("hi")
+msg.channel.send("test")
 .then(function(msg){
+ msg.react('👍').then(() => msg.react('👎'));
+});
  msg.awaitReactions(filter, { max: 1, time: 60000, })
     .then(collected => {
         const reaction = collected.first();
@@ -53,7 +51,7 @@ msg.channel.send("hi")
             msg.reply('you reacted with a thumbs up.');
         }else {
             msg.reply('you reacted with a thumbs down.');
-        }});
+        }
     });
  }});
 
