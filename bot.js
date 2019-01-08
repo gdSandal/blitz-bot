@@ -37,6 +37,7 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
+  msg.channel.send('page command').then(msg => {
   msg.react('👍').then(() => msg.react('👎'));
   let pages = ['p1', 'p2', 'p3'];
   let page = 1;
@@ -53,8 +54,9 @@ client.on('message', msg => {
     if (page = pages.length) return;
     page ++;
     msg.edit('page ' + pages);
-   });
+  });
  }});
+ });
     
                
 
