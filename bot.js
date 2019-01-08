@@ -38,10 +38,8 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
  
 client.on('message', msg => {
  if (msg.content.startsWith('s/blackjack')) {
- const hitfilter = msg => msg.content.startsWith('hit');
- const holdfilter = msg => msg.content.startsWith('hold');
  msg.channel.send("Blackjack: [?][?] type: hit or hold ");
- msg.channel.awaitMessages(hitfilter, {
+ msg.channel.awaitMessages({
   max: 1,
   time: 3000
  }).then(collected => {
