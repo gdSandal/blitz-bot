@@ -30,7 +30,7 @@ setTimeout(function(){
 msg.edit('```_________\n|_______|/\n|💎🍀💵|/      Loading....\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
 }, 1500);
 setTimeout(function(){
-msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  [' + s[sI] + x[xI] + y[yI] + ']\n| 𝕊𝕃𝕆𝕋𝕊||\n|_______|/```');
+msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  [' + s[sI] + x[xI] + y[yI] + ']\n| 𝕊𝕃𝕆𝕋𝕊 ||\n|_______|/```');
 }, 2000);
 });
 }});
@@ -41,11 +41,13 @@ client.on('message', msg => {
  const hitfilter = msg => msg.content.startsWith('hit');
  const holdfilter = msg => msg.content.startsWith('hold');
  msg.channel.send("Blackjack: [?][?] type: hit or hold ");
- msg.channel.awaitMessages(hitfilter, holdfilter, {
+ msg.channel.awaitMessages(hitfilter, {
   max: 1,
   time: 3000
- }).then(collected => {
-  msg.channel.send("HIT: ");
+ })
+  if (msg.content.startsWith('hit')
+ .then(collected => {
+  msg.channel.send("HIT: "));
  }).catch(function(){
   msg.channel.send("Error - Invalid Anwser");
  });
