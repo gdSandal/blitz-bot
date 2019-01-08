@@ -61,7 +61,6 @@ client.on('message', msg => {
   });
    
    forwards.on('collect', r => {
-    if (page = pages.length) return;
     page ++;
     msg.edit(embed);
   });
