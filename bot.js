@@ -37,9 +37,9 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
+  msg.react('👍').then(() => msg.react('👎'));
   let pages = ['p1', 'p2', 'p3'];
   let page = 1;
-  msg.react('👍').then(() => msg.react('👎'));
   const bFilter = (reaction, user) => reaction.emoji.name === '👍' && user.id === msg.author.id;
   const fFilter = (reaction, user) => reaction.emoji.name === '👎' && user.id === msg.author.id;
   const backwards = msg.createReactionCollector(bFilter, {time: 60000});
