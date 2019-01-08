@@ -37,7 +37,6 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
-  let mess = function(msg);
 msg.channel.send("test message")
 .then(function(msg){
  msg.react('👍').then(() => msg.react('👎'));
@@ -45,7 +44,7 @@ msg.channel.send("test message")
 const filter = (reaction, user) => {
     return ['👍', '👎'].includes(reaction.emoji.name);
 }
- mess.awaitReactions(filter, { max: 1, time: 60000 })
+ msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         if (reaction.emoji.name === '👍') {
