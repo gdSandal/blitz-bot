@@ -44,10 +44,9 @@ client.on('message', msg => {
  msg.channel.awaitMessages(hitfilter, {
   max: 1,
   time: 3000
- })
-  if (msg.content.startsWith('hit')
- .then(collected => {
-  msg.channel.send("HIT: "));
+ }).then(collected => {
+  if (msg.content.startsWith('hit'));
+  msg.channel.send("HIT: ");
  }).catch(function(){
   msg.channel.send("Error - Invalid Anwser");
  });
