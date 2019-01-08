@@ -44,7 +44,7 @@ msg.channel.send("test message")
 const filter = (reaction, user) => {
     return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
-msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+function.msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
     .then(collected => {
         const reaction = collected.first();
 
