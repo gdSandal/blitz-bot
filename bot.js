@@ -42,7 +42,7 @@ msg.channel.send("test message")
  msg.react('👍').then(() => msg.react('👎'));
 });
 const filter = (reaction, user) => {
-    return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
+    return ['👍', '👎'].includes(reaction.emoji.name);
 }
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
