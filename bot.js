@@ -46,7 +46,7 @@ msg.channel.send("test")
 });
  msg.awaitReactions(filter, { max: 1, time: 60000, })
     .then(collected => {
-        const reaction = collected.first();
+        const reaction = collected.third();
         if (reaction.emoji.name === '👍') {
             msg.reply('you reacted with a thumbs up.');
         }else {
