@@ -37,14 +37,14 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
+  let pages = ['p1', 'p2', 'p3'];
+  let page = 1;
   const embed = {embed: {
    color: 15868795,
-   title: 'page ${page} of ${pages.length}'
+   title: 'page ' + page + ' of ' + pages.length
   }}
   msg.channel.send(embed).then(msg => {
   msg.react('👍').then(() => msg.react('👎'));
-  let pages = ['p1', 'p2', 'p3'];
-  let page = 1;
   const bFilter = (reaction, user) => reaction.emoji.name === '👍' && user.id === msg.author.id;
   const fFilter = (reaction, user) => reaction.emoji.name === '👎' && user.id === msg.author.id;
   const backwards = msg.createReactionCollector(bFilter, {time: 60000});
