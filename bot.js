@@ -49,6 +49,7 @@ client.on('message', msg => {
    color: 15868795,
    title: 'page ' + page + ' of ' + pages.length
   }}
+  
   msg.channel.send(embed).then(msg => {
   msg.react('⏪').then(() => msg.react('⏩'));
   
@@ -57,12 +58,14 @@ client.on('message', msg => {
    page--;
    msg.edit(embed);
   });
+   
    forwards.on('collect', r => {
     if (page = pages.length) return;
     page ++;
-    msg.edit(embed);
-    msg.channel.send("next page!");
+    msg.edit(embed)
+    .then(msg.channel.send("next page!"));
   });
+   
  });
  }});
     
