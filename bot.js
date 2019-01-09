@@ -70,7 +70,7 @@ const filter = (reaction, user) => {
 }
   msg.channel.send({embed: {
    color: 15868795,
-   title: 's/test2 - **Help Guide**',
+   title: 's/help - **Help Guide**',
    description: '__Table of Contents__',
    fields:
    [{
@@ -90,8 +90,8 @@ const filter = (reaction, user) => {
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
-        if (reaction.emoji.name === '⏪') {
-         reaction.remove();
+        if (reaction.emoji.name === '⏩') {
+         msg.reaction.remove();
             msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (2)',
@@ -110,8 +110,8 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     text: 'React to navigate pages [2/3]'
    }
    }});
-        }else if (reaction.emoji.name === '⏩') {
-         reaction.remove();
+        }else if (reaction.emoji.name === '⏪') {
+         msg.reaction.remove();
             msg.edit('Err:');
         }else {
          msg.delete();
