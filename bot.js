@@ -63,7 +63,7 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         const reaction2 = collected.second();
-        const reaction3 = collected.third();
+        
         if (reaction.emoji.name === '⏩') {
             msg.edit({embed: {
    color: 15868795,
@@ -85,7 +85,7 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
    }});
         }else {
          msg.delete();
-        }
+        });
         
         if (reaction2.emoji.name === '⏪') {
             msg.edit({embed: {
