@@ -84,15 +84,16 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     text: 'React to navigate pages [1/3]'
    }
    }});
-         }, 1000);
+         }, 100);
         }else {
          msg.delete();
         }
-    }).then(msg => {
+    });
    msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reactiont = collected.first();
     if (reactiont.emoji.name === '⏩') {
+     reactiont.remove(reactiont.users.last());
             msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (2)',
@@ -114,7 +115,6 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
         }else {
          msg.delete();
         }
-   });
    });
   });
   }});
