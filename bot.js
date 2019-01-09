@@ -58,7 +58,7 @@ const filter = (reaction, user) => {
     text: 'React to navigate pages [1/4]'
    }
   }}).then(msg => {
-  msg.react('1️⃣').then(() => msg.react('2️⃣')).then(() => msg.react('3️⃣')).then(() => msg.react('4️⃣')).then(() => msg.react('⏸'));
+  msg.react('1️⃣').then(() => msg.react('2️⃣').then(() => msg.react('3️⃣').then(() => msg.react('4️⃣').then(() => msg.react('⏸')))));
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
