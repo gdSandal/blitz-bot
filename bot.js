@@ -68,15 +68,51 @@ client.on('message', msg => {
 const filter = (reaction, user) => {
     return ['⏪', '⏹', '⏩'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
-  msg.channel.send('sample page').then(msg => {
+  msg.channel.send({embed: {
+   color: 15868795,
+   title: 's/test2 - **Help Guide**',
+   description: '__Table of Contents__',
+   fields:
+   [{
+    name: 'name',
+    value: 'value'
+   },
+    {
+     name: 'name',
+     value: 'value'
+    },
+    ],
+   footer: {
+    text: 'React to navigate pages [1/3]'
+   }
+  }}).then(msg => {
   msg.react('⏪').then(() => msg.react('⏹').then(() => msg.react('⏩')));
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         if (reaction.emoji.name === '⏪') {
-            msg.edit('back');
+         reaction.remove();
+            msg.edit({embed: {
+   color: 15868795,
+   title: 's/help - PAGE (2)',
+   description: 'Moderation Commands',
+   fields:
+   [{
+    name: 'name',
+    value: 'value'
+   },
+    {
+     name: 'name',
+     value: 'value'
+    },
+    ],
+   footer: {
+    text: 'React to navigate pages [2/3]'
+   }
+   }});
         }else if (reaction.emoji.name === '⏩') {
-            msg.edit('forward');
+         reaction.remove();
+            msg.edit('Err:');
         }else {
          msg.delete();
         }
