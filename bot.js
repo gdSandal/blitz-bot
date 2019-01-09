@@ -38,7 +38,7 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 client.on('message', msg => {
  if (msg.content === 's/test2') {
 const filter = (reaction, user) => {
-    return ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '⏸'].includes(reaction.emoji.name) && user.id === msg.author.id;
+    return ['1️⃣', '2️⃣'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
   msg.channel.send({embed: {
    color: 15868795,
