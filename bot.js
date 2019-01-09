@@ -82,10 +82,10 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
    footer: {
     text: 'React to navigate pages [1/3]'
    }
-   }}),(1000);
+   }});
         }else {
          msg.delete();
-        }
+        }, (2000)
     });
    msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
