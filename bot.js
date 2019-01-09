@@ -62,7 +62,6 @@ const filter = (reaction, user) => {
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
-        const reactiont = collected.second();
         if (reaction.emoji.name === '⏩') {
             msg.edit({embed: {
    color: 15868795,
@@ -82,7 +81,14 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     text: 'React to navigate pages [2/3]'
    }
    }});
-        }else if (reactiont.emoji.name === '⏩') {
+        }else {
+         msg.delete();
+        }
+    });
+   msg.awaitReactions(filter, {max: 1, time: 60000 })
+   .then(collected => {
+    const reactiont = collected.second();
+     if (reactiont.emoji.name === '⏩') {
          msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (3)',
@@ -101,10 +107,9 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     text: 'React to navigate pages [2/3]'
    }
    }});
-        }else {
-         msg.delete();
-        }
-    });
+     }else {
+      msg.delete();
+     }
   });
   }});
                
