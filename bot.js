@@ -70,13 +70,13 @@ const filter = (reaction, user) => {
 }
   msg.channel.send('sample page').then(msg => {
   msg.react('⏪').then(() => msg.react('⏩'));
-msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         if (reaction.emoji.name === '⏪') {
-            msg.reply('back');
+            msg.edit('back');
         }else {
-            msg.reply('forward');
+            msg.edit('forward');
         }
     });
   });
