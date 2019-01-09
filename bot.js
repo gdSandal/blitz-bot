@@ -69,14 +69,16 @@ const filter = (reaction, user) => {
     return ['⏪', '⏩'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
   msg.channel.send('sample page').then(msg => {
-  msg.react('⏪').then(() => msg.react('⏩'));
+  msg.react('⏪').then(() => msg.react('⏹').then(() => msg.react('⏩')));
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         if (reaction.emoji.name === '⏪') {
             msg.edit('back');
-        }else {
+        }else if (reaction.emoji.name === '⏩') {
             msg.edit('forward');
+        }else {
+         msg.delete();
         }
     });
   });
