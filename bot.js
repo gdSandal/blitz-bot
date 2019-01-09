@@ -82,7 +82,7 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
    footer: {
     text: 'React to navigate pages [1/3]'
    }
-   }}(1000));
+   }}, (1000));
         }else {
          msg.delete();
         }
@@ -106,7 +106,7 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     },
     ],
    footer: {
-    text: 'React to navigate pages [1/3]'
+    text: 'React to navigate pages [2/3]'
    }
    }});
         }else {
