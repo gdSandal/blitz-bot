@@ -65,14 +65,14 @@ client.on('message', msg => {
     
 client.on('message', msg => {
  if (msg.content === 's/test2') {
-  msg.channel.send('sample page').then(msg => {
-  msg.react('⏪').then(() => msg.react('⏩'));
 const filter = (reaction, user) => {
     return ['⏪', '⏩'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
+  msg.channel.send('sample page').then(msg => {
+  msg.react('⏪').then(() => msg.react('⏩'));
 msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
     .then(collected => {
-        const reaction = collected.third();
+        const reaction = collected.first();
         if (reaction.emoji.name === '⏪') {
             msg.reply('back');
         }else {
