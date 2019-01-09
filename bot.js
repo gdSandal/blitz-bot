@@ -62,11 +62,31 @@ const filter = (reaction, user) => {
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
+        const reactiont = collected.second();
         if (reaction.emoji.name === '⏩') {
             msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (2)',
    description: 'Moderation Commands',
+   fields:
+   [{
+    name: 'name',
+    value: 'value'
+   },
+    {
+     name: 'name',
+     value: 'value'
+    },
+    ],
+   footer: {
+    text: 'React to navigate pages [2/3]'
+   }
+   }});
+        }else if (reactiont.emoji.name === '⏩') {
+         msg.edit({embed: {
+   color: 15868795,
+   title: 's/help - PAGE (3)',
+   description: 'RNG Commands',
    fields:
    [{
     name: 'name',
