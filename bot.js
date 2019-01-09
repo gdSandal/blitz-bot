@@ -66,7 +66,7 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content === 's/test2') {
 const filter = (reaction, user) => {
-    return ['⏪', '⏩'].includes(reaction.emoji.name) && user.id === msg.author.id;
+    return ['⏪', '⏹', '⏩'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
   msg.channel.send('sample page').then(msg => {
   msg.react('⏪').then(() => msg.react('⏹').then(() => msg.react('⏩')));
