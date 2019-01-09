@@ -87,7 +87,7 @@ const filter = (reaction, user) => {
    }
   }}).then(msg => {
   msg.react('⏪').then(() => msg.react('⏹').then(() => msg.react('⏩')));
-msg.awaitReactions(filter, { max: 1, time: 60000 })
+msg.awaitReactions(filter, { max: 3, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         const reaction2 = collected.second();
