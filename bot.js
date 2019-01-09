@@ -64,7 +64,7 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         if (reaction.emoji.name === '⏩') {
-         reaction.remove(reaction.author);
+         user.reaction.remove();
             msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (1)',
@@ -122,42 +122,6 @@ client.on('message', msg => {
  let args = msg.content.split(" ").slice(1);
   msg.delete();
   msg.channel.send(args.join(" "));
- }
-});
-
-client.on('message', msg => {
- if (msg.content.startsWith('s/stand')) {
- const filter = msg.includes['Star Platinum', 'Magician’s Red', 'Hermit Purple', 'Hierophant Green','Silver Chariot','The Fool','Tower of Grey','Dark Blue Moon','Strength','Ebony Devil','Yellow Temperance','Hanged Man','Emperor','Empress','Wheel of Fortune','Justice','Lovers','TheSun','Death 13','Judgement','High Priestess','Geb','Khnum','Thoth','Anubis','Bast','Sethan','Osiris','Horus','Atum','Tenor Sax','Cream','The World','Crazy Diamond','The Hand','Echoes','Heaven’s Door','Aqua Necklace','Bad Company','Red Hot Chili Pepper','The Lock','Surface','Love Deluxe','Pearl Jam','Achtung Baby','Ratt','Harvest','Cinderella','Boy II Man','Earth, Wind and Fire','Highway Star','Super Fly','Eigma','Cheap Trick','Stray Cat','Atom Heart Father','Killer Queen'];
-  let args = msg.content.split(" ").slice(1)
- let wikilink = "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png";
- let googlelink = "https://www.google.com/search?q=" + args.join("+") + "&client=safari&hl=en";
-  msg.channel.send("Name a Stand | Expires in 6s" (msg.delete(6000))
-  .then(msg.channel.awaitMessages(filter, {max: 1, time: 6000}))
-  .then(collected => {
-   msg.channel.send({embed: {
-   color: 15868795,
-   title: "__| JJBA Stand Stats |__",
-   thumbnail: {
-    url: "http://i.imgur.com/Vqypytw.jpg"
-   },
-   fields: [{
-    name: "**Stand name:**",
-    value: args.join(" ")
-   },
-   {
-    name: "**Wiki Page:**",
-    value: "Click here: " + "http://jojo.wikia.com/wiki/" + args.join("_")
-   },
-   {
-    name: "**Images:**",
-    value: wikilink + " | " + googlelink
-   },
-   ],
-   footer: {
-    text: "type - s/standhelp for troubleshooting"
-   }
- }});
-}});
  }
 });
 
