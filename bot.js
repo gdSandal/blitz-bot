@@ -38,7 +38,7 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 client.on('message', msg => {
  if (msg.content === 's/test2') {
 const filter = (reaction, user) => {
-    return ['⏪', '⏹', '⏩'].includes(reaction.emoji.name) && user.id === msg.author.id;
+    return ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '⏸'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
   msg.channel.send({embed: {
    color: 15868795,
@@ -55,18 +55,18 @@ const filter = (reaction, user) => {
     },
     ],
    footer: {
-    text: 'React to navigate pages [1/3]'
+    text: 'React to navigate pages [1/4]'
    }
   }}).then(msg => {
-  msg.react('⏪').then(() => msg.react('⏹').then(() => msg.react('⏩')));
+  msg.react('1️⃣').then(() => msg.react('2️⃣').then(() => msg.react('3️⃣').then(() => msg.react('4️⃣').then(() => msg.react('⏸')))));
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
-        if (reaction.emoji.name === '⏩') {
+        if (reaction.emoji.name === '1️⃣') {
             msg.edit({embed: {
    color: 15868795,
-   title: 's/help - PAGE (2)',
-   description: 'Moderation Commands',
+   title: 's/help - **Help Guide**',
+   description: '__Table of Contents__',
    fields:
    [{
     name: 'name',
@@ -78,38 +78,32 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     },
     ],
    footer: {
-    text: 'React to navigate pages [2/3]'
+    text: 'React to navigate pages [1/4]'
+   }
+   }});
+        }else if (reaction.emoji.name === '2️⃣') {
+         msg.edit({embed: {
+   color: 15868795,
+   title: '**Page 2 - Moderation**',
+   description: 'Command List:',
+   fields:
+   [{
+    name: 'name',
+    value: 'value'
+   },
+    {
+     name: 'name',
+     value: 'value'
+    },
+    ],
+   footer: {
+    text: 'React to navigate pages [2/4]'
    }
    }});
         }else {
          msg.delete();
         }
     });
-   msg.awaitReactions(filter, {max: 1, time: 60000 })
-   .then(collected => {
-    const reactiont = collected.second();
-     if (reactiont.emoji.name === '⏩') {
-         msg.edit({embed: {
-   color: 15868795,
-   title: 's/help - PAGE (3)',
-   description: 'RNG Commands',
-   fields:
-   [{
-    name: 'name',
-    value: 'value'
-   },
-    {
-     name: 'name',
-     value: 'value'
-    },
-    ],
-   footer: {
-    text: 'React to navigate pages [2/3]'
-   }
-   }});
-     }else {
-      msg.delete();
-     }
   });
   }});
                
