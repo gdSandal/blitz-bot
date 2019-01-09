@@ -105,6 +105,32 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
          msg.delete();
         }
     });
+   msg.awaitReactions(filter, { max: 1, time: 60000 })
+    .then(collected => {
+        const reactiont = collected.second();
+    if (reactiont.emoji.name === '⏩') {
+            msg.edit({embed: {
+   color: 15868795,
+   title: 's/help - PAGE (2)',
+   description: 'Moderation Commands',
+   fields:
+   [{
+    name: 'name',
+    value: 'value'
+   },
+    {
+     name: 'name',
+     value: 'value'
+    },
+    ],
+   footer: {
+    text: 'React to navigate pages [1/3]'
+   }
+   }});
+        }else {
+         msg.delete();
+        }
+   });
   });
   }});
    
