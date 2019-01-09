@@ -72,7 +72,7 @@ const filter = (reaction, user) => {
 }
 msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
     .then(collected => {
-        const reaction = collected.first();
+        const reaction = collected.third();
         if (reaction.emoji.name === '⏪') {
             msg.reply('back');
         }else {
