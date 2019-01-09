@@ -34,34 +34,6 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 }, 2000);
 });
 }});
-
-client.on('message', msg => {
- if (msg.content === 's/test') {
-  let pages = ['p1', 'p2', 'p3'];
-  let page = 1;
-  
-  const bFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === msg.author.id;
-  const fFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === msg.author.id;
-  const backwards = msg.createReactionCollector(bFilter, { time: 60000 });
-  const forwards = msg.createReactionCollector(fFilter, { time: 60000 });
-  
-  const embed = {embed: {
-   color: 15868795,
-   title: 'page ' + page + ' of ' + pages.length
-  }}
-  msg.channel.send(embed).then(msg => {
-  msg.react('⏪').then(() => msg.react('⏩'));
-  backwards.on('collect', r => {
-   if (page === 1) return;
-   page--;
-   msg.edit(embed);
-  });
-   forwards.on('collect', r => {
-    page ++;
-    msg.edit(embed);
-  });
- });
- }});
     
 client.on('message', msg => {
  if (msg.content === 's/test2') {
@@ -111,7 +83,11 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
     text: 'React to navigate pages [2/3]'
    }
    }});
-        }else if (reaction2.emoji.name === '⏪') {
+        }else {
+         msg.delete();
+        }
+        
+        if (reaction2.emoji.name === '⏪') {
             msg.edit({embed: {
    color: 15868795,
    title: 's/help - **Help Guide**',
