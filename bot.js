@@ -132,8 +132,7 @@ client.on('message', msg => {
  let wikilink = "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png";
  let googlelink = "https://www.google.com/search?q=" + args.join("+") + "&client=safari&hl=en";
   msg.channel.awaitMessages(filter, {max: 1, time: 60000})
- .then(collected => {
- msg.channel.send({embed: {
+  .then(msg.channel.send({embed: {
    color: 15868795,
    title: "__| JJBA Stand Stats |__",
    thumbnail: {
@@ -155,7 +154,7 @@ client.on('message', msg => {
    footer: {
     text: "type - s/standhelp for troubleshooting"
    }
- }
+ });
 }});
  }
 });
