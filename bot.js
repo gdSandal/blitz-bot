@@ -91,7 +91,7 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     });
    msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
-        const reactiont = collected.first();
+        const reactiont = collected.second();
     if (reactiont.emoji.name === '⏩') {
      reactiont.remove(reactiont.users.last());
      setTimeout(function(){
