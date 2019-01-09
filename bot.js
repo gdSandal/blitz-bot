@@ -84,12 +84,12 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     text: 'React to navigate pages [1/3]'
    }
    }});
+         }, 1000);
         }else {
          msg.delete();
         }
     });
    
-   }, 1000);
    msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reactiont = collected.first();
