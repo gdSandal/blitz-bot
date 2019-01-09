@@ -39,7 +39,7 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 client.on('message', msg => {
  if (msg.content === 's/test2') {
 const filter = (reaction, user) => {
-    return ['⏪', '⏩', '⏸'].includes(reaction.emoji.name) && user.id === msg.author.id;
+    return ['532597451325177866', '⏩', '⏸'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
   msg.channel.send({embed: {
    color: 15868795,
@@ -59,7 +59,7 @@ const filter = (reaction, user) => {
     text: 'React to navigate pages [0/3]'
    }
   }}).then(msg => {
-  msg.react('⏪').then(() => msg.react('⏩').then(() => msg.react('⏸')));
+  msg.react('532597451325177866').then(() => msg.react('⏩').then(() => msg.react('⏸')));
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
