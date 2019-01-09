@@ -88,13 +88,12 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
         }else {
          msg.delete();
         }
-    });
+    }).then
    msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reactiont = collected.second();
     if (reactiont.emoji.name === '⏩') {
      reactiont.remove(reactiont.users.last());
-     setTimeout(function(){
             msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (2)',
@@ -113,7 +112,6 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     text: 'React to navigate pages [2/3]'
    }
    }});
-     }, 200);
         }else {
          msg.delete();
         }
