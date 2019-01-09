@@ -39,7 +39,7 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 client.on('message', msg => {
  if (msg.content === 's/test2') {
 const filter = (reaction, user) => {
-    return ['2️⃣'].includes(reaction.emoji.name) && user.id === msg.author.id;
+    return ['1️⃣', '2️⃣', '3️⃣', '⏸'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
   msg.channel.send({embed: {
    color: 15868795,
@@ -68,6 +68,44 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
    color: 15868795,
    title: 's/help - PAGE (2)',
    description: 'Moderation Commands',
+   fields:
+   [{
+    name: 'name',
+    value: 'value'
+   },
+    {
+     name: 'name',
+     value: 'value'
+    },
+    ],
+   footer: {
+    text: 'React to navigate pages [2/3]'
+   }
+   }});
+        }else if (reaction.emoji.name === '3️⃣') {
+         msg.edit({embed: {
+   color: 15868795,
+   title: 's/help - PAGE (3)',
+   description: 'Fun Commands',
+   fields:
+   [{
+    name: 'name',
+    value: 'value'
+   },
+    {
+     name: 'name',
+     value: 'value'
+    },
+    ],
+   footer: {
+    text: 'React to navigate pages [2/3]'
+   }
+   }});
+        }else if (reaction.emoji.name === '1️⃣') {
+         msg.edit({embed: {
+   color: 15868795,
+   title: 's/help - **Help Guide**',
+   description: 'Table',
    fields:
    [{
     name: 'name',
