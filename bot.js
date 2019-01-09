@@ -103,7 +103,6 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
         }else {
          msg.delete();
         }
-    });
   });
   }});
                
