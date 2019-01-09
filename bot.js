@@ -59,7 +59,7 @@ const filter = (reaction, user) => {
     text: 'React to navigate pages [1/3]'
    }
   }}).then(msg => {
-  msg.react('1️⃣').then(() => msg.react('2️⃣').then(() => msg.react('3️⃣').then(() => msg.react('⏸'))));
+  msg.react('1️⃣').then(() => msg.react('2️⃣')).then(() => msg.react('3️⃣')).then(() => msg.react('⏸'));
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
@@ -98,7 +98,7 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     },
     ],
    footer: {
-    text: 'React to navigate pages [2/3]'
+    text: 'React to navigate pages [3/3]'
    }
    }});
         }else if (reaction.emoji.name === '1️⃣') {
@@ -117,7 +117,7 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     },
     ],
    footer: {
-    text: 'React to navigate pages [2/3]'
+    text: 'React to navigate pages [1/3]'
    }
    }});
         }else {
