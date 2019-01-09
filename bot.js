@@ -131,7 +131,7 @@ client.on('message', msg => {
   let args = msg.content.split(" ").slice(1)
  let wikilink = "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png";
  let googlelink = "https://www.google.com/search?q=" + args.join("+") + "&client=safari&hl=en";
-  msg.channel.send("Name a Stand | Expires in 6s")
+  msg.channel.send("Name a Stand | Expires in 6s" (msg.delete(6000))
   .then(msg.channel.awaitMessages(filter, {max: 1, time: 6000}))
   .then(collected => {
    msg.channel.send({embed: {
