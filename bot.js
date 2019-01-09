@@ -62,9 +62,9 @@ const filter = (reaction, user) => {
   msg.react('⏪').then(() => msg.react('⏩').then(() => msg.react('⏸')));
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
-        const reaction = collected.first();
+        const reaction = collected.last();
         if (reaction.emoji.name === '⏩') {
-         collected.last.remove();
+         reaction.remove();
             msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (1)',
