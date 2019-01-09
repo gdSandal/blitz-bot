@@ -127,12 +127,14 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/stand')) {
- const filter = ['Star Platinum', 'Magician’s Red', 'Hermit Purple', 'Hierophant Green','Silver Chariot','The Fool','Tower of Grey','Dark Blue Moon','Strength','Ebony Devil','Yellow Temperance','Hanged Man','Emperor','Empress','Wheel of Fortune','Justice','Lovers','TheSun','Death 13','Judgement','High Priestess','Geb','Khnum','Thoth','Anubis','Bast','Sethan','Osiris','Horus','Atum','Tenor Sax','Cream','The World','Crazy Diamond','The Hand','Echoes','Heaven’s Door','Aqua Necklace','Bad Company','Red Hot Chili Pepper','The Lock','Surface','Love Deluxe','Pearl Jam','Achtung Baby','Ratt','Harvest','Cinderella','Boy II Man','Earth, Wind and Fire','Highway Star','Super Fly','Eigma','Cheap Trick','Stray Cat','Atom Heart Father','Killer Queen'];
+ const filter = msg.includes['Star Platinum', 'Magician’s Red', 'Hermit Purple', 'Hierophant Green','Silver Chariot','The Fool','Tower of Grey','Dark Blue Moon','Strength','Ebony Devil','Yellow Temperance','Hanged Man','Emperor','Empress','Wheel of Fortune','Justice','Lovers','TheSun','Death 13','Judgement','High Priestess','Geb','Khnum','Thoth','Anubis','Bast','Sethan','Osiris','Horus','Atum','Tenor Sax','Cream','The World','Crazy Diamond','The Hand','Echoes','Heaven’s Door','Aqua Necklace','Bad Company','Red Hot Chili Pepper','The Lock','Surface','Love Deluxe','Pearl Jam','Achtung Baby','Ratt','Harvest','Cinderella','Boy II Man','Earth, Wind and Fire','Highway Star','Super Fly','Eigma','Cheap Trick','Stray Cat','Atom Heart Father','Killer Queen'];
   let args = msg.content.split(" ").slice(1)
  let wikilink = "http://jojo.wikia.com/wiki/List_of_Stands?file=" + args.join("") + "AvAnim.png";
  let googlelink = "https://www.google.com/search?q=" + args.join("+") + "&client=safari&hl=en";
-  msg.channel.awaitMessages(filter, {max: 1, time: 60000})
-  .then(msg.channel.send({embed: {
+  msg.channel.send("Name a Stand | Expires in 6s")
+  .then(msg.channel.awaitMessages(filter, {max: 1, time: 6000}))
+  .then(collected => {
+   msg.channel.send({embed: {
    color: 15868795,
    title: "__| JJBA Stand Stats |__",
    thumbnail: {
@@ -154,7 +156,7 @@ client.on('message', msg => {
    footer: {
     text: "type - s/standhelp for troubleshooting"
    }
- });
+ }});
 }});
  }
 });
