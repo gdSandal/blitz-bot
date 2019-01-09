@@ -83,7 +83,7 @@ msg.awaitReactions(filter, { max: 2, time: 60000 })
     text: 'React to navigate pages [1/3]'
    }
    }});
-        }else if (reactiont.emoji.name === '⏩') {
+        }else if (reactiont.emoji.name === '⏪') {
          msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (2)',
