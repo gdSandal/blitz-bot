@@ -85,8 +85,8 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
    }});
         }else {
          msg.delete();
-        }, (2000)
-    });
+        }
+    },(2000));
    msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reactiont = collected.first();
