@@ -62,7 +62,6 @@ const filter = (reaction, user) => {
 msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
-        
         if (reaction.emoji.name === '⏩') {
             msg.edit({embed: {
    color: 15868795,
