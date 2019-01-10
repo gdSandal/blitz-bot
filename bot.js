@@ -119,6 +119,7 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
         const reactiont = collected.first();
     if (reactiont.emoji.name === '⏩') {
      reactiont.remove(reactiont.users.last());
+     reactiont.remove('⏸');
             msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (1)',
