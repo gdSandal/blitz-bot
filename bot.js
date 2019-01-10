@@ -85,7 +85,6 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
    }});
         }else {
          msg.delete();
-         msg.channel.send('Command ended, use **s/help** to restart...').then(msg => msg.delete(2000));
         }
     })
    .then(msg.awaitReactions(filter, { max: 2, time: 60000 })
@@ -113,7 +112,6 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
    }});
         }else {
          msg.delete();
-          msg.channel.send('Command ended, use **s/help** to restart...').then(msg => msg.delete(2000));
         }
    }))
  .then(msg.awaitReactions(filter, { max: 1, time: 60000 })
@@ -139,9 +137,28 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
     text: 'React to navigate pages [1/3]'
    }
    }});
+        }else if (reactiont.emoji.name === '⏪') {
+     reactiont.remove(reactiont.users.last());
+            msg.edit({embed: {
+   color: 15868795,
+   title: 's/help - **Help Guide**',
+   description: 'Moderation Commands',
+   fields:
+   [{
+    name: 'name',
+    value: 'value'
+   },
+    {
+     name: 'name',
+     value: 'value'
+    },
+    ],
+   footer: {
+    text: 'React to navigate pages [1/3]'
+   }
+   }});
         }else {
          msg.delete();
-         msg.channel.send('Command ended, use **s/help** to restart...').then(msg => msg.delete(2000));
         }
    }));
   });
