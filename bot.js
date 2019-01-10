@@ -60,14 +60,14 @@ const filter = (reaction, user) => {
    }
   }}).then(msg => {
   msg.react('⏪').then(() => msg.react('⏩').then(() => msg.react('⏸')));
-msg.awaitReactions(filter, { max: 2, time: 60000 })
+msg.awaitReactions(filter, { max: 3, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         if (reaction.emoji.name === '⏩') {
          reaction.remove(reaction.users.last());
             msg.edit({embed: {
    color: 15868795,
-   title: 's/help - PAGE (1)',
+   title: 's/help - PAGE (3)',
    description: 'Moderation Commands',
    fields:
    [{
@@ -80,7 +80,7 @@ msg.awaitReactions(filter, { max: 2, time: 60000 })
     },
     ],
    footer: {
-    text: 'React to navigate pages [1/3]'
+    text: 'React to navigate pages [3/3]'
    }
    }});
         }else {
@@ -88,7 +88,7 @@ msg.awaitReactions(filter, { max: 2, time: 60000 })
          msg.channel.send('Command ended, use **s/help** to restart...').then(msg => msg.delete(2000));
         }
     })
-   .then(msg.awaitReactions(filter, { max: 1, time: 60000 })
+   .then(msg.awaitReactions(filter, { max: 2, time: 60000 })
     .then(collected => {
         const reactiont = collected.first();
     if (reactiont.emoji.name === '⏩') {
@@ -109,6 +109,33 @@ msg.awaitReactions(filter, { max: 2, time: 60000 })
     ],
    footer: {
     text: 'React to navigate pages [2/3]'
+   }
+   }});
+        }else {
+         msg.delete();
+        }
+   }))
+ .then(msg.awaitReactions(filter, { max: 1, time: 60000 })
+    .then(collected => {
+        const reactiont = collected.first();
+    if (reactiont.emoji.name === '⏩') {
+     reactiont.remove(reactiont.users.last());
+            msg.edit({embed: {
+   color: 15868795,
+   title: 's/help - PAGE (1)',
+   description: 'Moderation Commands',
+   fields:
+   [{
+    name: 'name',
+    value: 'value'
+   },
+    {
+     name: 'name',
+     value: 'value'
+    },
+    ],
+   footer: {
+    text: 'React to navigate pages [1/3]'
    }
    }});
         }else {
