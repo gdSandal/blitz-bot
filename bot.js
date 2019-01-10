@@ -39,7 +39,7 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 client.on('message', msg => {
  if (msg.content === 's/test2') {
 const filter = (reaction, user) => {
-    return ['⏩', '⏸'].includes(reaction.emoji.name) && user.id === msg.author.id;
+    return ['⏩', '⏯'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
   msg.channel.send({embed: {
    color: 15868795,
@@ -47,19 +47,27 @@ const filter = (reaction, user) => {
    description: '__Table of Contents__',
    fields:
    [{
-    name: 'name',
-    value: 'value'
+    name: 'Page 1:',
+    value: 'Moderation Commands'
    },
     {
-     name: 'name',
-     value: 'value'
+     name: 'Page 2:',
+     value: 'Utility Commands'
+    },
+    {
+     name: 'Page 3:',
+     value: 'Utility Commands'
+    },
+    {
+     name: 'Reaction Menu:',
+     value: '⏯ Cancel(page 0 only)/Next | ⏩ Next(all pages)'
     },
     ],
    footer: {
     text: 'React to navigate pages [0/3]'
    }
   }}).then(msg => {
-  msg.react('⏸').then(() => msg.react('⏩'));
+  msg.react('⏯').then(() => msg.react('⏩'));
 msg.awaitReactions(filter, { max: 3, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
@@ -67,8 +75,8 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
          reaction.remove(reaction.users.last());
             msg.edit({embed: {
    color: 15868795,
-   title: 's/help - PAGE (3)',
-   description: 'Moderation Commands',
+   title: 'Help Page 3',
+   description: 'Fun Commands',
    fields:
    [{
     name: 'name',
@@ -92,11 +100,10 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
         const reactiont = collected.first();
     if (reactiont.emoji.name === '⏩') {
      reactiont.remove(reactiont.users.last());
-     reactiont.remove('⏸');
             msg.edit({embed: {
    color: 15868795,
-   title: 's/help - PAGE (2)',
-   description: 'Moderation Commands',
+   title: 'Help Page 2',
+   description: 'Utility Commands',
    fields:
    [{
     name: 'name',
@@ -122,7 +129,7 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
      reactiont.remove(reactiont.users.last());
             msg.edit({embed: {
    color: 15868795,
-   title: 's/help - PAGE (1)',
+   title: 'Help Page 1',
    description: 'Moderation Commands',
    fields:
    [{
