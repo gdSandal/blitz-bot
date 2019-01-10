@@ -116,7 +116,6 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
          msg.delete();
         }
    });
-   });
   });
   }});
    
