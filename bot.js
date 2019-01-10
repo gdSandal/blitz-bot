@@ -37,7 +37,7 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 
 
 client.on('message', msg => {
- if (msg.content === 's/test2') {
+ if (msg.content === 's/help') {
 const filter = (reaction, user) => {
     return ['⏩', '⏯'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
@@ -104,7 +104,7 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
     },
     ],
    footer: {
-    text: 'Page [3/3] (page cancelled)'
+    text: 'Page [3/3] - (page is no longer active)'
    }
    }});
         }else {
@@ -165,8 +165,8 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
     value: '-  Clears <amount> messages'
    },
     {
-     name: 'WIP',
-     value: 'WIP'
+     name: 'In Progress',
+     value: '1/9'
     },
     ],
    footer: {
@@ -333,35 +333,6 @@ client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === args);
   if (!channel) return;
   channel.send(`Welcome to the server! ${member}`);
-});
-
-client.on('message', msg => {
-  if (msg.content === 's/help') {
-    msg.channel.send({embed: {
-  color: 15868795,
-  title: "s/help | Commands List",
-  fields: [{
-    name: "**s/ping:**",
-    value: "Retrieve bot latency."
-  },
-  {
-    name: "**s/info:**",
-    value: "Recieve bot information page."
-  },
-  {
-    name: "**s/userinfo:**",
-    value: "Recieve self information page."
-  },
-  {
-    name: "**s/coin:**",
-    value: "Flip a coin."
-  },
-  ],
-      footer: {
-        text: "Message user - Sandal#8314 for details"
-      }
-}});
-  }
 });
 
 client.on('message', msg => {
