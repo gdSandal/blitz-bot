@@ -39,7 +39,7 @@ msg.edit('```_________\n|_______|/\n|' + s[sI] + x[xI] + y[yI] + '|/   RESULT:  
 client.on('message', msg => {
  if (msg.content === 's/test2') {
 const filter = (reaction, user) => {
-    return ['⏪', '⏩', '⏸'].includes(reaction.emoji.name) && user.id === msg.author.id;
+    return ['⏩', '⏸'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
   msg.channel.send({embed: {
    color: 15868795,
@@ -59,7 +59,7 @@ const filter = (reaction, user) => {
     text: 'React to navigate pages [0/3]'
    }
   }}).then(msg => {
-  msg.react('⏪').then(() => msg.react('⏩').then(() => msg.react('⏸')));
+  msg.react('⏸').then(() => msg.react('⏩'));
 msg.awaitReactions(filter, { max: 3, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
@@ -81,26 +81,6 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
     ],
    footer: {
     text: 'React to navigate pages [3/3]'
-   }
-   }});
-        }else if (reaction.emoji.name === '⏪') {
-     reaction.remove(reaction.users.last());
-            msg.edit({embed: {
-   color: 15868795,
-   title: 's/help - PAGE (1)',
-   description: 'Moderation Commands',
-   fields:
-   [{
-    name: 'name',
-    value: 'value'
-   },
-    {
-     name: 'name',
-     value: 'value'
-    },
-    ],
-   footer: {
-    text: 'React to navigate pages [1/3]'
    }
    }});
         }else {
@@ -130,26 +110,6 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
     text: 'React to navigate pages [2/3]'
    }
    }});
-        }else if (reactiont.emoji.name === '⏪') {
-     reactiont.remove(reactiont.users.last());
-            msg.edit({embed: {
-   color: 15868795,
-   title: 's/help - PAGE (1)',
-   description: 'Moderation Commands',
-   fields:
-   [{
-    name: 'name',
-    value: 'value'
-   },
-    {
-     name: 'name',
-     value: 'value'
-    },
-    ],
-   footer: {
-    text: 'React to navigate pages [1/3]'
-   }
-   }});
         }else {
          msg.delete();
         }
@@ -162,26 +122,6 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
             msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (1)',
-   description: 'Moderation Commands',
-   fields:
-   [{
-    name: 'name',
-    value: 'value'
-   },
-    {
-     name: 'name',
-     value: 'value'
-    },
-    ],
-   footer: {
-    text: 'React to navigate pages [1/3]'
-   }
-   }});
-        }else if (reactiont.emoji.name === '⏪') {
-     reactiont.remove(reactiont.users.last());
-            msg.edit({embed: {
-   color: 15868795,
-   title: 's/help - **Help Guide**',
    description: 'Moderation Commands',
    fields:
    [{
