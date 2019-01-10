@@ -47,20 +47,20 @@ const filter = (reaction, user) => {
    description: '__Table of Contents__',
    fields:
    [{
-    name: 'Page 1:',
+    name: '**Page 1:**',
     value: 'Moderation Commands'
    },
     {
-     name: 'Page 2:',
+     name: '**Page 2:**',
      value: 'Utility Commands'
     },
     {
-     name: 'Page 3:',
+     name: '**Page 3:**',
      value: 'Utility Commands'
     },
     {
-     name: 'Reaction Menu:',
-     value: '⏯ Cancel(page 0 only)/Next | ⏩ Next(all pages)'
+     name: 'React ⏩ to go to the next page',
+     value: '*React ⏯ now to cancel*'
     },
     ],
    footer: {
@@ -75,16 +75,32 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
          reaction.remove(reaction.users.last());
             msg.edit({embed: {
    color: 15868795,
-   title: 'Help Page 3',
-   description: 'Fun Commands',
+   title: '**Help Page 3**',
+   description: '__Fun Commands__',
    fields:
    [{
-    name: 'name',
-    value: 'value'
+    name: '**s/slots**',
+    value: 'Play casino slots'
    },
     {
-     name: 'name',
-     value: 'value'
+     name: '**s/rcolor**',
+     value: 'Generate a random color'
+    },
+    {
+     name: '**s/rnumber**',
+     value: 'Generate a random number 1-10'
+    },
+    {
+     name: '**s/8ball** *<question>*',
+     value: 'Ask a 8ball a question'
+    },
+    {
+    name: '**s/coin**',
+    value: 'Flips a coin'
+    },
+    {
+     name: '**s/janken**',
+     value: 'Play a game of R/P/S'
     },
     ],
    footer: {
@@ -102,16 +118,28 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
      reactiont.remove(reactiont.users.last());
             msg.edit({embed: {
    color: 15868795,
-   title: 'Help Page 2',
-   description: 'Utility Commands',
+   title: '**Help Page 2**',
+   description: '__Utility Commands__',
    fields:
    [{
-    name: 'name',
-    value: 'value'
+    name: '**s/say** *<text>*',
+    value: 'Requiem responds with <text>'
    },
     {
-     name: 'name',
-     value: 'value'
+     name: '**s/embedsay** *<text>*',
+     value: 'Requiem responds with *embedded* <text>'
+    },
+    {
+     name: '**s/ping**',
+     value: 'Check bot latency'
+    },
+    {
+     name: '**s/info**',
+     value: 'Obtain bot info'
+    },
+    {
+     name: '**s/userinfo**',
+     value: 'Obtain self info'
     },
     ],
    footer: {
@@ -129,16 +157,16 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
      reactiont.remove(reactiont.users.last());
             msg.edit({embed: {
    color: 15868795,
-   title: 'Help Page 1',
-   description: 'Moderation Commands',
+   title: '**Help Page 1**',
+   description: '__Moderation Commands__',
    fields:
    [{
-    name: 'name',
-    value: 'value'
+    name: '**s/clear** *<amount>*',
+    value: 'Clears <amount> messages'
    },
     {
-     name: 'name',
-     value: 'value'
+     name: 'WIP',
+     value: 'WIP'
     },
     ],
    footer: {
