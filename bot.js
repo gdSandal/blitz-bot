@@ -111,7 +111,7 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
     text: 'React to navigate pages [2/3]'
    }
    }});
-        }else if (reactiont.enoji.name ==== '⏪') {
+        }else if (reactiont.emoji.name ==== '⏪') {
          reactiont.remove(reactiont.users.last());
          msg.edit({embed: {
    color: 15868795,
