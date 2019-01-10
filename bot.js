@@ -111,8 +111,29 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
     text: 'React to navigate pages [2/3]'
    }
    }});
+        }else if (reactiont.enoji.name ==== '⏪') {
+         reactiont.remove(reactiont.users.last());
+         msg.edit({embed: {
+   color: 15868795,
+   title: 's/help - PAGE (1)',
+   description: 'Moderation Commands',
+   fields:
+   [{
+    name: 'name',
+    value: 'value'
+   },
+    {
+     name: 'name',
+     value: 'value'
+    },
+    ],
+   footer: {
+    text: 'React to navigate pages [2/3]'
+   }
+   }});
         }else {
          msg.delete();
+          msg.channel.send('Command ended, use **s/help** to restart...').then(msg => msg.delete(2000));
         }
    }))
  .then(msg.awaitReactions(filter, { max: 1, time: 60000 })
