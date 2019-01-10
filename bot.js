@@ -60,12 +60,11 @@ const filter = (reaction, user) => {
    }
   }}).then(msg => {
   msg.react('⏪').then(() => msg.react('⏩').then(() => msg.react('⏸')));
-msg.awaitReactions(filter, { max: 1, time: 60000 })
+msg.awaitReactions(filter, { max: 2, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         if (reaction.emoji.name === '⏩') {
          reaction.remove(reaction.users.last());
-         setTimeout(function(){
             msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (1)',
@@ -88,7 +87,6 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
          msg.delete();
          msg.channel.send('Command ended, use **s/help** to restart...').then(msg => msg.delete(2000));
         }
-}, 1000);
     })
    .then(msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
