@@ -65,7 +65,6 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
         const reaction = collected.first();
         if (reaction.emoji.name === '⏩') {
          reaction.remove(reaction.users.last());
-         setTimeout(function(){
             msg.edit({embed: {
    color: 15868795,
    title: 's/help - PAGE (1)',
@@ -84,14 +83,14 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
     text: 'React to navigate pages [1/3]'
    }
    }});
-         }, 100);
         }else {
          msg.delete();
+         msg.channel.send('Command ended, use **s/help** to restart...').then(msg => msg.delete(2000));
         }
     });
    msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
-        const reactiont = collected.first();
+        const reactiont = collected.second();
     if (reactiont.emoji.name === '⏩') {
      reactiont.remove(reactiont.users.last());
             msg.edit({embed: {
