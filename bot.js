@@ -313,7 +313,7 @@ client.on('message', msg => {
     let outcomeIndex = Math.round(Math.random() * outcome.length);
     msg.channel.send({embed: {
       color: 15868795,
-      description: emoji(532740590358757389) + "Coinflip Result:\n:coin3::coin4:" + outcome[outcomeIndex]
+      description: "<a:coin1:532740590358757389><a:coin2:532740637473112094>" +"Coinflip Result:\n" + outcome[outcomeIndex] 
 }});
   }
 });
