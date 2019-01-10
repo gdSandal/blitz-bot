@@ -48,19 +48,19 @@ const filter = (reaction, user) => {
    fields:
    [{
     name: '**Page 1:**',
-    value: 'Moderation Commands'
+    value: '-  Moderation Commands'
    },
     {
      name: '**Page 2:**',
-     value: 'Utility Commands'
+     value: '-  Utility Commands'
     },
     {
      name: '**Page 3:**',
-     value: 'Utility Commands'
+     value: '-  Fun Commands'
     },
     {
-     name: 'React ⏩ to go to the next page',
-     value: '*React ⏯ now to cancel*'
+     name: '[React ⏩ to go to the next page]',
+     value: '*[React ⏯ now to cancel]*'
     },
     ],
    footer: {
@@ -80,31 +80,31 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
    fields:
    [{
     name: '**s/slots**',
-    value: 'Play casino slots'
+    value: '-  Play casino slots'
    },
     {
      name: '**s/rcolor**',
-     value: 'Generate a random color'
+     value: '-  Generate a random color'
     },
     {
      name: '**s/rnumber**',
-     value: 'Generate a random number 1-10'
+     value: '-  Generate a random number 1-10'
     },
     {
      name: '**s/8ball** *<question>*',
-     value: 'Ask a 8ball a question'
+     value: '-  Ask a 8ball a question'
     },
     {
     name: '**s/coin**',
-    value: 'Flips a coin'
+    value: '-  Flips a coin'
     },
     {
      name: '**s/janken**',
-     value: 'Play a game of R/P/S'
+     value: '-  Play a game of R/P/S'
     },
     ],
    footer: {
-    text: 'React to navigate pages [3/3]'
+    text: 'Page [3/3] (page cancelled)'
    }
    }});
         }else {
@@ -123,23 +123,23 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
    fields:
    [{
     name: '**s/say** *<text>*',
-    value: 'Requiem responds with <text>'
+    value: '-  Requiem responds with <text>'
    },
     {
      name: '**s/embedsay** *<text>*',
-     value: 'Requiem responds with *embedded* <text>'
+     value: '-  Requiem responds with *embedded* <text>'
     },
     {
      name: '**s/ping**',
-     value: 'Check bot latency'
+     value: '-  Check bot latency'
     },
     {
      name: '**s/info**',
-     value: 'Obtain bot info'
+     value: '-  Obtain bot info'
     },
     {
      name: '**s/userinfo**',
-     value: 'Obtain self info'
+     value: '-  Obtain self info'
     },
     ],
    footer: {
@@ -162,7 +162,7 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
    fields:
    [{
     name: '**s/clear** *<amount>*',
-    value: 'Clears <amount> messages'
+    value: '-  Clears <amount> messages'
    },
     {
      name: 'WIP',
