@@ -60,7 +60,7 @@ const filter = (reaction, user) => {
    }
   }}).then(msg => {
   msg.react('⏪').then(() => msg.react('⏩').then(() => msg.react('⏸')));
-msg.awaitReactions(filter, { max: 2, time: 60000 })
+msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         if (reaction.emoji.name === '⏩') {
