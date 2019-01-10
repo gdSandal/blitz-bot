@@ -60,7 +60,7 @@ const filter = (reaction, user) => {
    }
   }}).then(msg => {
   msg.react('⏪').then(() => msg.react('⏩').then(() => msg.react('⏸')));
-msg.awaitReactions(filter, { max: 1, time: 60000 })
+msg.awaitReactions(filter, { max: 2, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
         if (reaction.emoji.name === '⏩') {
@@ -87,10 +87,10 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
          msg.delete();
          msg.channel.send('Command ended, use **s/help** to restart...').then(msg => msg.delete(2000));
         }
-    });
-   msg.awaitReactions(filter, { max: 1, time: 60000 })
+    })
+   .then(msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
-        const reactiont = collected.second();
+        const reactiont = collected.first();
     if (reactiont.emoji.name === '⏩') {
      reactiont.remove(reactiont.users.last());
             msg.edit({embed: {
@@ -114,7 +114,7 @@ msg.awaitReactions(filter, { max: 1, time: 60000 })
         }else {
          msg.delete();
         }
-   });
+   }));
   });
   }});
    
