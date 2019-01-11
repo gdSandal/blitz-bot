@@ -71,6 +71,7 @@ const filter = (reaction, user) => {
 msg.awaitReactions(filter, { max: 3, time: 60000 })
     .then(collected => {
         const reaction = collected.first();
+         reaction.remove('⏯');
         if (reaction.emoji.name === '⏩') {
          reaction.remove(reaction.users.last());
             msg.edit({embed: {
@@ -320,7 +321,7 @@ client.on('message', msg => {
     
 client.on('message', msg => {
   if (msg.content.startsWith('s/8ball')) {
-    let ball = ["yes", "no", "maybe", "it is possible", "perhaps", "absolutely not", "it is likely", "it is unlikely"];
+    let ball = ["yes", "no", "maybe", "possibly", "perhaps", "absolutely not", "it is likely", "it is unlikely"];
     let ballIndex = Math.round(Math.random() * ball.length);
     msg.channel.send({embed: {
       color: 15868795,
