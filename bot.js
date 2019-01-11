@@ -14,7 +14,7 @@ client.on('message', msg => {
  if (msg.content === 's/test') {
   const mss = msg.channel.awaitMessages(msg => {
    return msg.content.includes("hi");
-  }, {time: 5000});
+  }, 5000);
   msg.channel.send((msg.content).join(" , "));
  }
 });
