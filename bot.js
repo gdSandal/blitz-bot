@@ -13,7 +13,7 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.content === 's/test') {
   const filter = m => m.author.id === msg.author.id;
-  msg.channel.send("Choose value: red or black")
+  msg.channel.send("Choose value")
   .then(msg => {
   msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
   .then(collected => {
@@ -30,6 +30,10 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content === 's/roulette') {
+  
+  let oe = ["odd", "even"];
+  let oei = Math.floor(Math.random() * oe.length);
+  
   const filter = m => m.author.id === msg.author.id;
   msg.channel.send({embed: {
    color: 15868795,
@@ -54,8 +58,10 @@ client.on('message', msg => {
   msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
   .then(collected => {
    const r = collected.first();
-   if (r.content === 'red') {
-   msg.channel.send("test ok");
+   if (r.content === 'odd') {
+    if (oei === 'odd') {
+   msg.channel.send("WIN");
+    }
    }else {
    msg.channel.send("invalid");
    }
