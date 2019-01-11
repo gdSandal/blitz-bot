@@ -211,11 +211,11 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content.startsWith('s/kick')) {
-   let kuser = msg.guild.member(msg.mentions.users.first());
+   let kuser = msg.mentions.members.first();
    let reason = msg.content.split(" ").slice(26);
   if (!msg.member.hasPermission("MANAGE MESSAGES")) return msg.reply("error");
   if (kuser.hasPermission("MANAGE MESSAGES")) return msg.reply("error");
-      msg.guild.member(kuser).kick(reason);
+      msg.guild.member(kuser).kick();
       msg.channel.send("Kicked " + kuser + " | " + reason).then(msg => msg.delete(6000));
 }
 });
