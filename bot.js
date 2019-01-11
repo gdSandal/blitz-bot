@@ -12,14 +12,15 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
-  const filter = (msg, user) => {
-    return ['hi', 'hello'].includes(msg) && user.id === msg.author.id;
-  }
-  msg.awaitMessages(filter, { max: 1, time: 6000 })
-    .then(collected => {
-        const res = collected.first();
-  msg.channel.send(res);
- }}
+  let c = ["red", "black"];
+  let ci = Math.floor(Math.random() * c.length);
+  const filter = msg.includes(["red", "black"]);
+  msg.channel.send("Choose value: red or black. Deleting in 4s").then(msg => msg.delete(4000));
+  msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
+  .then(collected => {
+   msg.channel.send("test ok");
+});
+ }
 });
   
 
