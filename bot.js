@@ -18,7 +18,7 @@ client.on('message', msg => {
   msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
   .then(collected => {
    const r = collected.first();
-   if (r.msg.content === 'red') {
+   if (r.content === 'red') {
    msg.channel.send("test ok");
    }else {
    msg.channel.send("invalid");
