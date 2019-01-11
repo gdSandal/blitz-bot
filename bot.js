@@ -26,6 +26,43 @@ client.on('message', msg => {
 });
 });
 }});
+
+
+client.on('message', msg => {
+ if (msg.content === 's/roulette') {
+  const filter = m => m.author.id === msg.author.id;
+  msg.channel.send({embed: {
+   color: 15868795,
+   title: "Roulette!",
+   description: "Send a message with your bet!",
+   fields:
+   [{
+    name: "__ODD/EVEN BET__",
+    value: "type: '**odd**' or '**even**'"
+   },
+    {
+    name: "__NUMBER BET__",
+    value: "type any number **0-36**"
+    },
+    {
+     name: "__COLOR BET__",
+     value: "type: '**red**' or '**black**'"
+    },
+    ],
+  }})
+  .then(msg => {
+  msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
+  .then(collected => {
+   const r = collected.first();
+   if (r.content === 'red') {
+   msg.channel.send("test ok");
+   }else {
+   msg.channel.send("invalid");
+   }
+});
+});
+}});
+
   
 
 client.on('message', msg => {
