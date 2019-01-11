@@ -211,6 +211,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content.startsWith('s/kick')) {
+  if (!msg.member.hasPermission("MANAGE MESSAGES")) return msg.reply("error");
    let kuser = msg.mentions.members.first();
       kuser.kick();
 }
