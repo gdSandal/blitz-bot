@@ -73,7 +73,6 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
         const reaction = collected.first();
         if (reaction.emoji.name === '⏩') {
          reaction.remove(reaction.users.last());
-         reaction.remove(reaction.client.first());
             msg.edit({embed: {
    color: 15868795,
    title: '**Help Page 3**',
@@ -207,6 +206,17 @@ client.on('message', msg => {
    let args = msg.content.split(" ").slice(1);
       msg.channel.bulkDelete(args);
       msg.channel.send("Cleared " + args.join(" ") + " messages").then(msg => msg.delete(4000));
+}
+});
+
+client.on('message', msg => {
+  if (msg.content.startsWith('s/kick')) {
+  if (!msg.member.hasPermission("MANAGE MESSAGES")) return msg.reply("error");
+   let kuser = msg.guild.member(msg.mentions.users.first());
+   let reason = msg.content.split(" ").slice(26);
+   if (kuser.hasPermission("MANAGE MESSAGES")) return msg.reply("error");
+      msg.guild.member(kuser).kick();
+      msg.channel.send("Kicked " + kuser + " | " + reason).then(msg => msg.delete(6000));
 }
 });
 
