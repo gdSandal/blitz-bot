@@ -12,7 +12,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
-  const filter = msg.author.id;
+  const filter = m => m.author.id === msg.author.id;
   msg.channel.send("Choose value: red or black")
   .then(msg => {
   msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
