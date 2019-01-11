@@ -31,8 +31,8 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content === 's/roulette') {
   
-  let oe = ["odd", "even"];
-  let oei = Math.floor(Math.random() * oe.length);
+  let rb = ["red", "black"];
+  let rbi = Math.floor(Math.random() * rb.length);
   let nb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36"];
   let nbi = Math.floor(Math.random() * nb.length);
   
@@ -43,10 +43,6 @@ client.on('message', msg => {
    description: "Send a message with your bet!",
    fields:
    [{
-    name: "__ODD/EVEN BET__",
-    value: "type: '**odd**' or '**even**'"
-   },
-    {
     name: "__NUMBER BET__",
     value: "type any number **0-36**"
     },
@@ -60,14 +56,20 @@ client.on('message', msg => {
   msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
   .then(collected => {
    const r = collected.first();
-   if (r.content === "odd") {
-    if (r.content === oe[oei]) {
-     msg.channel.send("O/E WIN");
+   if (r.content === "red") {
+    if (r.content === rb[rbi]) {
+     msg.channel.send("**You Bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + "**WIN!**");
     }else {
-     msg.channel.send("O/E LOSS");
+     msg.channel.send("**You Bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + "**LOSS**");
+    }
+   }else if (r.content === "black") {
+    if (r.content === rb[rbi]) {
+     msg.channel.send("**You Bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + "**WIN!**");
+    }else {
+     msg.channel.send("**You Bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + "**LOSS**");
     }
    }else if (r.content === nb[nbi]) {
-    msg.channel.send("WIN");
+    msg.channel.send("**You Bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + "**WIN**");
    }else {
    msg.channel.send("invalid");
    }
