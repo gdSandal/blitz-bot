@@ -12,13 +12,16 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
-  let c = ["red", "black"];
-  let ci = Math.floor(Math.random() * c.length);
-  const filter = msg.includes("red");
+  const filter = msg.author.id;
   msg.channel.send("Choose value: red or black. Deleting in 4s").then(msg => msg.delete(4000));
   msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
   .then(collected => {
+   const r = collected.first();
+   if (r.content === 'red') {
    msg.channel.send("test ok");
+   }else {
+   msg.channel.send("invalid");
+   }
 });
  }
 });
