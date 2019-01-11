@@ -31,7 +31,7 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content === 's/roulette') {
   
-  let oe = ["odd", "even", "odd", "even"];
+  let oe = ["odd", "even"];
   let oei = Math.floor(Math.random() * oe.length);
   
   const filter = m => m.author.id === msg.author.id;
@@ -58,10 +58,10 @@ client.on('message', msg => {
   msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
   .then(collected => {
    const r = collected.first();
-   if (r.content === oei) {
+   if (r.content === oe[oei]) {
    msg.channel.send("WIN");
    }else {
-   msg.channel.send("invalid" + oei);
+   msg.channel.send("invalid");
    }
 });
 });
