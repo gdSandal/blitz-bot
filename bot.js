@@ -12,7 +12,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
-  const mss = await msg.channel.awaitMessages(msg => {
+  const mss = msg.channel.awaitMessages(msg => {
    return msg.content.includes("hi");
   }, {time: 5000});
   msg.channel.send((msg.content).join(" , "));
