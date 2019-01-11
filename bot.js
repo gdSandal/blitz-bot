@@ -70,7 +70,9 @@ const filter = (reaction, user) => {
   msg.react('⏯').then(() => msg.react('⏩'));
 msg.awaitReactions(filter, { max: 3, time: 60000 })
     .then(collected => {
+        const pause = msg.react('⏯');
         const reaction = collected.first();
+ pause.remove();
         if (reaction.emoji.name === '⏩') {
          reaction.remove(reaction.users.last());
             msg.edit({embed: {
@@ -152,7 +154,6 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
    }))
  .then(msg.awaitReactions(filter, { max: 1, time: 60000 })
     .then(collected => {
- msg.reaction.remove("⏯");
         const reactiont = collected.first();
     if (reactiont.emoji.name === '⏩') {
      reactiont.remove(reactiont.users.last());
