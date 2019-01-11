@@ -58,10 +58,8 @@ client.on('message', msg => {
   msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
   .then(collected => {
    const r = collected.first();
-   if (r.content === 'odd') {
-    if (oei === 'odd') {
+   if (r.content === oei) {
    msg.channel.send("WIN");
-    }
    }else {
    msg.channel.send("invalid");
    }
