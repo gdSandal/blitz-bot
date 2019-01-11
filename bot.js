@@ -58,18 +58,22 @@ client.on('message', msg => {
    const r = collected.first();
    if (r.content === "red") {
     if (r.content === rb[rbi]) {
-     msg.channel.send("**You Bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " **WIN!**");
+     msg.channel.send("**You bet on: ** 🔴 " + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " **WIN!**");
     }else {
-     msg.channel.send("**You Bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " **LOSS**");
+     msg.channel.send("**You bet on: ** 🔴" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " **LOSS**");
     }
    }else if (r.content === "black") {
     if (r.content === rb[rbi]) {
-     msg.channel.send("**You Bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " **WIN!**");
+     msg.channel.send("**You bet on: ** ⚫️" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " **WIN!**");
     }else {
-     msg.channel.send("**You Bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " **LOSS**");
+     msg.channel.send("**You bet on: ** ⚫️" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " **LOSS**");
     }
-   }else if (r.content === nb) {
-    msg.channel.send("**You Bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " **WIN**");
+   }else if (r.content === "0", "1", "2") {
+    if (r.content === nb[nbi]) {
+     msg.channel.send("**You bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " **WIN**");
+    }else {
+     msg.channel.send("**You bet on: **" + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " **LOSS");
+    }
    }else {
    msg.channel.send("invalid bet");
    }
