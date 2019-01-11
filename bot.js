@@ -13,7 +13,8 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.content === 's/test') {
   const filter = msg.author.id;
-  msg.channel.send("Choose value: red or black. Deleting in 4s").then(msg => msg.delete(4000));
+  msg.channel.send("Choose value: red or black. Deleting in 4s")
+  .then(msg => {
   msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
   .then(collected => {
    const r = collected.first();
@@ -22,6 +23,7 @@ client.on('message', msg => {
    }else {
    msg.channel.send("invalid");
    }
+  });
 });
  }
 });
