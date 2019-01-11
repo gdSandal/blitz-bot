@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+let xp = require(".xp.json");
 
 client.on('ready', () => {
  client.user.setPresence({
