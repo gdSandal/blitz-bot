@@ -104,7 +104,7 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
     },
     ],
    footer: {
-    text: 'Page [3/3] - (page is no longer active)'
+    text: 'Page [3/3]'
    }
    }});
         }else {
@@ -165,8 +165,8 @@ msg.awaitReactions(filter, { max: 3, time: 60000 })
     value: '-  Clears <amount> messages'
    },
     {
-     name: 'In Progress',
-     value: '1/9'
+     name: '**s/kick** *<mention>*',
+     value: '-  Kicks <mentioned> user'
     },
     ],
    footer: {
