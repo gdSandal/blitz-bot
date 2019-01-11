@@ -70,8 +70,8 @@ const filter = (reaction, user) => {
   msg.react('⏯').then(() => msg.react('⏩'));
 msg.awaitReactions(filter, { max: 3, time: 60000 })
     .then(collected => {
+         msg.reaction.remove('⏯');
         const reaction = collected.first();
-         reaction.remove('⏯');
         if (reaction.emoji.name === '⏩') {
          reaction.remove(reaction.users.last());
             msg.edit({embed: {
