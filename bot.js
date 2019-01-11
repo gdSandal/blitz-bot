@@ -61,7 +61,7 @@ client.on('message', msg => {
    if (r.content === oei) {
    msg.channel.send("WIN");
    }else {
-   msg.channel.send("invalid");
+   msg.channel.send("invalid" + oei);
    }
 });
 });
