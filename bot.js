@@ -12,11 +12,14 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content === 's/test') {
-  const mss = msg.channel.awaitMessages(msg => {
-   return msg.content.includes("hi");
-  }, 5000);
-  msg.channel.send("ok");
- }
+  const filter = (msg, user) => {
+    return ['hi', 'hello'].includes(msg) && user.id === msg.author.id;
+  }
+  msg.awaitMessages(filter, { max: 1, time: 6000 })
+    .then(collected => {
+        const res = collected.first();
+  msg.channel.send(res);
+ }}
 });
   
 
