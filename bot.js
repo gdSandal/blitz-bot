@@ -31,7 +31,7 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content === 's/roulette') {
   
-  let oe = ["odd", "even"];
+  let oe = ["odd", "even", "odd", "even"];
   let oei = Math.floor(Math.random() * oe.length);
   
   const filter = m => m.author.id === msg.author.id;
