@@ -215,7 +215,7 @@ client.on('message', msg => {
    let reason = msg.content.split(" ").slice(26);
   if (!msg.member.hasPermission("MANAGE MESSAGES")) return msg.reply("error");
   if (kuser.hasPermission("MANAGE MESSAGES")) return msg.reply("error");
-      msg.guild.member(kuser).kick();
+      kuser.kick();
       msg.channel.send("Kicked " + kuser + " | " + reason).then(msg => msg.delete(6000));
 }
 });
