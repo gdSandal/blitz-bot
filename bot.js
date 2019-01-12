@@ -84,7 +84,7 @@ client.on('message', msg => {
     if (r.content.toLowerCase() === rb[rbi]) {
      msg.channel.send({embed: {
       color:15868795,
-      title: "**You bet on: ** ⚫️ [BLACK]",
+      title: "**You bet on: ** ⬛️ [BLACK]",
       description: "**Roulette Result: **" + rb[rbi] + " " + nb[nbi],
       fields: [{
        name: "__Your bet is a:__",
@@ -95,7 +95,7 @@ client.on('message', msg => {
     }else {
         msg.channel.send({embed: {
       color:15868795,
-      title: "**You bet on: ** ⚫️ [BLACK]",
+      title: "**You bet on: ** ⬛️ [BLACK]",
       description: "**Roulette Result: **" + rb[rbi] + " " + nb[nbi],
       fields: [{
        name: "__Your bet is a:__",
