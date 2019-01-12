@@ -68,7 +68,7 @@ client.on('message', msg => {
     }else {
      msg.channel.send("**You bet on: ** ⚫️ " + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " \n**LOSS**");
     }
-   }else if (r.content === "0" || "1" || "2" || "3" {
+   }else if (r.content === "0" || "1" || "2" || "3") {
     if (r.content === nb[nbi]) {
      msg.channel.send("**You bet on: ** #️⃣ " + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " \n**WIN** 🎉");
     }else {
