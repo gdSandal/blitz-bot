@@ -56,7 +56,7 @@ client.on('message', msg => {
   msg.channel.awaitMessages(filter, { max: 1, time: 60000 })
   .then(collected => {
    const x = collected.first();
-   const r = x.toLowerCase();
+   const r = x.shift().toLowerCase();
    if (r.content === "red") {
     if (r.content === rb[rbi]) {
      msg.channel.send("**You bet on: ** 🔴 " + r.content + "\n**Roulette Result:** " + rb[rbi] + " " + nb[nbi] + " \n**WIN!** 🎉");
