@@ -148,7 +148,7 @@ client.on('message', msg => {
  let xI = Math.floor(Math.random() * x.length);
  let y = ["💰", "🍒", "🍊", "💎", "🍀", "🍓", "💵", "🎲", "🎯",];
  let yI = Math.floor(Math.random() * y.length);
-msg.channel.send('```|[=𝕊𝕃𝕆𝕋𝕊=]|\n|=========|      RESULT::\n|{🍊🎯🍓}|      [...]\n|=========|```');
+msg.channel.send('```|[=𝕊𝕃𝕆𝕋𝕊=]|\n|=========|      RESULT::\n|{🍊🎯🍓}|      [...]\n|=========|```')
 .then((msg)=> {
 setTimeout(function(){
 msg.edit('```|[=𝕊𝕃𝕆𝕋𝕊=]|\n|=========|      RESULT::\n|{🍒💎💰}|      [...]\n|=========|```');
