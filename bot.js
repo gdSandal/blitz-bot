@@ -61,7 +61,7 @@ client.on('message', msg => {
      msg.channel.send({embed: {
       color:15868795,
       title: "**You bet on: ** 🔴 [RED]",
-      description: "**Roulette Result:**" + rb[rbi] + " " + nb[nbi],
+      description: "**Roulette Result: **" + rb[rbi] + " " + nb[nbi],
       fields: [{
        name: "__Your bet is a:__",
        value: "**WIN!** 🎉",
@@ -72,7 +72,7 @@ client.on('message', msg => {
      msg.channel.send({embed: {
       color:15868795,
       title: "**You bet on: ** 🔴 [RED]",
-      description: "**Roulette Result:**" + rb[rbi] + " " + nb[nbi],
+      description: "**Roulette Result: **" + rb[rbi] + " " + nb[nbi],
       fields: [{
        name: "__Your bet is a:__",
        value: "**LOSS**",
@@ -85,7 +85,7 @@ client.on('message', msg => {
      msg.channel.send({embed: {
       color:15868795,
       title: "**You bet on: ** ⚫️ [BLACK]",
-      description: "**Roulette Result:**" + rb[rbi] + " " + nb[nbi],
+      description: "**Roulette Result: **" + rb[rbi] + " " + nb[nbi],
       fields: [{
        name: "__Your bet is a:__",
        value: "**WIN!** 🎉",
@@ -96,7 +96,7 @@ client.on('message', msg => {
         msg.channel.send({embed: {
       color:15868795,
       title: "**You bet on: ** ⚫️ [BLACK]",
-      description: "**Roulette Result:**" + rb[rbi] + " " + nb[nbi],
+      description: "**Roulette Result: **" + rb[rbi] + " " + nb[nbi],
       fields: [{
        name: "__Your bet is a:__",
        value: "**LOSS**",
@@ -109,7 +109,7 @@ client.on('message', msg => {
              msg.channel.send({embed: {
       color:15868795,
       title: "**You bet on: ** #️⃣ [" + r.content + "]",
-      description: "**Roulette Result:**" + rb[rbi] + " " + nb[nbi],
+      description: "**Roulette Result: **" + rb[rbi] + " " + nb[nbi],
       fields: [{
        name: "__Your bet is a:__",
        value: "**WIN 🎉**",
@@ -120,7 +120,7 @@ client.on('message', msg => {
             msg.channel.send({embed: {
       color:15868795,
       title: "**You bet on: ** #️⃣ [" + r.content + "]",
-      description: "**Roulette Result:**" + rb[rbi] + " " + nb[nbi],
+      description: "**Roulette Result: **" + rb[rbi] + " " + nb[nbi],
       fields: [{
        name: "__Your bet is a:__",
        value: "**LOSS**",
