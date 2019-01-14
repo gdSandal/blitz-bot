@@ -31,12 +31,8 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content ==='s/dev') {
   let test = ["one", "two", "three"];
-  test.some(word => msg.content.contains(word)).then(msg => {
+ if (test.some(word => msg.content.contains(word)).then(msg => {
    msg.channel.send("thats a word");
-  }else {
-   msg.channel.send('that word is ok');
-    break;
-  }
 });
 }});
 
