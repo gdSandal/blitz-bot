@@ -31,15 +31,12 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content ==='s/dev') {
   let test = ["one", "two", "three"];
-for (var i = 0; i < test.length; i++) {
-  if (msg.content.includes(test[i])) {
-    // message.content contains a forbidden word;
-    // delete message, log, etc.
+  test.some(word => msg.content.contains(word)) {
    msg.channel.send("thats a word");
   }else {
    msg.channel.send('that word is ok');
     break;
-  }}
+  }
 }});
 
 
