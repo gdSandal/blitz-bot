@@ -11,6 +11,16 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+ if (msg.content === 'devsanctum') {
+  msg.channel.send({embed: {
+   color: 15868795,
+   image: {
+    url: "http://i.imgur.com/j8qJAoH.jpg"
+   }
+  }});
+ }});
+
+client.on('message', msg => {
  if (msg.content === 's/test') {
   const filter = m => m.author.id === msg.author.id;
   msg.channel.send("Choose value")
