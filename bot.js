@@ -451,7 +451,7 @@ client.on('message', msg => {
     let outcomeIndex = Math.round(Math.random() * outcome.length);
     msg.channel.send({embed: {
       color: 15868795,
-      description: "Coinflip Result:" outcome[outcomeIndex] 
+      description: "Coinflip Result:" + outcome[outcomeIndex] 
 }});
   }
 });
