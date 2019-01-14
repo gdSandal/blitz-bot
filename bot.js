@@ -29,6 +29,18 @@ client.on('message', msg => {
 
 
 client.on('message', msg => {
+ if (msg.content ==='s/dev') {
+  let test = ["one", "two", "three"];
+for (var i = 0; i < test.length; i++) {
+  if (msg.content.includes(test[i])) {
+    // message.content contains a forbidden word;
+    // delete message, log, etc.
+    break;
+  }}
+}});
+
+
+client.on('message', msg => {
  if (msg.content === 's/roulette') {
   
   let rb = ["red", "black"];
