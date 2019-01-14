@@ -11,16 +11,6 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.content === 'devsanctum') {
-  msg.channel.send({embed: {
-   color: 15868795,
-   image: {
-    url: "http://i.imgur.com/j8qJAoH.jpg"
-   }
-  }});
- }});
-
-client.on('message', msg => {
  if (msg.content === 's/test') {
   const filter = m => m.author.id === msg.author.id;
   msg.channel.send("Choose value")
@@ -170,7 +160,7 @@ setTimeout(function(){
 msg.edit('```|[=𝕊𝕃𝕆𝕋𝕊=]|\n|=========|      Spinning....\n|{💰🍊🎲}|      [....]\n|=========|```');
 }, 1500);
 setTimeout(function(){
-msg.edit('```|[=𝕊𝕃𝕆𝕋𝕊=]|\n|=========|      RESULT::\n|{' + s[sI] + x[xI] + y[yI] + '}|      [' + s[sI] + x[xI] + y[yI] + ']\n|=========|```');
+msg.edit('```|[=𝕊𝕃𝕆𝕋𝕊=]|\n|=========|      🎰 RESULT::\n|{' + s[sI] + x[xI] + y[yI] + '}|      [' + s[sI] + x[xI] + y[yI] + ']\n|=========|```');
 }, 2000);
 });
 }});
@@ -362,7 +352,7 @@ client.on('message', msg => {
   let randomcolor = Math.floor(Math.random() * 10000000);
   msg.channel.send({embed: {
    color: randomcolor,
-   description: "Random color [decimal]: " + randomcolor
+   description: "🎨 Random color [decimal]: " + randomcolor
 }});
   }
 });
@@ -461,7 +451,7 @@ client.on('message', msg => {
     let outcomeIndex = Math.round(Math.random() * outcome.length);
     msg.channel.send({embed: {
       color: 15868795,
-      description: "<a:coin1:532740590358757389><a:coin2:532740637473112094>" + "   Coinflip Result:\n" + "<a:coin3:532740690896093195><a:coin4:532740736735641611>          " + outcome[outcomeIndex] 
+      description: "Coinflip Result:" outcome[outcomeIndex] 
 }});
   }
 });
@@ -472,13 +462,13 @@ client.on('message', msg => {
     let ballIndex = Math.round(Math.random() * ball.length);
     msg.channel.send({embed: {
       color: 15868795,
-      description: "8 ball says: " + ball[ballIndex]
+      description: "🎱 8 ball says: " + ball[ballIndex]
 }});
   }
 });
 
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find(ch => ch.name === args);
+  const channel = member.guild.channels.find(ch => ch.name === "sanctum");
   if (!channel) return;
   channel.send(`Welcome to the server! ${member}`);
 });
