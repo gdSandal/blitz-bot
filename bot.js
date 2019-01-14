@@ -37,7 +37,7 @@ for (var i = 0; i < test.length; i++) {
     // delete message, log, etc.
    msg.channel.send("thats a word");
   }else {
-   msg.channel.send('that word is ok);
+   msg.channel.send('that word is ok');
     break;
   }}
 }});
