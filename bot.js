@@ -35,6 +35,9 @@ for (var i = 0; i < test.length; i++) {
   if (msg.content.includes(test[i])) {
     // message.content contains a forbidden word;
     // delete message, log, etc.
+   msg.channel.send("thats a word");
+  }else {
+   msg.channel.send('that word is ok);
     break;
   }}
 }});
