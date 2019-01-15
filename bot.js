@@ -9,7 +9,14 @@ client.on('ready', () => {
     }
 });
 });
-
+  
+client.on('message', msg => {
+ if (msg.content.startsWith("s/role")) {
+  let args = msg.content.split(" ").slice(23);
+  msg.channel.send(args);
+ }
+});
+  
 client.on('message', msg => {
  if (msg.content === 's/test') {
   const filter = m => m.author.id === msg.author.id;
@@ -341,7 +348,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content.startsWith('s/kick')) {
-  if (!msg.member.hasPermission("MANAGE MESSAGES")) return msg.reply("error");
+  if (!msg.member.hasPermission("KICK MEMBERS")) return msg.reply("error");
    let kuser = msg.mentions.members.first();
       kuser.kick();
 }
@@ -470,7 +477,7 @@ client.on('message', msg => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === "sanctum");
   if (!channel) return;
-  channel.send(`Welcome to the server! ${member}`);
+  channel.send(`Welcome to SANCTUM! ${member}`);
 });
 
 client.on('message', msg => {
