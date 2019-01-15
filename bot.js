@@ -13,7 +13,7 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.content.startsWith("s/role")) {
   let args = msg.content.split(" ").slice(23);
-  msg.channel.send(args);
+  msg.channel.send(args + "uh");
  }
 });
   
