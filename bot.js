@@ -12,7 +12,8 @@ client.on('ready', () => {
   
 client.on('message', msg => {
  if (msg.content.startsWith("s/role")) {
-  let args = msg.content.split(" ").slice(23);
+  let rmember = msg.guild.member(msg.mentions.users.first());
+  let args = msg.content.split(" ").slice(rmember);
   msg.channel.send(args + "uh");
  }
 });
