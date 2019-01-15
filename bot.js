@@ -11,10 +11,11 @@ client.on('ready', () => {
 });
   
 client.on('message', msg => {
+ if (msg.author.bot) return;
  if (msg.content.startsWith("s/role")) {
   let rmember = msg.guild.member(msg.mentions.users.first());
-  let args = msg.content.split(" ").slice("s/role" + rmember);
-  msg.channel.send("no");
+  let args = msg.content.split(" ").slice(6);
+  msg.channel.send(args);
  }
 });
   
