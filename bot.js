@@ -14,7 +14,7 @@ client.on('message', msg => {
  if (msg.author.bot) return;
  if (msg.content.startsWith("s/role")) {
   let rmember = msg.guild.member(msg.mentions.users.first());
-  let args = msg.content.split(" ").slice(6);
+  let args = msg.content.split(" ").slice(2);
   msg.channel.send(args);
  }
 });
