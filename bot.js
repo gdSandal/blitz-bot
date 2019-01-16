@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const ccc = "null";
 
 client.on('ready', () => {
  client.user.setPresence({
@@ -8,6 +9,13 @@ client.on('ready', () => {
         type: 0
     }
 });
+});
+
+client.on('message', msg => {
+ if (msg.content === 's/change') {
+  let ccc = "new";
+  msg.channel.send(ccc);
+ }
 });
 
 client.on('message', msg => {
