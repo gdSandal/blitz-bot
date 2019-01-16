@@ -9,6 +9,17 @@ client.on('ready', () => {
     }
 });
 });
+
+client.on('message', msg => {
+ msg.awaitReactions({ max: 5, time: 180000 })
+    .then(collected => {
+        const reaction = collected.first();
+        const star = '⭐️';
+        if (reaction.emoji.name === '⭐️') {
+         if (reaction.count === 1) {
+          msg.channel.send('function ok!');
+  }}});
+});
   
 client.on('message', msg => {
  if (msg.author.bot) return;
@@ -94,7 +105,7 @@ client.on('message', msg => {
     if (r.content.toLowerCase() === rb[rbi]) {
      msg.channel.send({embed: {
       color:15868795,
-      title: "**You bet on: [BLACK]",
+      title: "**You bet on:** [BLACK]",
       description: "**Roulette Result: **" + rb[rbi] + " " + nb[nbi],
       fields: [{
        name: "__Your bet is a:__",
