@@ -14,9 +14,8 @@ client.on('message', msg => {
  msg.awaitReactions({ max: 5, time: 180000 })
     .then(collected => {
         const reaction = collected.first();
-        const star = '⭐️';
         if (reaction.emoji.name === '⭐️') {
-         if (reaction.count === 1) {
+         if (msg.reaction.count === 1) {
           msg.channel.send('function ok!');
   }}});
 });
