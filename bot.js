@@ -40,19 +40,15 @@ client.on('message', msg => {
   setTimeout(function(){
    msg.edit("**Time has stopped**, Resumes in: 3");
   }, 2000);
-  }).then((msg) => {
-  setTimeout(function(){
+   setTimeout(function(){
    msg.edit("**Time has stopped**, Resumes in: 2");
   }, 3000);
-  }).then((msg) => {
   setTimeout(function(){
    msg.edit("**Time has stopped**, Resumes in: 1");
   }, 4000);
-  }).then((msg) => {
   setTimeout(function(){
   msg.edit("**時 は 動き出す**\nChannel unfrozen, Time resumes");
   }, 5000);
-  });
  }});
 
 client.on('message', msg => {
