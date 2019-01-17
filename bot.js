@@ -26,6 +26,12 @@ client.on('message', msg => {
    text: "Channel freeze lasts for 10 seconds"
   },
  }});
+  setTimeout(function(){
+  msg.edit({ embed: {
+   title: "時 は 動き出す",
+   descritption: "Channel unfrozen, time resumes"
+  }});
+  }, 9000);
  msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
   SEND_MESSAGES: false
   });
@@ -34,12 +40,6 @@ client.on('message', msg => {
    SEND_MESSAGES: true
   });
   }, 10000);
-  setTimeout(function(){
-  msg.edit({ embed: {
-   title: "時 は 動き出す",
-   descritption: "Channel unfrozen, time resumes"
-  }});
-  }, 9000);
  }});
 
 client.on('message', msg => {
