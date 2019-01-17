@@ -33,9 +33,10 @@ client.on('message', msg => {
   msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
   });
-  }, 5000).then(() => {
-  msg.channel.send("**時 は 動き出す**\nChannel unfrozen, Time resumes").delete(2000);
-  });
+  }, 5000);
+  setTimeout(function(){
+  msg.channel.send("**時 は 動き出す**\nChannel unfrozen, Time resumes");
+  }, 100);
  }});
 
 client.on('message', msg => {
