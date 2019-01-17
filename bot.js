@@ -38,13 +38,13 @@ client.on('message', msg => {
    msg.channel.send("**Time has stopped**, Resumes in: 4");
   }, 100);
   setTimeout(function(){
-   msg.channel.send("**Time has stopped**, Resumes in: 3");
+   msg.edit("**Time has stopped**, Resumes in: 3");
   }, 2000);
   setTimeout(function(){
-   msg.channel.send("**Time has stopped**, Resumes in: 2");
+   msg.edit("**Time has stopped**, Resumes in: 2");
   }, 3000);
   setTimeout(function(){
-   msg.channel.send("**Time has stopped**, Resumes in: 1");
+   msg.edit("**Time has stopped**, Resumes in: 1");
   }, 4000);
   setTimeout(function(){
   msg.edit("**時 は 動き出す**\nChannel unfrozen, Time resumes");
