@@ -19,7 +19,7 @@ client.on('message', msg => {
   title: "Channel locked for 5s",
   description: "[ZA~WARUDO](https://youtu.be/-FT23AwNPOM) | Time stopped",
   image: {
-   url: "http://i.imgur.com/LOVtYFk.jpg"
+   url: "http://imgur.com/LOVtYFk"
   },
  }});
   
