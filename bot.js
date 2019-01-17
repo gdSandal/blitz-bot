@@ -12,7 +12,9 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/mute")) {
- msg.guild.channels.find('name', '『private』').overwritePermissions(msg.guild.defaultRole, {
+  let args = msg.content.split(" ").slice(1);
+  let chn = args.join("-")
+ msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
   SEND_MESSAGES: false
  });
   msg.channel.send("muted");
