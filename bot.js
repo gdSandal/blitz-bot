@@ -19,7 +19,7 @@ client.on('message', msg => {
   title: "Channel temporarily locked",
   description: "[ZA~WARUDO](https://youtu.be/-FT23AwNPOM) | Time stopped",
   image: {
-   url: "http://i.imgur.com/LOVtYFk.jpg"
+   url: "https://cdn.discordapp.com/attachments/470359851227414532/535490838327853088/image0.gif"
   },
   footer: {
    text: "Channel freeze lasts for 5 seconds"
