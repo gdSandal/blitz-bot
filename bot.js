@@ -11,13 +11,13 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.content.toLowerCase().startsWith("s/mute")) {
+ if (msg.content.startsWith("s/mute")) {
  msg.guild.channels.find('name', "『private』").overwritePermissions("everyone", {
-  SEND_MESSAGES: false
+  "SEND MESSAGES": false
  }).then(() => {
   setTimeout(function(){
   msg.guild.channels.find('name', "『private』").overwritePermissions("everyone", {
-   SEND_MESSAGES: true
+   "SEND MESSAGES": true
   }, 5000);
   });
  });
