@@ -22,17 +22,16 @@ client.on('message', msg => {
    url: "http://i.imgur.com/LOVtYFk.jpg"
   },
  }});
+  
  msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
   SEND_MESSAGES: false
-  }).then(() => {
+  });
   setTimeout(function(){
   msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
   });
   }, 5000);
-});
-});
-}});
+ }});
 
 client.on('message', msg => {
  msg.awaitReactions({ max: 5, time: 180000 })
