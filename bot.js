@@ -29,8 +29,8 @@ client.on('message', msg => {
   setTimeout(function(){
   msg.edit({ embed: {
    color: 15868795,
-   title: "**時 は 動き出す** Time Resumed",
-   descritption: "Channel is unlocked"
+   title: "__時 は 動き出す__ ~ **Time Resumes**",
+   description: "Channel has been unlocked"
   }});
   }, 9000);
  });
