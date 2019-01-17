@@ -25,7 +25,7 @@ client.on('message', msg => {
          if (msg.reaction.count === 1) {
           msg.channel.send('function ok!');
   }}});
-});y
+});
   
 client.on('message', msg => {
  if (msg.author.bot) return;
