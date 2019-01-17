@@ -16,8 +16,8 @@ client.on('message', msg => {
   let chn = args.join("")
  msg.channel.send({ embed: {
   color: 15868795,
-  title: "[ZA~WARUDO](https://youtu.be/-FT23AwNPOM)",
-  description: "Channel muted for 5 seconds",
+  title: "Channel locked for 5s",
+  description: "[ZA~WARUDO](https://youtu.be/-FT23AwNPOM) | Time stopped",
   image: {
    url: "http://i.imgur.com/LOVtYFk.jpg"
   },
@@ -31,8 +31,8 @@ client.on('message', msg => {
   }).then(() => {
   msg.edit({ embed: {
   color: 15868795,
-  title: "[時 は 動き出す](https://youtu.be/-FT23AwNPOM)",
-  description: "Channel unmuted, time continues...",
+  description: "[時 は 動き出す](https://youtu.be/-FT23AwNPOM) | Time resumes...",
+  title: "Channel unlocked!",
   thumbnail: {
    url: "http://i.imgur.com/LOVtYFk.jpg"
   },
