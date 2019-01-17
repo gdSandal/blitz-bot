@@ -16,10 +16,13 @@ client.on('message', msg => {
   let chn = args.join("")
  msg.channel.send({ embed: {
   color: 15868795,
-  title: "Channel locked for 5s",
+  title: "Channel temporarily locked",
   description: "[ZA~WARUDO](https://youtu.be/-FT23AwNPOM) | Time stopped",
   image: {
-   url: "http://imgur.com/LOVtYFk"
+   url: "http://i.imgur.com/LOVtYFk.jpg"
+  },
+  footer: {
+   text: "Channel freeze lasts for 5 seconds"
   },
  }});
   
@@ -27,6 +30,7 @@ client.on('message', msg => {
   SEND_MESSAGES: false
   });
   setTimeout(function(){
+   msg.channel.send("**時 は 動き出す**\nChannel unfrozen, Time resumes").delete(2000);
   msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
   });
