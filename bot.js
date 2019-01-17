@@ -14,12 +14,15 @@ client.on('message', msg => {
  if (msg.content.startsWith("s/mute")) {
   let args = msg.content.split(" ").slice(1);
   let chn = args.join("")
- msg.channel.send("ZA WARUDO");
+ msg.channel.send({ embed: {
+  title: "ZA WARUDO",
+  description: "Channel muted for 5 seconds"
+ }});
  msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
   SEND_MESSAGES: false
   }).then(() => {
   setTimeout(function(){
-  msg.guild.channel.s.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
+  msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
   }, 5000);
   });
