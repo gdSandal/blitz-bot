@@ -11,6 +11,21 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+ if (msg.content.toLowerCase().startsWith("s/theworld")) {
+     let args = msg.content.split(" ").slice(1);
+     let chn = args.join("-")
+ msg.guild.channels.find('name', chn).overwritePermissions("everyone", {
+  SEND_MESSAGES: false
+ }).then(() => {
+  setTimeout(function(){
+  msg.guild.channels.find('name', chn).overwritePermissions("everyone", {
+   SEND_MESSAGES: true
+  }, 5000);
+  });
+ });
+}});
+
+client.on('message', msg => {
  msg.awaitReactions({ max: 5, time: 180000 })
     .then(collected => {
         const reaction = collected.first();
