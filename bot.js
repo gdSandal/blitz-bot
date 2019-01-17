@@ -36,7 +36,7 @@ client.on('message', msg => {
   }, 5000);
   setTimeout(function(){
    msg.channel.send("**Time has stopped**, Resumes in: 4");
-  }, 100).then((msg) => {
+  }, 100).then(() => {
   setTimeout(function(){
    msg.edit("**Time has stopped**, Resumes in: 3");
   }, 2000);
