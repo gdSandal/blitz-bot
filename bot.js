@@ -13,11 +13,6 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.content.startsWith("s/theworld")) {
   if (!msg.member.hasPermission("MANAGE PERMISSIONS")) return;
-  let args = msg.content.split(" ").slice(1);
-  let f = args.join("");
-  let t = f + 000;
-  if (args.includes("abcdefghijklmnop")) return;
-  if (args.length > 2) return;
  msg.channel.send({ embed: {
   color: 15868795,
   title: "Channel temporarily locked",
@@ -26,7 +21,7 @@ client.on('message', msg => {
    url: "https://cdn.discordapp.com/attachments/470359851227414532/535492022748839936/image0.gif"
   },
   footer: {
-   text: "Channel freeze lasts for " + t + " seconds"
+   text: "Channel freeze lasts for 10 seconds"
   },
  }}).then((msg) => {
   setTimeout(function(){
@@ -38,7 +33,7 @@ client.on('message', msg => {
     url: "https://cdn.discordapp.com/attachments/470359851227414532/535589451695652865/image0.gif"
    },
   }});
-  }, t);
+  }, 9500);
  });
  msg.channel.overwritePermissions(msg.guild.defaultRole, {
   SEND_MESSAGES: false
@@ -47,7 +42,7 @@ client.on('message', msg => {
   msg.channel.overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
   });
-  }, t);
+  }, 10000);
  }});
 
 client.on('message', msg => {
