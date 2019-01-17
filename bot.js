@@ -23,7 +23,7 @@ client.on('message', msg => {
    url: "https://cdn.discordapp.com/attachments/470359851227414532/535492022748839936/image0.gif"
   },
   footer: {
-   text: "Channel freeze lasts for 5 seconds"
+   text: "Channel freeze lasts for 10 seconds"
   },
  }});
  msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
@@ -33,13 +33,13 @@ client.on('message', msg => {
   msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
   });
-  }, 5000);
+  }, 10000);
   setTimeout(function(){
   msg.edit({ embed: {
    title: "時 は 動き出す",
    descritption: "Channel unfrozen, time resumes"
   }});
-  }, 5000);
+  }, 9000);
  }});
 
 client.on('message', msg => {
