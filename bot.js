@@ -49,6 +49,7 @@ client.on('message', msg => {
   setTimeout(function(){
   msg.edit("**時 は 動き出す**\nChannel unfrozen, Time resumes");
   }, 5000);
+  });
  }});
 
 client.on('message', msg => {
