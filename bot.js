@@ -21,9 +21,10 @@ client.on('message', msg => {
   image: {
    url: "http://i.imgur.com/LOVtYFk.jpg"
   },
- }});
+ }}).then(() => {
  msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
   SEND_MESSAGES: false
+ });
   }).then(() => {
   setTimeout(function(){
   msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
