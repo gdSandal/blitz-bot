@@ -38,11 +38,11 @@ client.on('message', msg => {
   }});
   }, 9000);
  });
- msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
+ msg.guild.channel.overwritePermissions(msg.guild.defaultRole, {
   SEND_MESSAGES: false
   });
   setTimeout(function(){
-  msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
+  msg.guild.channel.overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
   });
   }, 10000);
