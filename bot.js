@@ -30,12 +30,11 @@ client.on('message', msg => {
   SEND_MESSAGES: false
   });
   setTimeout(function(){
-  msg.channel.send("**時 は 動き出す**\nChannel unfrozen, Time resumes").delete(2000).then(() => {
   msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
   });
-  });
   }, 5000);
+  msg.channel.send("**時 は 動き出す**\nChannel unfrozen, Time resumes").delete(2000)
  }});
 
 client.on('message', msg => {
