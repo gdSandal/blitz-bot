@@ -12,12 +12,10 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/theworld")) {
-  if (msg.content === "s/theworld") {
-   msg.channel.send("Please name a channel");
-  }else
   if (!msg.member.hasPermission("MANAGE PERMISSIONS")) return;
   let args = msg.content.split(" ").slice(1);
   let chn = args.join("")
+  if (args = [0]) return;
  msg.channel.send({ embed: {
   color: 15868795,
   title: "Channel temporarily locked",
