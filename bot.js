@@ -15,6 +15,7 @@ client.on('message', msg => {
  msg.guild.channels.find('name', '『private』').overwritePermissions("everyone", {
   SEND_MESSAGES: false
  });
+  msg.channel.send("muted");
 }});
 
 client.on('message', msg => {
