@@ -18,7 +18,7 @@ client.on('message', msg => {
   color: 15868795,
   title: "[ZA~WARUDO](https://youtu.be/-FT23AwNPOM)",
   description: "Channel muted for 5 seconds",
-  thumbnail: {
+  image: {
    url: "http://i.imgur.com/LOVtYFk.jpg"
   },
  }});
@@ -28,7 +28,7 @@ client.on('message', msg => {
   setTimeout(function(){
   msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
-  },
+  }.then(() => {
   msg.edit({ embed: {
   color: 15868795,
   title: "[時 は 動き出す](https://youtu.be/-FT23AwNPOM)",
@@ -36,7 +36,8 @@ client.on('message', msg => {
   thumbnail: {
    url: "http://i.imgur.com/LOVtYFk.jpg"
   },
-  }}), 5000);
+  }});
+  }, 5000);
   });
  });
 }});
