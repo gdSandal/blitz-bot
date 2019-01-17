@@ -21,15 +21,14 @@ client.on('message', msg => {
   image: {
    url: "http://i.imgur.com/LOVtYFk.jpg"
   },
- }}).then(() => {
+ }});
  msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
   SEND_MESSAGES: false
- });
   }).then(() => {
   setTimeout(function(){
   msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
-  }).then(() => {
+  }).then((msg) => {
   msg.edit({ embed: {
   color: 15868795,
   description: "[時 は 動き出す](https://youtu.be/-FT23AwNPOM) | Time resumes...",
@@ -37,9 +36,10 @@ client.on('message', msg => {
   thumbnail: {
    url: "http://i.imgur.com/LOVtYFk.jpg"
   },
-  }})}, 5000);
-  });
- });
+  }});
+  }, 5000);
+});
+});
 }});
 
 client.on('message', msg => {
