@@ -28,15 +28,7 @@ client.on('message', msg => {
   setTimeout(function(){
   msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
-  }).then((msg) => {
-  msg.edit({ embed: {
-  color: 15868795,
-  description: "[時 は 動き出す](https://youtu.be/-FT23AwNPOM) | Time resumes...",
-  title: "Channel unlocked!",
-  thumbnail: {
-   url: "http://i.imgur.com/LOVtYFk.jpg"
-  },
-  }});
+  });
   }, 5000);
 });
 });
