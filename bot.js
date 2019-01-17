@@ -14,12 +14,6 @@ client.on('message', msg => {
  if (msg.content.startsWith("s/mute")) {
  msg.guild.channel.overwritePermissions("everyone", {
   SEND_MESSAGES: false
- }).then(() => {
-  setTimeout(function(){
-  msg.guild.channel.overwritePermissions("everyone", {
-   SEND_MESSAGES: true
-  }, 5000);
-  });
  });
 }});
 
