@@ -30,7 +30,10 @@ client.on('message', msg => {
   msg.edit({ embed: {
    color: 15868795,
    title: "__時 は 動き出す__ ~ **Time Resumes**",
-   description: "Channel has been unlocked"
+   description: "Channel has been unlocked",
+   image: {
+    url: "https://cdn.discordapp.com/attachments/470359851227414532/535589451695652865/image0.gif"
+   },
   }});
   }, 9000);
  });
