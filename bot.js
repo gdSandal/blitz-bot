@@ -28,7 +28,7 @@ client.on('message', msg => {
   setTimeout(function(){
   msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
-  }.then(() => {
+  }).then(() => {
   msg.edit({ embed: {
   color: 15868795,
   title: "[時 は 動き出す](https://youtu.be/-FT23AwNPOM)",
