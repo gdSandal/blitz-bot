@@ -13,7 +13,7 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.content.startsWith("s/mute")) {
  msg.guild.channels.find('name', '『private』').setPermissions("everyone", {
-  SEND_MESSAGES: false
+  "SEND MESSAGES": false
  });
   msg.channel.send("muted");
 }});
