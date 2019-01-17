@@ -11,14 +11,12 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.content.toLowerCase().startsWith("s/theworld")) {
-     let args = msg.content.split(" ").slice(1);
-     let chn = args.join("-")
- msg.guild.channels.find('name', chn).overwritePermissions("everyone", {
+ if (msg.content.toLowerCase().startsWith("s/mute")) {
+ msg.guild.channels.find('name', msg.guild.channel).overwritePermissions("everyone", {
   SEND_MESSAGES: false
  }).then(() => {
   setTimeout(function(){
-  msg.guild.channels.find('name', chn).overwritePermissions("everyone", {
+  msg.guild.channels.find('name', msg.guild.channel).overwritePermissions("everyone", {
    SEND_MESSAGES: true
   }, 5000);
   });
@@ -33,7 +31,7 @@ client.on('message', msg => {
          if (msg.reaction.count === 1) {
           msg.channel.send('function ok!');
   }}});
-});
+});y
   
 client.on('message', msg => {
  if (msg.author.bot) return;
