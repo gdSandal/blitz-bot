@@ -15,7 +15,7 @@ client.on('message', msg => {
   if (!msg.member.hasPermission("MANAGE PERMISSIONS")) return;
   let args = msg.content.split(" ").slice(1);
   let chn = args.join("")
-  if (args === 0) return;
+  if (args.length === 0) return;
  msg.channel.send({ embed: {
   color: 15868795,
   title: "Channel temporarily locked",
