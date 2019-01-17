@@ -12,6 +12,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/theworld")) {
+  if (!msg.member.hasPermission("MANAGE MESSAGES")) return;
   let args = msg.content.split(" ").slice(1);
   let chn = args.join("")
  msg.channel.send({ embed: {
@@ -34,7 +35,10 @@ client.on('message', msg => {
   });
   }, 5000);
   setTimeout(function(){
-  msg.channel.send("**時 は 動き出す**\nChannel unfrozen, Time resumes");
+  msg.edit({ embed: {
+   title: "時 は 動き出す",
+   descritption: "Channel unfrozen, time resumes"
+  }});
   }, 5000);
  }});
 
