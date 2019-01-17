@@ -11,12 +11,16 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.content.startsWith("s/mute")) {
+ if (msg.content.startsWith("s/theworld")) {
   let args = msg.content.split(" ").slice(1);
   let chn = args.join("")
  msg.channel.send({ embed: {
-  title: "ZA WARUDO",
-  description: "Channel muted for 5 seconds"
+  color: 15868795,
+  title: "[ZA~WARUDO](https://youtu.be/-FT23AwNPOM)",
+  description: "Channel muted for 5 seconds",
+  thumbnail: {
+   url: "http://i.imgur.com/LOVtYFk.jpg"
+  },
  }});
  msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
   SEND_MESSAGES: false
@@ -24,7 +28,15 @@ client.on('message', msg => {
   setTimeout(function(){
   msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
    SEND_MESSAGES: true
-  }, 5000);
+  },
+  msg.edit({ embed: {
+  color: 15868795,
+  title: "[時 は 動き出す](https://youtu.be/-FT23AwNPOM)",
+  description: "Channel unmuted, time continues...",
+  thumbnail: {
+   url: "http://i.imgur.com/LOVtYFk.jpg"
+  },
+  }}), 5000);
   });
  });
 }});
