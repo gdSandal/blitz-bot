@@ -36,8 +36,7 @@ client.on('message', msg => {
   thumbnail: {
    url: "http://i.imgur.com/LOVtYFk.jpg"
   },
-  }});
-  }, 5000);
+  }})}, 5000);
   });
  });
 }});
