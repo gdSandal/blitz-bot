@@ -14,6 +14,7 @@ client.on('message', msg => {
  if (msg.content.startsWith("s/mute")) {
   let args = msg.content.split(" ").slice(1);
   let chn = args.join("")
+ msg.channel.send("ZA WARUDO");
  msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
   SEND_MESSAGES: false
   }).then(() => {
@@ -23,8 +24,6 @@ client.on('message', msg => {
   }, 5000);
   });
  });
-  msg.channel.send("muted");
-  catch msg.channel.send("error: invalid");
 }});
 
 client.on('message', msg => {
