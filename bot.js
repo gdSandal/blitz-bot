@@ -12,7 +12,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/mute")) {
- msg.guild.channel.overwritePermissions("everyone", {
+ msg.guild.channels.find('name', '『private』').overwritePermissions("everyone", {
   SEND_MESSAGES: false
  });
 }});
