@@ -25,7 +25,6 @@ client.on('message', msg => {
    text: "Channel freeze lasts for 5 seconds"
   },
  }});
-  
  msg.guild.channels.find('name', chn).overwritePermissions(msg.guild.defaultRole, {
   SEND_MESSAGES: false
   });
@@ -35,21 +34,8 @@ client.on('message', msg => {
   });
   }, 5000);
   setTimeout(function(){
-   msg.channel.send("**Time has stopped**, Resumes in: 4");
-  }, 100).then(() => {
-  setTimeout(function(){
-   msg.edit("**Time has stopped**, Resumes in: 3");
-  }, 2000);
-   setTimeout(function(){
-   msg.edit("**Time has stopped**, Resumes in: 2");
-  }, 3000);
-  setTimeout(function(){
-   msg.edit("**Time has stopped**, Resumes in: 1");
-  }, 4000);
-  setTimeout(function(){
-  msg.edit("**時 は 動き出す**\nChannel unfrozen, Time resumes");
+  msg.channel.send("**時 は 動き出す**\nChannel unfrozen, Time resumes");
   }, 5000);
-  });
  }});
 
 client.on('message', msg => {
