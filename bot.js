@@ -19,8 +19,7 @@ client.on('message', msg => {
     value: "test"
    }, {
     name: "test",
-    value: "test",
-    inline: true
+    value: "test", true
    },
    ],
   }});
