@@ -26,11 +26,15 @@ client.on('message', msg => {
    }, {
     name: x,
     value: x,
-    inline: true
+    inline: false
    }, {
     name: x,
     value: x,
     inline: false
+   }, {
+    name: x,
+    value: x,
+    inline: true
    },
    ],
   }});
