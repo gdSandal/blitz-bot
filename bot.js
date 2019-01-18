@@ -11,6 +11,22 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+ if (msg.content === "s/dev") {
+  msg.channel.send({ embed: {
+   title: "sample",
+   fields: [{
+    name: "test",
+    value: "test"
+   }, {
+    name: "test",
+    value: "test",
+    inline: true
+   },
+   ],
+  }});
+ }});
+
+client.on('message', msg => {
  if (msg.content.startsWith("s/theworld")) {
   if (!msg.member.hasPermission("MANAGE PERMISSIONS")) return;
  msg.channel.send({ embed: {
