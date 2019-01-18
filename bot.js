@@ -12,14 +12,25 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content === "s/dev") {
+  let x = "test";
   msg.channel.send({ embed: {
    title: "sample",
    fields: [{
-    name: "test",
-    value: "test"
+    name: x,
+    value: x,
+    inline: true
    }, {
-    name: "test",
-    value: "test", true
+    name: x,
+    value: x,
+    inline: true
+   }, {
+    name: x,
+    value: x,
+    inline: true
+   }, {
+    name: x,
+    value: x,
+    inline: true
    },
    ],
   }});
