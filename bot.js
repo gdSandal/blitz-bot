@@ -11,36 +11,6 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.content === "s/dev") {
-  let x = "test";
-  msg.channel.send({ embed: {
-   title: "sample",
-   fields: [{
-    name: x,
-    value: x,
-    inline: true
-   }, {
-    name: x,
-    value: x,
-    inline: true
-   }, {
-    name: x,
-    value: x,
-    inline: false
-   }, {
-    name: x,
-    value: x,
-    inline: false
-   }, {
-    name: x,
-    value: x,
-    inline: true
-   },
-   ],
-  }});
- }});
-
-client.on('message', msg => {
  if (msg.content.startsWith("s/theworld")) {
   if (!msg.member.hasPermission("MANAGE PERMISSIONS")) return;
  msg.channel.send({ embed: {
