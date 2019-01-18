@@ -563,40 +563,6 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 's/userinfo') {
-    const user = msg.author.username;
-    msg.channel.send({embed: {
-  color: 15868795,
-  title: "User Information - " + user,
-  thumbnail: {
-  url: msg.author.avatarURL,
-  },
-  fields: [{
-    name: "Name:",
-    value: user
-  },
-  {
-    name: "Tag:",
-    value: "@" + user + "#" + msg.author.discriminator
-  },
-  {
-    name: "User ID:",
-    value: msg.author.id
-  },
-  {
-    name: "Joined:",
-    value: msg.author.createdAt
-  },
-  ],
-      timestamp: new Date(),
-      footer: {
-        text: user + " | " + msg.guild.name + " 2019"
-      }
-}});
-  }
-});
-
-client.on('message', msg => {
   if (msg.content === 's/info') {
     msg.channel.send({embed: {
   color: 15868795,
