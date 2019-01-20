@@ -11,6 +11,12 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+ if (msg.content === 's/dev') {
+  msg.channel.send("online");
+ }
+});
+
+client.on('message', msg => {
  if (msg.content.startsWith("s/theworld")) {
   if (!msg.member.hasPermission("MANAGE PERMISSIONS")) return;
  msg.channel.send({ embed: {
