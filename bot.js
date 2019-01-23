@@ -11,6 +11,12 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+ if (msg.content.startsWith("s/moodyblues")) {
+ let user = msg.members.mentions.first();
+  msg.channel.send(user);
+ }});
+
+client.on('message', msg => {
  if (msg.content.startsWith("s/theworld")) {
   if (!msg.member.hasPermission("MANAGE PERMISSIONS")) return;
  msg.channel.send({ embed: {
