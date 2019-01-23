@@ -484,7 +484,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('message', msg => {
-  if (msg.content.toLowerCase.startsWith('s/userinfo')) {
+  if (msg.content.toLowerCase === 's/userinfo') {
     msg.channel.send({embed: {
   color: 15868795,
   title: "User Information - " + msg.author,
