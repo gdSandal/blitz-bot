@@ -14,8 +14,8 @@ client.on('message', msg => {
  if (msg.content.startsWith("s/moodyblues")) {
  let u = msg.mentions.members.first();
  let args = msg.content.split(" ").slice(1);
- if (args.length == 0) return msg.channel.send("error");
-  msg.channel.send(u.id);
+ if (args.length == 0) return msg.channel.send("please include a member name");
+  msg.channel.send(u.id) return msg.channel.send("error");
  }});
 
 client.on('message', msg => {
