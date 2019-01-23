@@ -12,8 +12,8 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/moodyblues")) {
- let user = msg.members.mentions.first();
-  msg.channel.send(user);
+ let u = msg.guild.member(msg.mentions.users.first());
+  msg.channel.send(u);
  }});
 
 client.on('message', msg => {
