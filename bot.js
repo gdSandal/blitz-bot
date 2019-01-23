@@ -9,6 +9,41 @@ client.on('ready', () => {
     }
 });
 });
+
+client.on('message', msg => {
+ if (msg.content.startsWith("s/theworld")) {
+  if (!msg.member.hasPermission("MANAGE PERMISSIONS")) return;
+ msg.channel.send({ embed: {
+  color: 15868795,
+  title: "Channel temporarily locked",
+  description: "[ZA~WARUDO](https://youtu.be/-FT23AwNPOM) | Time stopped",
+  image: {
+   url: "https://cdn.discordapp.com/attachments/470359851227414532/535492022748839936/image0.gif"
+  },l
+  footer: {
+   text: "Channel freeze lasts for 10 seconds"
+  },
+ }}).then((msg) => {
+  setTimeout(function(){
+  msg.edit({ embed: {
+   color: 15868795,
+   title: "__時 は 動き出す__ ~ **Time Resumes**",
+   description: "Channel has been unlocked",
+   image: {
+    url: "https://cdn.discordapp.com/attachments/470359851227414532/535589451695652865/image0.gif"
+   },
+  }});
+  }, 9500);
+ });
+ msg.channel.overwritePermissions(msg.guild.defaultRole, {
+  SEND_MESSAGES: false
+  });
+  setTimeout(function(){
+  msg.channel.overwritePermissions(msg.guild.defaultRole, {
+   SEND_MESSAGES: true
+  });
+  }, 10000);
+ }});
         
 client.on('message', msg => {
  if (msg.author.bot) return;
