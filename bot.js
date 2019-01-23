@@ -484,21 +484,20 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('message', msg => {
-  if (msg.content.toLowerCase.startsWith('s/heavensdoor')) {
-    const user = msg.mentions.members.first();
+  if (msg.content.toLowerCase.startsWith('s/userinfo')) {
     msg.channel.send({embed: {
   color: 15868795,
-  title: "User Information - " + user,
+  title: "User Information - " + msg.author,
   thumbnail: {
   url: msg.author.avatarURL,
   },
   fields: [{
     name: "Name:",
-    value: user
+    value: msg.author
   },
   {
     name: "Tag:",
-    value: "@" + user + "#" + msg.author.discriminator
+    value: "@" + msg.author + "#" + msg.author.discriminator
   },
   {
     name: "User ID:",
@@ -511,7 +510,7 @@ client.on('message', msg => {
   ],
       timestamp: new Date(),
       footer: {
-        text: user + " | " + msg.guild.name + " 2019"
+        text: msg.author + " | " + msg.guild.name + " 2019"
       }
 }});
   }
