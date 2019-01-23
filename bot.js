@@ -19,7 +19,7 @@ client.on('message', msg => {
   description: "[ZA~WARUDO](https://youtu.be/-FT23AwNPOM) | Time stopped",
   image: {
    url: "https://cdn.discordapp.com/attachments/470359851227414532/535492022748839936/image0.gif"
-  },l
+  },
   footer: {
    text: "Channel freeze lasts for 10 seconds"
   },
