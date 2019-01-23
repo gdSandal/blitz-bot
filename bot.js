@@ -15,7 +15,7 @@ client.on('message', msg => {
  let u = msg.mentions.members.first();
  let args = msg.content.split(" ").slice(1);
  if (args.length == 0) return msg.channel.send("please include a member name");
-  msg.channel.send(u.id) return msg.channel.send("error");
+  msg.channel.send(u.id + " id")
  }});
 
 client.on('message', msg => {
