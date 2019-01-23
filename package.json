@@ -1,6 +1,6 @@
 {
-  "name": "blitz-bot",
-  "description": "blitz-bot",
+  "name": "requiem",
+  "description": "requiem",
   "version": "0.0.0",
   "main": "bot.js",
   "scripts": {
