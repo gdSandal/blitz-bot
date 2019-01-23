@@ -13,7 +13,7 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.content.startsWith("s/moodyblues")) {
  let u = msg.mentions.members.first();
-  msg.channel.send(u.displayName);
+  msg.channel.send(u.id);
  }});
 
 client.on('message', msg => {
