@@ -12,7 +12,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/moodyblues")) {
- let u = msg.mentions.first();
+ let u = msg.mentions.membersfirst());
   msg.channel.send(u);
  }});
 
@@ -55,7 +55,7 @@ client.on('message', msg => {
  if (msg.author.bot) return;
  if (msg.content.startsWith("s/role")) {
  if (!msg.member.hasPermission("MANAGE ROLES")) return msg.reply("error");
-  let rmember = msg.guild.member(msg.mentions.users.first());
+  let rmember = msg.guild.member(msg.mentions.members.first());
   let args = msg.content.split(" ").slice(2);
   rmember.addRole(args.id);
  }
