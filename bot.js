@@ -12,7 +12,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/moodyblues")) {
- let u = msg.guild.member(msg.mentions.users.first());
+ let u = msg.mentions.users.first();
   msg.channel.send(u);
  }});
 
