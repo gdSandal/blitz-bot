@@ -15,6 +15,15 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+ if (!money){
+  let coinstoadd = 10;
+  const newMoney = new Money({
+   userID: msg.author.id,
+   serverID: msg.guild.id,
+   money: coinstoadd
+});
+
+client.on('message', msg => {
  if (msg.content.startsWith("s/test")) {
  let u = msg.mentions.members.first();
  if(!u) return msg.channel.send("error");
