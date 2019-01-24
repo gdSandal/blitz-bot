@@ -21,7 +21,8 @@ client.on('message', msg => {
    userID: msg.author.id,
    serverID: msg.guild.id,
    money: coinstoadd
-});
+  });
+ }});
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/test")) {
