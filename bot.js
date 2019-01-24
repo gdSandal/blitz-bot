@@ -1,5 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/Reports');
+
 
 client.on('ready', () => {
  client.user.setPresence({
