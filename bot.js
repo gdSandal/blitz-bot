@@ -13,9 +13,7 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.content.startsWith("s/test")) {
  let u = msg.mentions.members.first();
- let args = msg.content.split(" ").slice(1);
- if (args.length == 0) return msg.channel.send("please include a member name");
- if(!u) return "error";
+ if(!u) return msg.channel.send("error");
   msg.channel.send(u.id)
  }});
 
