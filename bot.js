@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/requiem');
+mongoose.connect('mongodb+srv://sandal:gdsandal@cluster0-e8ohu.mongodb.net/admin');
 const money = require('money');
 
 
