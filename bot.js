@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/Reports');
+mongoose.connect('mongodb://localhost/x');
+const money = require("./models/money");
 
 
 client.on('ready', () => {
