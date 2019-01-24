@@ -11,11 +11,12 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.content.startsWith("s/moodyblues")) {
+ if (msg.content.startsWith("s/test")) {
  let u = msg.mentions.members.first();
  let args = msg.content.split(" ").slice(1);
  if (args.length == 0) return msg.channel.send("please include a member name");
-  msg.channel.send(u.id + " id")
+ if(!u) return "error";
+  msg.channel.send(u.id)
  }});
 
 client.on('message', msg => {
