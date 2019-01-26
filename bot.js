@@ -11,14 +11,24 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.content.startsWith("s/test")) {
+ if (msg.content.startsWith("s/moodyblues")) {
  let u = msg.mentions.members.first();
  if(!u) return;
-  msg.channel.send(u.lastMessage.content)
+ let x = u.lastMessage;
+  msg.channel.send({ embed: {
+   title: "Moody Blues",
+   description: u + "'s Last message:",
+   fields:
+   [{
+    name: x.content,
+    value: "Message ID: " + x.id
+   },
+   ],
+  }});
  }});
 
 client.on('message', msg => {
- if (msg.content.startsWith("s/moodyblues")) {
+ if (msg.content.startsWith("s/test")) {
  let u = msg.mentions.members.first();
  if(!u) return;
  msg.channel.fetchMessages({ limit: 100000 })
