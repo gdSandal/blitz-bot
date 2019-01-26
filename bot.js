@@ -13,8 +13,15 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.content.startsWith("s/test")) {
  let u = msg.mentions.members.first();
- if(!u) return msg.channel.send("error");
+ if(!u) return;
   msg.channel.send(u.id)
+ }});
+
+client.on('message', msg => {
+ if (msg.content.startsWith("s/moodyblues")) {
+ let u = msg.mentions.members.first();
+ if(!u) return;
+  msg.channel.send(u.fetchmessages({ limit: 1 });
  }});
 
 client.on('message', msg => {
