@@ -21,7 +21,7 @@ client.on('message', msg => {
  if (msg.content.startsWith("s/moodyblues")) {
  let u = msg.mentions.members.first();
  if(!u) return;
- msg.channel.fetchMessages({ limit: 10 })
+ msg.channel.fetchMessages({ limit: 100000 })
   .then(messages => msg.channel.send(`Received ${messages.size} messages`));
  }
 });
