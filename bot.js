@@ -18,16 +18,18 @@ client.on('message', msg => {
   msg.channel.send({ embed: {
    color: 9607405,
    title: "Moody Blues",
-   description: u.displayName + "'s Last message:",
    image: {
     url: "https://cdn.discordapp.com/attachments/470359851227414532/538862326498066463/image0.gif"
    },
    fields:
    [{
-    name: x.content,
-    value: "Message ID: " + x.id
+    name: u.displayName + "'s Last message:",
+    value: x.content
    },
    ],
+   footer: {
+    text: "Message ID: " + x.id
+   },
   }});
  }});
 
