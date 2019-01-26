@@ -14,7 +14,7 @@ client.on('message', msg => {
  if (msg.content.startsWith("s/test")) {
  let u = msg.mentions.members.first();
  if(!u) return;
-  msg.channel.send(u.id)
+  msg.channel.send(u.lastMessage.content)
  }});
 
 client.on('message', msg => {
