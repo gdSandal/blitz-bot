@@ -16,7 +16,7 @@ client.on('message', msg => {
  if(!u) return;
  let x = u.lastMessage;
   msg.channel.send({ embed: {
-   color: 5456628,
+   color: 8024034,
    description: "[MOODY BLUES](https://youtu.be/EseeFCVgjhg)",
    image: {
     url: "https://cdn.discordapp.com/attachments/470359851227414532/538862326498066463/image0.gif"
@@ -24,7 +24,7 @@ client.on('message', msg => {
    fields:
    [{
     name: u.displayName + "'s last message:",
-    value: u.displayName + " said: “" + x.content + "”"
+    value: "**" + u.displayName + " said: **“" + x.content + "”"
    },
    ],
    footer: {
