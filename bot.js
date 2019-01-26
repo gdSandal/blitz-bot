@@ -21,9 +21,10 @@ client.on('message', msg => {
  if (msg.content.startsWith("s/moodyblues")) {
  let u = msg.mentions.members.first();
  if(!u) return;
- let x = u.fetchmessages({ limit: 1 });
-  msg.channel.send("x = " x);
- }});
+ msg.channel.fetchMessages({ limit: 10 })
+  .then(messages => msg.channel.send(`Received ${messages.size} messages`));
+ }
+});
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/theworld")) {
