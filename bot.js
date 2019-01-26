@@ -17,7 +17,7 @@ client.on('message', msg => {
  let x = u.lastMessage;
   msg.channel.send({ embed: {
    color: 9607405,
-   title: "[Moody Blues](https://youtu.be/EseeFCVgjhg)",
+   description: "[Moody Blues](https://youtu.be/EseeFCVgjhg)",
    image: {
     url: "https://cdn.discordapp.com/attachments/470359851227414532/538862326498066463/image0.gif"
    },
