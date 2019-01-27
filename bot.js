@@ -10,6 +10,11 @@ client.on('ready', () => {
 });
 });
 
+client.on('message', msg => {
+ if (msg.DMChannel) return msg.channel.send("DM inputs are ignored, Sorry!");
+ if (msg.author.bot) return;
+});
+
 //
 //log commands below
 //
