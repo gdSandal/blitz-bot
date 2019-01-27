@@ -64,7 +64,7 @@ client.on('message', msg => {
  if (msg.content.startsWith("s/u")) {
  let u = msg.mentions.members.first();
  if(!u) return msg.channel.send("please include a member name");
-  msg.channel.send(u);
+  msg.channel.send(u.id + u.displayName);
  }});
 
 client.on('message', msg => {
