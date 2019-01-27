@@ -66,6 +66,9 @@ client.on('message', msg => {
  if(!u) return msg.channel.send("please include a member name");
   msg.channel.send({ embed: {
    color: 16051778,
+   thumbnail: {
+    url: u.user.avatarURL
+   },
    description: "[HEAVEN'S DOOR](https://youtu.be/e108Q6P5c6Y)",
    image: {
     url: "https://cdn.discordapp.com/attachments/470359851227414532/538869570694283264/image0.gif"
@@ -85,7 +88,7 @@ client.on('message', msg => {
    },
     {
     name: "Avatar url:",
-    value: u.user.avatarURL
+    value: "[Click Here](u.user.avatarURL)"
    },
     {
     name: "Presence:",
