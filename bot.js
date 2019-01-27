@@ -88,7 +88,7 @@ client.on('message', msg => {
    },
     {
     name: "Presence:",
-    value: u.user.presence
+    value: u.presence
    },
     {
     name: "Verified:",
