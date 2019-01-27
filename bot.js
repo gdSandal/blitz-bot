@@ -68,7 +68,7 @@ client.on('message', msg => {
    fields:
    [{
     name: u.displayName + "'s Information",
-    value: "val"
+    value: "- - - - - - - -"
    }, {
     name: "User ID:",
     value: u.id
@@ -83,6 +83,7 @@ client.on('message', msg => {
     value: u.presence
    },
    ],
+   timestamp: new Date(),
   }});
  }});
 
