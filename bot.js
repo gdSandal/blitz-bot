@@ -11,7 +11,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.guild === null) return;
+ if (msg.guild.DMChannel) return;
  if (msg.author.bot) return;
 });
 
