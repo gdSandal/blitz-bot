@@ -154,9 +154,8 @@ client.on('message', msg => {
  }});
         
 client.on('message', msg => {
- if (msg.author.bot) return;
  if (msg.content.startsWith("s/role")) {
- if (!msg.member.hasPermission("MANAGE ROLES")) return msg.reply("error");
+ if (!msg.member.hasPermission("MANAGE ROLES")) return msg.channel.send("insufficient permissions");
   let rmember = msg.mentions.members.first();
   let args = msg.content.split(" ").slice(2);
   msg.channel.send(rmember + " now has the " + args + " role!");
