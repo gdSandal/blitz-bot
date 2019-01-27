@@ -81,7 +81,7 @@ client.on('message', msg => {
    },
     {
     name: "Join date:",
-    value: u.createdAt
+    value: u.createdTimestamp
    },
     {
     name: "Avatar url:",
