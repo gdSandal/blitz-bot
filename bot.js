@@ -16,7 +16,7 @@ client.on('ready', () => {
 
 client.on('messageDelete', msg => {
  let log = client.channels.get("538879270999556147");
- log.send("test");
+ log.send(msg.content);
 });
 
 
