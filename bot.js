@@ -85,11 +85,11 @@ client.on('message', msg => {
    },
     {
     name: "Avatar url:",
-    value: u.avatarURL
+    value: u.id
    },
     {
     name: "Presence:",
-    value: u.id
+    value: u.presence
    },
    ],
    timestamp: new Date(),
