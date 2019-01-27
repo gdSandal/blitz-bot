@@ -61,9 +61,9 @@ client.on('messageUpdate', (oldMsg, newMsg) => {
 //
 
 client.on('message', msg => {
- if (msg.content.startsWith("s/u")) {
+ if (msg.content.startsWith("s/heavensdoor")) {
  let u = msg.mentions.members.first();
- if(!u) return msg.channel.send("please include a member name");
+ if(!u) return msg.channel.send("please include a member name").then ((msg) => msg.delete(2000));
   msg.channel.send({ embed: {
    color: 16051778,
    thumbnail: {
@@ -76,7 +76,7 @@ client.on('message', msg => {
    fields:
    [{
     name: u.displayName + "’s Information",
-    value: "- - - - - - - -"
+    value: "- - - - - - - - - - - -"
    },
     {
     name: "User ID:",
@@ -639,39 +639,6 @@ client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === "sanctum");
   if (!channel) return;
   channel.send(`Welcome to SANCTUM! ${member}`);
-});
-
-client.on('message', msg => {
-  if (msg.content.toLowerCase === 's/userinfo') {
-    msg.channel.send({embed: {
-  color: 15868795,
-  title: "User Information - " + msg.author,
-  thumbnail: {
-  url: msg.author.avatarURL,
-  },
-  fields: [{
-    name: "Name:",
-    value: msg.author
-  },
-  {
-    name: "Tag:",
-    value: "@" + msg.author + "#" + msg.author.discriminator
-  },
-  {
-    name: "User ID:",
-    value: msg.author.id
-  },
-  {
-    name: "Joined:",
-    value: msg.author.createdAt
-  },
-  ],
-      timestamp: new Date(),
-      footer: {
-        text: msg.author + " | " + msg.guild.name + " 2019"
-      }
-}});
-  }
 });
 
 client.on('message', msg => {
