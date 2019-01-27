@@ -33,17 +33,17 @@ client.on('guildMemberRemove', msg => {
  }});
 });
 
-client.on('messageUpdate', (msg, oldMessage, newMessage) => {
+client.on('messageUpdate', (msg, oldMsg, newMsg,) => {
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
   title: "**Message updated** in #" + msg.channel.name,
   description: msg.author + "’s message was edited:",
   fields: [{
    name: "Original message:",
-   value: oldMessage.content
+   value: oldMsg.content
   }, {
    name: "Edited message:",
-   value: newMessage.content
+   value: newMsg.content
   },
   ],
   timestamp: new Date(),
