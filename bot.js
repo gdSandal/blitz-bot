@@ -11,6 +11,37 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+ if (msg.content.startsWith("s/heavensdoor")) {
+ let u = msg.mentions.members.first();
+ if(!u) return;
+  msg.channel.send({ embed: {
+   color: 16051778,
+   description: "[HEAVEN'S DOOR](https://youtu.be/e108Q6P5c6Y)",
+   image: {
+    url: "https://cdn.discordapp.com/attachments/470359851227414532/538869570694283264/image0.gif",
+   },
+   fields:
+   [{
+    name: u.displayName + "'s Information",
+    value: u.discriminator
+   }, {
+    name: "User ID:",
+    value: u.id
+   }, {
+    name: "Join date:",
+    value: u.createdAt | u.createdTimestamp
+   }, {
+    name: "Avatar url:",
+    value: u.avatarURL
+   }, {
+    name: "Presence:",
+    value: u.presence
+   },
+   ],
+  }});
+ }});
+
+client.on('message', msg => {
  if (msg.content.startsWith("s/moodyblues")) {
  let u = msg.mentions.members.first();
  if(!u) return;
