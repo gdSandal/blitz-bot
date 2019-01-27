@@ -62,7 +62,7 @@ client.on('messageUpdate', (oldMsg, newMsg) => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/u")) {
- const u = msg.mentions.members.first();
+ let u = msg.mentions.members.first();
  if(!u) return msg.channel.send("please include a member name");
   msg.channel.send({ embed: {
    color: 16051778,
@@ -81,7 +81,7 @@ client.on('message', msg => {
    },
     {
     name: "Join date:",
-    value: u.id
+    value: u.user.createdAt
    },
     {
     name: "Avatar url:",
@@ -89,7 +89,7 @@ client.on('message', msg => {
    },
     {
     name: "Presence:",
-    value: u.presence
+    value: u.id
    },
    ],
    timestamp: new Date(),
