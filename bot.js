@@ -23,7 +23,7 @@ client.on('message', msg => {
    fields:
    [{
     name: u.displayName + "'s Information",
-    value: " "
+    value: "val"
    }, {
     name: "User ID:",
     value: u.id
