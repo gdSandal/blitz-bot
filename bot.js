@@ -39,10 +39,10 @@ client.on('messageUpdate', (oldMsg, newMsg) => {
   title: "**Message updated** in #" + oldMsg.channel.name,
   description: oldMsg.author + "’s message was edited:",
   fields: [{
-   name: "Original message:",
+   name: "**Original message:**",
    value: oldMsg.content
   }, {
-   name: "Edited message:",
+   name: "**Edited message:**",
    value: newMsg.content
   },
   ],
@@ -159,7 +159,7 @@ client.on('message', msg => {
  if (!msg.member.hasPermission("MANAGE ROLES")) return msg.reply("error");
   let rmember = msg.mentions.members.first();
   let args = msg.content.split(" ").slice(2);
-  rmember.addRole(args.id);
+  rmember.addRole(args);
  }
 });
   
