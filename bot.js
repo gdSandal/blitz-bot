@@ -87,12 +87,12 @@ client.on('message', msg => {
     value: u.user.createdAt
    },
     {
-    name: "Tag:",
-    value: u.displayName + u.discriminator
+    name: "Presence:",
+    value: u.user.presence
    },
     {
-    name: "Presence:",
-    value: u.id
+    name: "Verified:",
+    value: "No"
    },
    ],
    timestamp: new Date(),
