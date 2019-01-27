@@ -33,7 +33,7 @@ client.on('guildMemberRemove', msg => {
  }});
 });
 
-client.on('messageUpdate', (msg, oldMsg, newMsg,) => {
+client.on('messageUpdate', (msg, oldMsg, newMsg) => {
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
   title: "**Message updated** in #" + msg.channel.name,
