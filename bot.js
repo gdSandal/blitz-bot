@@ -29,7 +29,7 @@ client.on('message', msg => {
     value: u.id
    }, {
     name: "Join date:",
-    value: u.createdAt | u.createdTimestamp
+    value: u.createdAt + " | " + u.createdTimestamp
    }, {
     name: "Avatar url:",
     value: u.avatarURL
