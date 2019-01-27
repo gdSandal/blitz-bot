@@ -10,6 +10,20 @@ client.on('ready', () => {
 });
 });
 
+//
+//log commands below
+//
+
+client.on('messageDelete', msg => {
+ const log = member.guild.channels.find(ch => ch.name === "log");
+ msg.channel.send("test");
+});
+
+
+//
+//log commands above
+//
+
 client.on('message', msg => {
  if (msg.content.startsWith("s/heavensdoor")) {
  let u = msg.mentions.members.first();
