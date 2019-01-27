@@ -18,7 +18,7 @@ client.on('message', msg => {
    color: 16051778,
    description: "[HEAVEN'S DOOR](https://youtu.be/e108Q6P5c6Y)",
    image: {
-    url: "https://cdn.discordapp.com/attachments/470359851227414532/538869570694283264/image0.gif",
+    url: "https://cdn.discordapp.com/attachments/470359851227414532/538869570694283264/image0.gif"
    },
    fields:
    [{
