@@ -77,10 +77,10 @@ client.on('message', msg => {
     value: u.createdAt + " | " + u.createdTimestamp
    }, {
     name: "Avatar url:",
-    value: u.avatarURL
+    value: u
    }, {
     name: "Presence:",
-    value: u.presence
+    value: u
    },
    ],
    timestamp: new Date(),
