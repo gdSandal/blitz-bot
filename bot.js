@@ -158,10 +158,10 @@ client.on('message', msg => {
  if (!msg.member.hasPermission("MANAGE ROLES")) return msg.channel.send("insufficient permissions");
   let rmember = msg.mentions.members.first();
   let args = msg.content.split(" ").slice(2);
-  if (!rmember) return;
-  if (!args) return;
-  msg.channel.send(rmember + " now has the " + args + " role!");
-  rmember.addRole(args);
+  let role = msg.guild.roles.find(r => r.name === args.join(" "));
+  if (!role) return;
+  msg.channel.send(rmember + " now has the " + role + " role!");
+  rmember.addRole(role);
  }
 });
   
