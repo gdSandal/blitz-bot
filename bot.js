@@ -15,8 +15,8 @@ client.on('ready', () => {
 //
 
 client.on('messageDelete', msg => {
- const log = member.guild.channels.find(ch => ch.name === "log");
- msg.channel.send("test");
+ let log = guild.channels.find(ch => ch.name === "log");
+ log.send("test");
 });
 
 
