@@ -87,8 +87,8 @@ client.on('message', msg => {
     value: u.user.createdAt
    },
     {
-    name: "Avatar url:",
-    value: "[Click Here](u.user.avatarURL)"
+    name: "Tag:",
+    value: u.tag
    },
     {
     name: "Presence:",
