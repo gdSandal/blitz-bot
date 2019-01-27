@@ -62,7 +62,7 @@ client.on('messageUpdate', (oldMsg, newMsg) => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/u")) {
- let u = msg.mentions.members.first();
+ const u = msg.mentions.members.first();
  if(!u) return msg.channel.send("please include a member name");
   msg.channel.send({ embed: {
    color: 16051778,
