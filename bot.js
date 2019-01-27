@@ -88,7 +88,7 @@ client.on('message', msg => {
    },
     {
     name: "Tag:",
-    value: u.tag
+    value: u.displayName + u.discriminator
    },
     {
     name: "Presence:",
