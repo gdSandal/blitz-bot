@@ -159,6 +159,7 @@ client.on('message', msg => {
  if (!msg.member.hasPermission("MANAGE ROLES")) return msg.reply("error");
   let rmember = msg.mentions.members.first();
   let args = msg.content.split(" ").slice(2);
+  msg.channel.send(rmember + " now has the " + args + " role!");
   rmember.addRole(args);
  }
 });
