@@ -89,7 +89,7 @@ client.on('message', msg => {
    },
     {
     name: "Presence:",
-    value: u.user.presence
+    value: u.id
    },
    ],
    timestamp: new Date(),
