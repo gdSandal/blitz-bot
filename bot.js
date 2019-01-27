@@ -81,7 +81,7 @@ client.on('message', msg => {
    },
     {
     name: "Join date:",
-    value: u.id
+    value: u.createdAt
    },
     {
     name: "Avatar url:",
