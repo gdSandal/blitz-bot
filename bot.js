@@ -16,7 +16,10 @@ client.on('ready', () => {
 
 client.on('messageDelete', msg => {
  let log = client.channels.get("538879270999556147");
- log.send(msg.content);
+ log.send({ embed: {
+  title: "Message Deleted in " + msg.channel,
+  description: msg.author.displayName + "deleted: " + msg.content
+ }});
 });
 
 
