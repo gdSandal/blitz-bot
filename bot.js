@@ -11,7 +11,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.guild.DMChannel) return;
+ if (msg.guild.DMChannel) return msg.channel.send("**DM's are ignored.** Please contact __Sandal#8314__ for assistance");
  if (msg.author.bot) return;
 });
 
