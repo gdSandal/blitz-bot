@@ -67,7 +67,7 @@ client.on('message', msg => {
    },
    fields:
    [{
-    name: u.displayName + "'s Information",
+    name: u.displayName + "’s Information",
     value: "- - - - - - - -"
    }, {
     name: "User ID:",
@@ -77,10 +77,10 @@ client.on('message', msg => {
     value: u.createdAt + " | " + u.createdTimestamp
    }, {
     name: "Avatar url:",
-    value: u
+    value: u.avatarURL
    }, {
     name: "Presence:",
-    value: u
+    value: u.presence
    },
    ],
    timestamp: new Date(),
