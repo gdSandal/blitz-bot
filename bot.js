@@ -17,8 +17,19 @@ client.on('ready', () => {
 client.on('messageDelete', msg => {
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
-  title: "Message Deleted in " + msg.channel.name,
-  description: msg.author + " deleted: " + msg.content
+  color: 16007746,
+  title: "**Message deleted** in #" + msg.channel.name,
+  description: msg.author + "’s message was deleted: \n" + msg.content,
+  timestamp: new Date(),
+ }});
+});
+
+client.on('guildMemberRemove', msg => {
+ let log = client.channels.get("538879270999556147");
+ log.send({ embed: {
+  color: 16007746,
+  title: member + "Has left or been kicked",
+  timestamp: new Date(),
  }});
 });
 
