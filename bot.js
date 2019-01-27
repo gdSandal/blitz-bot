@@ -56,9 +56,9 @@ client.on('messageUpdate', (oldMsg, newMsg) => {
 //
 
 client.on('message', msg => {
- if (msg.content.startsWith("s/heavensdoor")) {
+ if (msg.content.startsWith("s/u")) {
  let u = msg.mentions.members.first();
- if(!u) return;
+ if(!u) return msg.channel.send("please include a member name");
   msg.channel.send({ embed: {
    color: 16051778,
    description: "[HEAVEN'S DOOR](https://youtu.be/e108Q6P5c6Y)",
