@@ -29,11 +29,20 @@ client.on('messageDelete', msg => {
  }});
 });
 
-client.on('guildMemberRemove', msg => {
+client.on('guildMemberRemove', (msg, member) => {
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
   color: 16007746,
-  title: "${member} Has left or been kicked",
+  title: member + " Has left or been kicked",
+  timestamp: new Date(),
+ }});
+});
+
+client.on('guildMemberAdd', (msg, member) => {
+ let log = client.channels.get("538879270999556147");
+ log.send({ embed: {
+  color: 5698626,
+  title: member + " Has joined",
   timestamp: new Date(),
  }});
 });
@@ -636,7 +645,7 @@ client.on('message', msg => {
 });
 
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find(ch => ch.name === "sanctum");
+  const channel = member.guild.channels.find(ch => ch.name === "『sanctum』");
   if (!channel) return;
   channel.send(`Welcome to SANCTUM! ${member}`);
 });
