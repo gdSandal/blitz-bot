@@ -29,7 +29,7 @@ client.on('messageDelete', msg => {
  }});
 });
 
-client.on('guildMemberRemove', (msg, member) => {
+client.on('guildMemberRemove', member => {
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
   color: 16007746,
@@ -38,7 +38,7 @@ client.on('guildMemberRemove', (msg, member) => {
  }});
 });
 
-client.on('guildMemberAdd', (msg, member) => {
+client.on('guildMemberAdd', member => {
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
   color: 5698626,
