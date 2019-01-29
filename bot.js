@@ -33,10 +33,9 @@ client.on('guildMemberRemove', (msg, member) => {
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
   color: 16007746,
-  title: member.username + " Has left or been kicked",
+  title: member.tag + " Has left or been kicked",
   timestamp: new Date(),
  }});
- log.send(member);
 });
 
 client.on('guildMemberAdd', (msg, member) => {
