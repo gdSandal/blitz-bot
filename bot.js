@@ -111,7 +111,9 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/bruh")) {
-  msg.channel.send(msg.channel.lastMessage.deleted);
+  let ch = msg.channel;
+  let cn = ch.lastMessage.deleted;
+  msg.channel.send(ch.context);
  }
 });
 
