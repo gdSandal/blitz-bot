@@ -48,6 +48,7 @@ client.on('guildMemberAdd', (msg, member) => {
 });
 
 client.on('messageUpdate', (oldMsg, newMsg) => {
+ if (oldMsg.content.startsWith("http")) return;
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
   title: "**Message updated** in #" + oldMsg.channel.name,
@@ -107,6 +108,13 @@ client.on('message', msg => {
    timestamp: new Date(),
   }});
  }});
+
+client.on('message', msg => {
+ if (msg.content.startsWith("s/bruh")) {
+  let u = msg.guild.members;
+  msg.channel.send(u.lastMessage.deleted);
+ }
+});
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/moodyblues")) {
