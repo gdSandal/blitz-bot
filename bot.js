@@ -651,7 +651,7 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
   channel.send({ embed: {
    color: 15868795,
-   title: "Welcome to **Sanctum!** " + member.username,
+   title: "Welcome to **Sanctum!** " + member.displayName,
    image: {
     url: "https://cdn.discordapp.com/attachments/470359851227414532/539682548985495582/image0.png"
    },
