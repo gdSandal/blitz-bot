@@ -33,7 +33,7 @@ client.on('guildMemberRemove', (msg, member) => {
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
   color: 16007746,
-  title: member.user.displayName + " Has left or been kicked",
+  title: member.displayName + " Has left or been kicked",
   timestamp: new Date(),
  }});
 });
@@ -42,7 +42,7 @@ client.on('guildMemberAdd', (msg, member) => {
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
   color: 5698626,
-  title: member.user.displayName + " Has joined",
+  title: member.displayName + " Has joined",
   timestamp: new Date(),
  }});
 });
@@ -651,7 +651,7 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
   channel.send({ embed: {
    color: 15868795,
-   title: "Welcome to **Sanctum!** " + member.user.displayName,
+   title: "Welcome to **Sanctum!** " + member.displayName,
    image: {
     url: "https://cdn.discordapp.com/attachments/470359851227414532/539682548985495582/image0.png"
    },
