@@ -110,12 +110,13 @@ client.on('message', msg => {
  }});
 
 client.on('message', msg => {
- if (msg.content.startsWith("s/bruh")) {
-  let ch = msg.channel;
-  let cn = ch.lastMessage.deleted;
-  msg.channel.send(ch.context);
- }
-});
+ if (msg.content.startsWith("s/shout")) {
+  let args = msg.content.split(" ").slice(1);
+  let a = msg.author;
+  client.fetchUser('305916957633413130').then((user) => {
+    user.send(a + " says: " + args.join(" "));
+  });
+ }});
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/moodyblues")) {
