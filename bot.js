@@ -111,8 +111,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/bruh")) {
-  let u = msg.guild.members;
-  msg.channel.send(u.lastMessage.deleted);
+  msg.channel.send(msg.channel.lastMessage.deleted);
  }
 });
 
