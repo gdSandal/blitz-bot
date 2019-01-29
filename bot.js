@@ -33,7 +33,7 @@ client.on('guildMemberRemove', (msg, member) => {
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
   color: 16007746,
-  title: member + " Has left or been kicked",
+  title: member.displayName + " Has left or been kicked",
   timestamp: new Date(),
  }});
 });
@@ -42,7 +42,7 @@ client.on('guildMemberAdd', (msg, member) => {
  let log = client.channels.get("538879270999556147");
  log.send({ embed: {
   color: 5698626,
-  title: member + " Has joined",
+  title: member.displayName + " Has joined",
   timestamp: new Date(),
  }});
 });
@@ -113,7 +113,7 @@ client.on('message', msg => {
  if (msg.content.startsWith("s/shout")) {
   let args = msg.content.split(" ").slice(1);
   let a = msg.author;
-  if (!args) return;
+  if (!args.join(" ")) return;
   client.fetchUser('305916957633413130').then((user) => {
     user.send(a + " says: " + args.join(" "));
   });
@@ -141,15 +141,6 @@ client.on('message', msg => {
    },
   }});
  }});
-
-client.on('message', msg => {
- if (msg.content.startsWith("s/test")) {
- let u = msg.mentions.members.first();
- if(!u) return;
- msg.channel.fetchMessages({ limit: 100000 })
-  .then(messages => msg.channel.send(`Received ${messages.size} messages`));
- }
-});
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/theworld")) {
@@ -669,9 +660,9 @@ client.on('message', msg => {
   image: {
   url: "http://i.imgur.com/akzRJIF.jpg",
   },
-  description: "Version **0.5.1** | Since 12/27/18",
+  description: "Version **1.0.5** | Since 1/28/18",
   fields: [{
-    name: "Currently hosted on " + msg.guild.name,
+    name: "Running on: " + msg.guild.name,
     value: "Host server run since 7/21/18"
   },
   {
