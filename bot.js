@@ -113,6 +113,7 @@ client.on('message', msg => {
  if (msg.content.startsWith("s/shout")) {
   let args = msg.content.split(" ").slice(1);
   let a = msg.author;
+  if (!args) return;
   client.fetchUser('305916957633413130').then((user) => {
     user.send(a + " says: " + args.join(" "));
   });
