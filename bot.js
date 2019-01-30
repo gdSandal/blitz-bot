@@ -26,6 +26,16 @@ client.on('message', msg => {
    }});
  }});
 
+client.on('message', msg => {
+ if (msg.content === "veds") {
+  msg.delete;
+  msg.channel.send({ embed: {
+   color: 15868795,
+   title: "**Welcome to Sanctum!**",
+   description: ":r1::r2::r2::r2::r2::r2::r2::r2::r2::r2::r3:\n" + " Thanks for joining!"
+   }});
+ }});
+
 //
 //log commands below
 //
