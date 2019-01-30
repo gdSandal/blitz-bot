@@ -36,7 +36,7 @@ client.on('message', msg => {
   msg.channel.send({ embed: {
    color: 15868795,
    title: "hey" + t,
-   description: a + b + b + b + b + b + c + "\n s"
+   description: a + b + b + b + b + b + c + "\n" + t
    }});
  }});
 
