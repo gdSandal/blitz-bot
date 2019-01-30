@@ -15,6 +15,17 @@ client.on('message', msg => {
  if (msg.author.bot) return;
 });
 
+client.on('message', msg => {
+ if (msg.content === "sdev") {
+  msg.delete;
+  msg.channel.send({ embed: {
+   color: 15868795,
+   image: {
+   url: "https://cdn.discordapp.com/attachments/470359851227414532/540288394652155940/image0.png"
+   }
+   }});
+ }});
+
 //
 //log commands below
 //
