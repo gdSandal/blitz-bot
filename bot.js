@@ -33,10 +33,11 @@ client.on('message', msg => {
   const c = client.emojis.find(emoji => emoji.name === "r3");
   msg.delete;
   let t = msg.content.split("-").slice(1);
+  let z = msg.content.split("~").slice(1);
   msg.channel.send({ embed: {
    color: 15868795,
-   title: "**Welcome to Sanctum!**" + t,
-   description: a + b + b + b + b + b + c + "\n Thanks for joining!"
+   title: t,
+   description: a + b + b + b + b + b + c + "\n" + z
    }});
  }});
 
