@@ -27,7 +27,7 @@ client.on('message', msg => {
  }});
 
 client.on('message', msg => {
- if (msg.content === "veds") {
+ if (msg.content.startsWith("veds")) {
   const a = client.emojis.find(emoji => emoji.name === "r1");
   const b = client.emojis.find(emoji => emoji.name === "r2");
   const c = client.emojis.find(emoji => emoji.name === "r3");
