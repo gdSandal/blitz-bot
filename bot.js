@@ -28,12 +28,14 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content === "veds") {
-  const r1 = client.emojis.find(emoji => emoji.name === "r1");
+  const 1 = client.emojis.find(emoji => emoji.name === "r1");
+  const 2 = client.emojis.find(emoji => emoji.name === "r2");
+  const 3 = client.emojis.find(emoji => emoji.name === "r3");
   msg.delete;
   msg.channel.send({ embed: {
    color: 15868795,
    title: "**Welcome to Sanctum!**",
-   description: r1 + ":r2::r2::r2::r2::r2::r2::r2::r2::r2::r3:\n" + " Thanks for joining!"
+   description: 1+2+2+2+2+2+2+2+2+2+3 + "\n" + " Thanks for joining!"
    }});
  }});
 
