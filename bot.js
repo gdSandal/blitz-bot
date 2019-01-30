@@ -35,7 +35,7 @@ client.on('message', msg => {
   msg.channel.send({ embed: {
    color: 15868795,
    title: "**Welcome to Sanctum!**",
-   description: 1+2+2+2+2+2+2+2+2+2+3 + "\n" + " Thanks for joining!"
+   description: 1 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 3 + "\n" + " Thanks for joining!"
    }});
  }});
 
