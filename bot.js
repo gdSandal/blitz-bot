@@ -32,12 +32,11 @@ client.on('message', msg => {
   const b = client.emojis.find(emoji => emoji.name === "r2");
   const c = client.emojis.find(emoji => emoji.name === "r3");
   msg.delete;
-  let t = msg.content.split("-").slice(1);
-  let x = msg.content.split("~").slice(1);
+  let x = msg.content.split("-").slice(1);
   msg.channel.send({ embed: {
    color: 15868795,
-   title: "**" + (t-x).content + "**",
-   description: a + b + b + b + b + b + c + "\n" + x
+   title: x.first(),
+   description: a + b + b + b + b + b + c + "\n" + x.last()
    }});
  }});
 
