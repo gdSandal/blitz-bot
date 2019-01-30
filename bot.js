@@ -28,10 +28,10 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("veds")) {
+  msg.delete;
   const a = client.emojis.find(emoji => emoji.name === "r1");
   const b = client.emojis.find(emoji => emoji.name === "r2");
   const c = client.emojis.find(emoji => emoji.name === "r3");
-  msg.delete;
   let x = msg.content.split("-").slice(1);
   msg.channel.send({ embed: {
    color: 15868795,
