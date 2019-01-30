@@ -35,8 +35,8 @@ client.on('message', msg => {
   let t = msg.content.split("-").slice(1);
   msg.channel.send({ embed: {
    color: 15868795,
-   title: t,
-   description: a + b + b + b + b + b + c
+   title: "hey" + t,
+   description: a + b + b + b + b + b + c + "\n s"
    }});
  }});
 
