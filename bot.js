@@ -32,7 +32,7 @@ client.on('message', msg => {
 
 
 client.on('message', msg => {
- if (msg.content === "sdev") {
+ if (msg.content === "dv7") {
   msg.delete;
   msg.channel.send({ embed: {
    color: 15868795,
@@ -43,7 +43,7 @@ client.on('message', msg => {
  }});
 
 client.on('message', msg => {
- if (msg.content.startsWith("veds")) {
+ if (msg.content.startsWith("dv8")) {
   msg.delete;
   const a = client.emojis.find(emoji => emoji.name === "r1");
   const b = client.emojis.find(emoji => emoji.name === "r2");
