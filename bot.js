@@ -19,7 +19,7 @@ client.on('message', msg => {
  if (msg.content.startsWith("s/entrust")) {
  if (!msg.member.hasPermission("MANAGE ROLES")) return;
   let rmember = msg.mentions.members.first();
-  let role = msg.guild.roles.find(r => r.name === "capo");
+  let role = msg.guild.roles.find(r => r.name === "Capo");
   if (!rmember) return;
   msg.channel.send({ embed: {
    color: 15868795,
