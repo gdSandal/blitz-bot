@@ -13,7 +13,21 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.guild.DMChannel) return;
  if (msg.author.bot) return;
+}); 
+
+client.on('message', msg => {
+ if (msg.content.startsWith("s/entrust")) {
+ if (!msg.member.hasPermission("ADMINISTRATOR")) return msg.channel.send("insufficient permissions");
+  let rmember = msg.mentions.members.first();
+  let role = msg.guild.roles.find(r => r.name === "capo");
+  msg.channel.send({ embed: {
+   color: 15868795,
+   title: rmember + " has achieved the rank of **Capo!**",
+   description: "Congratulations " + rmember + "!"
+  rmember.addRole(role);
+ }
 });
+
 
 client.on('message', msg => {
  if (msg.content === "sdev") {
