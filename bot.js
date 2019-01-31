@@ -24,6 +24,7 @@ client.on('message', msg => {
    color: 15868795,
    title: rmember + " has achieved the rank of **Capo!**",
    description: "Congratulations " + rmember + "!"
+  }});
   rmember.addRole(role);
  }
 });
