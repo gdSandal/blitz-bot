@@ -20,6 +20,7 @@ client.on('message', msg => {
  if (!msg.member.hasPermission("ADMINISTRATOR")) return msg.channel.send("insufficient permissions");
   let rmember = msg.mentions.members.first();
   let role = msg.guild.roles.find(r => r.name === "capo");
+  if (!rmember) return;
   msg.channel.send({ embed: {
    color: 15868795,
    title: rmember + " has achieved the rank of **Capo!**",
@@ -224,6 +225,7 @@ client.on('message', msg => {
   let args = msg.content.split(" ").slice(2);
   let role = msg.guild.roles.find(r => r.name === args.join(" "));
   if (!role) return;
+  if (!rmember) return;
   msg.channel.send(rmember + " now has the " + role + " role!");
   rmember.addRole(role);
  }
