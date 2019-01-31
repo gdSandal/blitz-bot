@@ -17,7 +17,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/entrust")) {
- if (!msg.member.hasPermission("ADMINISTRATOR")) return msg.channel.send("insufficient permissions");
+ if (!msg.member.hasPermission("MANAGE ROLES")) return;
   let rmember = msg.mentions.members.first();
   let role = msg.guild.roles.find(r => r.name === "capo");
   if (!rmember) return;
