@@ -13,7 +13,16 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.guild.DMChannel) return;
  if (msg.author.bot) return;
-}); 
+});
+
+client.on('message', msg => {
+ if (msg.content === "s/dance") {
+  const a = client.emojis.find(emoji => emoji.name === "dance1");
+  const b = client.emojis.find(emoji => emoji.name === "dance2");
+  const c = client.emojis.find(emoji => emoji.name === "dance3");
+  const d = client.emojis.find(emoji => emoji.name === "dance4");
+  msg.channel.send(a + b + "\n" + c + d);
+ }});
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/entrust")) {
