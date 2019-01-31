@@ -23,7 +23,7 @@ client.on('message', msg => {
   if (!rmember) return;
   msg.channel.send({ embed: {
    color: 15868795,
-   title: rmember + " has achieved the rank of **Capo!**",
+   title: rmember.username + " has achieved the rank of **Capo!**",
    description: "Congratulations " + rmember + "!"
   }});
   rmember.addRole(role);
