@@ -16,6 +16,22 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+ if(msg.content.startsWith("s/ttt")) {
+    let x = msg.author;
+    let y = msg.mentions.members.first();
+  if (!y) return;
+  msg.channel.send({ embed: {
+   title: "TIC~TAC~TOE",
+   description: "▢▢▢\n▢▢▢\n▢▢▢",
+   fields: [{
+    name: x.user.username + " VS " + y.user.username,
+    value: "It's " + x.user.username + "'s Turn"
+   },
+   ],
+  }});
+ }});
+
+client.on('message', msg => {
  if (msg.content === "s/dance") {
   const a = client.emojis.find(emoji => emoji.name === "dance1");
   const b = client.emojis.find(emoji => emoji.name === "dance2");
