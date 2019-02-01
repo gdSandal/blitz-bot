@@ -21,7 +21,7 @@ client.on('message', msg => {
     let y = msg.mentions.members.first();
   if (!y) return;
   const filter = m => m.author.id === msg.author.id;
-  const filter = u => u.y.id === y.id;
+  const fil = u => u.y.id === y.id;
   msg.channel.send({ embed: {
    title: "TIC~TAC~TOE",
    description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
