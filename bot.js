@@ -25,8 +25,8 @@ client.on('message', msg => {
    title: "TIC~TAC~TOE",
    description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
    fields: [{
-    name: x.username + " VS " + y.user.username,
-    value: "It's " + x.username + "'s Turn"
+    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
+    value: "It's " + x.username + "'s Turn! Reply with #1-9"
    },
    ],
   }})
@@ -35,7 +35,15 @@ client.on('message', msg => {
   .then(collected => {
    const r = collected.first();
    if (r.content === '1') {
-   msg.channel.send("collected");
+   msg.edit({ embed: {
+   title: "TIC~TAC~TOE",
+   description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
+   fields: [{
+    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
+    value: "It's " + y.username + "'s Turn! Reply with #1-9"
+   },
+   ],
+  }});
    }else if(r.content === '2') {
     msg.channel.send("?");
     }else if(r.content === '3') {
