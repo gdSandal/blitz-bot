@@ -29,8 +29,7 @@ client.on('message', msg => {
     value: "It's " + x.username + "'s Turn"
    },
    ],
-  }});
-  msg.channel.send(x.username + ", it's your turn!\n please type the number space you want to play!\n10 seconds remain [use 1-9]")
+  }})
     .then(msg => {
   msg.channel.awaitMessages(filter, { max: 1, time: 10000 })
   .then(collected => {
