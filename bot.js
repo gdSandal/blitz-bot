@@ -20,6 +20,7 @@ client.on('message', msg => {
     let x = msg.author;
     let y = msg.mentions.members.first();
   if (!y) return;
+  const filter = m => m.author.id === msg.author.id;
   msg.channel.send({ embed: {
    title: "TIC~TAC~TOE",
    description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
@@ -29,7 +30,33 @@ client.on('message', msg => {
    },
    ],
   }});
-  msg.channel.send(x.username + ", it's your turn!\n please type the number space you want to play! [1-9]");
+  msg.channel.send(x.username + ", it's your turn!\n please type the number space you want to play!\n10 seconds remain [use 1-9]")
+    .then(msg => {
+  msg.channel.awaitMessages(filter, { max: 1, time: 10000 })
+  .then(collected => {
+   const r = collected.first();
+   if (r.content === '1') {
+   msg.edit("collected");
+   }else if(r.content === '2') {
+    msg.edit("?");
+    }else if(r.content === '3') {
+     msg.edit("?");
+     }else if(r.content === '4') {
+      msg.edit("?");
+      }else if(r.content === '5') {
+       msg.edit("?");
+       }else if(r.content === '6') {
+        msg.edit("?");
+        }else if(r.content === '7') {
+         msg.edit("?");
+         }else if(r.content === '8') {
+          msg.edit("?");
+          }else if(r.content === '9') {
+           msg.edit("?");
+   }else {
+   msg.channel.send("invalid");
+   }
+  }});
  }});
 
 client.on('message', msg => {
