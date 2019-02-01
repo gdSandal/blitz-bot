@@ -138,7 +138,19 @@ client.on('message', msg => {
    return msg.channel.send("invalid");
    }
   });
+  })
+      .then(msg => {
+  msg.channel.awaitMessages(fil, { max: 1, time: 10000 })
+  .then(collected => {
+   const r = collected.first();
+   if (r.content === "1") {
+    msg.channel.send("ok");
+   }else {
+    return;
+   }
   });
+  });
+  
  }});
 
 client.on('message', msg => {
