@@ -55,7 +55,8 @@ client.on('message', msg => {
    }else {
    msg.channel.send("invalid");
    }
-  }});
+  });
+  });
  }});
 
 client.on('message', msg => {
