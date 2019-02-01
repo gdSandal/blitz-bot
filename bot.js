@@ -24,8 +24,8 @@ client.on('message', msg => {
    title: "TIC~TAC~TOE",
    description: "▢▢▢\n▢▢▢\n▢▢▢",
    fields: [{
-    name: x.user.username + " VS " + y.user.username,
-    value: "It's " + x.user.username + "'s Turn"
+    name: x.username + " VS " + y.user.username,
+    value: "It's " + x.username + "'s Turn"
    },
    ],
   }});
