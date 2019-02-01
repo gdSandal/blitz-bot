@@ -35,23 +35,23 @@ client.on('message', msg => {
   .then(collected => {
    const r = collected.first();
    if (r.content === '1') {
-   msg.edit("collected");
+   msg.channel.send("collected");
    }else if(r.content === '2') {
-    msg.edit("?");
+    msg.channel.send("?");
     }else if(r.content === '3') {
-     msg.edit("?");
+     msg.channel.send("?");
      }else if(r.content === '4') {
-      msg.edit("?");
+      msg.channel.send("?");
       }else if(r.content === '5') {
-       msg.edit("?");
+       msg.channel.send("?");
        }else if(r.content === '6') {
-        msg.edit("?");
+        msg.channel.send("?");
         }else if(r.content === '7') {
-         msg.edit("?");
+         msg.channel.send("?");
          }else if(r.content === '8') {
-          msg.edit("?");
+          msg.channel.send("?");
           }else if(r.content === '9') {
-           msg.edit("?");
+           msg.channel.send("?");
    }else {
    msg.channel.send("invalid");
    }
