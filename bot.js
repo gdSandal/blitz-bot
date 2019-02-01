@@ -22,13 +22,14 @@ client.on('message', msg => {
   if (!y) return;
   msg.channel.send({ embed: {
    title: "TIC~TAC~TOE",
-   description: "▢▢▢\n▢▢▢\n▢▢▢",
+   description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
    fields: [{
     name: x.username + " VS " + y.user.username,
     value: "It's " + x.username + "'s Turn"
    },
    ],
   }});
+  msg.channel.send(x.username + ", it's your turn!\n please type the number space you want to play! [1-9]");
  }});
 
 client.on('message', msg => {
