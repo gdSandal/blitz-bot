@@ -44,7 +44,7 @@ client.on('message', msg => {
    },
    ],
   }});
-    r.delete;
+    r.delete();
    }else if(r.content === '2') {
     msg.channel.send("?");
     }else if(r.content === '3') {
