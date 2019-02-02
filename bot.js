@@ -18,7 +18,7 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content.startsWith("s/blackjack")) {
   const filter = (reaction, user) => {
-    return ['✅'].includes(reaction.emoji.name) && user.id != client.id;
+    return ['✅'].includes(reaction.emoji.name) && user.id === msg.author.id;
 }
   msg.channel.send({embed:{
    title: "BLACKJACK",
