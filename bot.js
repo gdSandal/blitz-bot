@@ -37,7 +37,7 @@ client.on('message', msg => {
    });
   })
   .then(msg => {
-  msg.awaitReactions(filter, { max: 1, time: 10000 })
+  msg.awaitReactions(filter, { max: 2, time: 10000 })
     .then(collected => {
         const l = collected.next();
    if (l.emoji.name === '✅') {
