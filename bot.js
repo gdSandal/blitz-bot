@@ -22,10 +22,13 @@ client.on('message', msg => {
 }
   msg.channel.send({embed:{
    title: "BLACKJACK",
-   description: "React ✅ to join! `[max: 3][ends in 10s]`"
+   description: "React ✅ to join!\n`[max: 3][ends in 10s]`"
   }})
   .then(msg => {
   msg.react('✅');
+  msg.awaitReactions(filter, { max: 3, time: 10000 })
+    .then(collected => {
+        const reaction = collected.next();
   });
  }});
    
