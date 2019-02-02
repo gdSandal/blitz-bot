@@ -19,8 +19,8 @@ client.on('message', msg => {
  if(msg.content.startsWith("s/ttt")) {
     let x = msg.author;
     let y = msg.mentions.members.first();
-    const a = 0;
-    const c = 0;
+    let a = 0;
+    let c = 0;
   if (!y) return;
   const filter = m => m.author.id === msg.author.id;
   const fil = u => u.y.id === y.id;
