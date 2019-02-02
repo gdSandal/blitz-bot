@@ -27,8 +27,8 @@ client.on('message', msg => {
   .then(msg => {
   msg.react('✅');
   });
+ }});
    
-  
   client.on('message', msg => {
  if (msg.content === "s/dance") {
   const a = client.emojis.find(emoji => emoji.name === "dance1");
