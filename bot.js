@@ -32,10 +32,9 @@ client.on('message', msg => {
         const l = collected.last();
    if (f.emoji.name === '✅') {
     msg.channel.send("ok!");
-   } else if (l.emoji.name === '✅') {
+   }
+   if (l.emoji.name === '✅') {
     msg.channel.send("2!");
-   } else {
-    return;
    }
    }});
   });
