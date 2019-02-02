@@ -20,9 +20,19 @@ client.on('message', msg => {
     let x = msg.author;
     let y = msg.mentions.members.first();
     const a;
+    const c;
   if (!y) return;
   const filter = m => m.author.id === msg.author.id;
   const fil = u => u.y.id === y.id;
+  let z = ({ embed: {
+   title: "TIC~TAC~TOE",
+   description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
+   fields: [{
+    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
+    value: "It's " + c + "'s Turn! Reply with #1-9"
+   },
+   ],
+  }});
   msg.channel.send({ embed: {
    title: "TIC~TAC~TOE",
    description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
@@ -31,184 +41,11 @@ client.on('message', msg => {
     value: "It's " + x.username + "'s Turn! Reply with #1-9"
    },
    ],
-  }})
-    .then(msg => {
-  msg.channel.awaitMessages(filter, { max: 1, time: 10000 })
-  .then(collected => {
-   const r = collected.first();
-   if (r.content === '1') {
-   msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "🔴 ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + y.user.username + "'s Turn! Reply with #1-9"
-   },
-   ],
   }});
-    r.delete();
-    a.set(1);
-   }else if(r.content === '2') {
-    msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢ 🔴 ▢\n▢  ▢  ▢\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + y.user.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-    r.delete();
-    a.set(2);
-    }else if(r.content === '3') {
-     msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢ 🔴\n▢  ▢  ▢\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + y.user.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-    r.delete();
-     a.set(3);
-     }else if(r.content === '4') {
-      msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n🔴 ▢  ▢\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + y.user.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-    r.delete();
-      a.set(4);
-      }else if(r.content === '5') {
-       msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n▢ 🔴 ▢\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + y.user.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-    r.delete();
-       a.set(5);
-       }else if(r.content === '6') {
-        msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n▢  ▢ 🔴\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + y.user.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-    r.delete();
-        a.set(6);
-        }else if(r.content === '7') {
-         msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n▢  ▢  ▢\n🔴 ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + y.user.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-    r.delete();
-         a.set(7);
-         }else if(r.content === '8') {
-          msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n▢  ▢  ▢\n▢ 🔴 ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + y.user.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-    r.delete();
-          a.set(8);
-          }else if(r.content === '9') {
-           msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢ 🔴",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + y.user.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-    r.delete();
-           a.set(9);
-   }else {
-   return msg.channel.send("invalid");
-   }
-  });
-  })
-      .then(msg => {
-  msg.channel.awaitMessages(fil, { max: 1, time: 10000 })
-  .then(collected => {
-   const r = collected.first();
-    if(r.content === '1') {
-     if (a = 1) {
-      return msg.channel.send("invalid!");
-     }
-     msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + x.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-    r.delete();
-    }else if(r.content === '2') {
-    msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + x.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-    r.delete();
-     }else if(r.content === '3') {
-     msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + x.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-      r.delete();
-     }else if(r.content === '4') {
-      msg.edit({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + x.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-    r.delete();
-   }else {
-    return msg.channel.send("invalid");
-   }
-  });
-  });
-  
- }});
+ });
 
-client.on('message', msg => {
+  
+  client.on('message', msg => {
  if (msg.content === "s/dance") {
   const a = client.emojis.find(emoji => emoji.name === "dance1");
   const b = client.emojis.find(emoji => emoji.name === "dance2");
