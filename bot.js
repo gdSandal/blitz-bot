@@ -28,7 +28,10 @@ client.on('message', msg => {
   msg.react('✅');
   msg.awaitReactions(filter, { max: 3, time: 10000 })
     .then(collected => {
-        const reaction = collected.next();
+        const rn = collected.next();
+   if (rn.emoji.name === '✅') {
+    msg.channel.send("ok!");
+   }});
   });
  }});
    
