@@ -22,15 +22,21 @@ client.on('message', msg => {
 }
   msg.channel.send({embed:{
    title: "BLACKJACK",
-   description: "React ✅ to join!\n`[max: 3][ends in 10s]`"
+   description: "React ✅ to join!\n`[max: 2][ends in 10s]`"
   }})
   .then(msg => {
   msg.react('✅');
-  msg.awaitReactions(filter, { max: 3, time: 10000 })
+  msg.awaitReactions(filter, { max: 2, time: 10000 })
     .then(collected => {
-        const rn = collected.next();
-   if (rn.emoji.name === '✅') {
+        const f = collected.first();
+        const l = collected.last();
+   if (f.emoji.name === '✅') {
     msg.channel.send("ok!");
+   } else if (l.emoji.name === '✅') {
+    msg.channel.send("2!");
+   } else {
+    return;
+   }
    }});
   });
  }});
