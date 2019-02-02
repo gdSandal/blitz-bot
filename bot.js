@@ -18,7 +18,7 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content.startsWith("s/blackjack")) {
   const filter = (reaction, user) => {
-    return ['✅'].includes(reaction.emoji.name) && user.id != reaction.author.bot.id;
+    return ['✅'].includes(reaction.emoji.name);
 }
   msg.channel.send({embed:{
    title: "BLACKJACK",
@@ -39,7 +39,7 @@ client.on('message', msg => {
   .then(msg => {
   msg.awaitReactions(filter, { max: 1, time: 10000 })
     .then(collected => {
-        const l = collected.last();
+        const l = collected.first();
    if (l.emoji.name === '✅') {
     msg.channel.send("ok2!");
    } else{
