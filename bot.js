@@ -15,6 +15,19 @@ client.on('message', msg => {
  if (msg.author.bot) return;
 });
 
+client.on('message', msg => {
+ if (msg.content.startsWith("s/blackjack")) {
+  const filter = (reaction, user) => {
+    return ['✅'].includes(reaction.emoji.name);
+}
+  msg.channel.send({embed:{
+   title: "BLACKJACK",
+   description: "React ✅ to join! `[max: 3][ends in 10s]`"
+  }})
+  .then(msg => {
+  msg.react('✅');
+  });
+   
   
   client.on('message', msg => {
  if (msg.content === "s/dance") {
