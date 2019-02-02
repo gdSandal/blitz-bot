@@ -15,35 +15,6 @@ client.on('message', msg => {
  if (msg.author.bot) return;
 });
 
-client.on('message', msg => {
- if(msg.content.startsWith("s/ttt")) {
-    let x = msg.author;
-    let y = msg.mentions.members.first();
-    let a = 0;
-    let c = 0;
-  if (!y) return;
-  const filter = m => m.author.id === msg.author.id;
-  const fil = u => u.y.id === y.id;
-  let z = ({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + c + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
-  msg.channel.send({ embed: {
-   title: "TIC~TAC~TOE",
-   description: "▢  ▢  ▢\n▢  ▢  ▢\n▢  ▢  ▢",
-   fields: [{
-    name: "[🔴] " + x.username + " VS " + y.user.username + " [🔵]",
-    value: "It's " + x.username + "'s Turn! Reply with #1-9"
-   },
-   ],
-  }});
- });
-
   
   client.on('message', msg => {
  if (msg.content === "s/dance") {
