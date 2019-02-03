@@ -826,7 +826,7 @@ client.on("message", msg => {
 		let amt = msg.content.split(" ").slice(2);
 		if (!um) return;
 		if (!amt) return;
-		msg.channel.send(um " recieved " + amt);
+		msg.channel.send(um.username " recieved " + amt);
 	}});
 
 client.login(process.env.BOT_TOKEN);
