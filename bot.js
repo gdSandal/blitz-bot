@@ -813,14 +813,4 @@ client.on('message', msg => {
 	      }
 	  });
 
-client.on("message", msg => {
-	if (msg.content.startsWith("s/gift")){
-	    if (!msg.author.hasPermission("MANAGE ROLES")) return;
-		let um = msg.mentions.members.first();
-		let amt = msg.content.split(" ").slice(2);
-		if (!um) return msg.channel.send("no memebrr");
-		if (!amt) return msg.channel.send("no amt");
-		msg.channel.send(um.username + " recieved " + amt);
-	}});
-
 client.login(process.env.BOT_TOKEN);
