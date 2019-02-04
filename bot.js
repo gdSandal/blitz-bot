@@ -794,7 +794,7 @@ client.on('message', msg => {
 	  coins[message.author.id] = {
 	    coins: coins[message.author.id].coins + coinAmt
 	  };
-	  fs.writeFileSync("./coins.json", JSON.stringify (coins), (err) => {
+	  fs.writeFile("./coins.json", JSON.stringify (coins), (err) => {
 	    if (err) console.log(err);
 	  });
 	}
