@@ -790,13 +790,17 @@ client.on('message', msg => {
 	let baseAmt = 1;
 	console.log(coinAmt , baseAmt);
 	
-	if(coinAmt === baseAmt){
+	if(coinAmt = 1){
 	  coins[message.author.id] = {
 	    coins: coins[message.author.id].coins + coinAmt
 	  };
 	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
 	    if (err) console.log(err);
 	  });
+	} else if(coinAmt > 1){
+		  coins[message.author.id] = {
+	    coins: coins[message.author.id].coins + coinAmt
+	  };
 	  fs.editFile("./xp.json", JSON.stringify (coins), (err) => {
 	    if (err) console.log(err);
 	  });
