@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require("fs");
 const coins = require("./xp.json");
-let cooldown = new Set();
 
 client.on('ready', () => {
  client.user.setPresence({
@@ -796,6 +795,9 @@ client.on('message', msg => {
 	    coins: coins[message.author.id].coins + coinAmt
 	  };
 	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
+	    if (err) console.log(err);
+	  });
+	  fs.editFile("./xp.json", JSON.stringify (coins), (err) => {
 	    if (err) console.log(err);
 	  });
 	}
