@@ -784,6 +784,8 @@ client.on('message', msg => {
 	  coins[message.author.id] = {
 	    coins: 0
 	  }
+	}else{
+	return;
 	}
 	
 	let coinAmt = 1;
