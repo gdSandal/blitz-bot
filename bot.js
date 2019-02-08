@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require("fs");
-const coins = require("./xp.json");
+const coins = require("xp.json");
 
 client.on('ready', () => {
  client.user.setPresence({
@@ -784,8 +784,6 @@ client.on('message', msg => {
 	  coins[message.author.id] = {
 	    coins: 0
 	  }
-	}else{
-	return;
 	}
 	
 	let coinAmt = 1;
@@ -796,7 +794,7 @@ client.on('message', msg => {
 	  coins[message.author.id] = {
 	    coins: coins[message.author.id].coins + coinAmt
 	  };
-	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
+	  fs.writeFile("xp.json", JSON.stringify (coins), (err) => {
 	    if (err) console.log(err);
 	  });
 	}
