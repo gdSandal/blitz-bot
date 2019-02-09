@@ -19,7 +19,9 @@ client.on('message', msg => {
 //db
 client.on('message', msg => {
 	let money = await db.fetch('money_${msg.author.id}');
-	if (money === null) money = 0;
+	if (money === null) {
+		money = 0;
+	}
 	msg.channel.send(money);
 });
 	
