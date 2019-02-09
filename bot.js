@@ -18,8 +18,8 @@ client.on('message', msg => {
 
 //db
 client.on('message', msg => {
-	let xp = await db.fetch('xp_${user.id}');
-	if (xp === null) xp = 0;
+	let xp = await db.fetch('money_${user.id}');
+	if (!xp) xp = 0;
 	msg.channel.send(xp);
 });
 
