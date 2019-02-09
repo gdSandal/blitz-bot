@@ -1,8 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
-const Enmap = require('enmap');
-const mEnmap = new Enmap();
+const mongoose = require('mongoose');
 
 client.on('ready', () => {
  client.user.setPresence({
