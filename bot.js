@@ -16,6 +16,21 @@ client.on('message', msg => {
  if (msg.author.bot) return;
 });
 
+//db
+client.on('message', msg => {
+	db.updateValue(msg.author.id, 1).then(i => {
+		let messages;
+	});
+});
+
+client.on('message', msg => {
+ if (msg.content === "s/credits") {
+	db.fetchObject(msg.author.id).then(i => {
+		msg.channel.send("= " + (i.value + 1);
+ });
+});
+		
+
 client.on('message', msg => {
  if (msg.content.startsWith("s/blackjack")) {
   const filter = (reaction, user) => {
