@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const mongoose = require('mongodb');
+const db = require('quick.db');
 
 client.on('ready', () => {
  client.user.setPresence({
@@ -17,7 +17,12 @@ client.on('message', msg => {
 });
 
 //db
-
+client.on('message', msg => {
+	let money = await db.fetch('money_${msg.author.id}');
+	if (money === null) money = 0;
+	msg.channel.send(money);
+});
+	
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/blackjack")) {
