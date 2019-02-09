@@ -20,6 +20,9 @@ client.on('message', msg => {
 client.on('message', msg => {
 	db.updateValue(msg.author.id, 1).then(i => {
 		let messages;
+	if(!isNaN(messages)) {
+		db.updateValue(1);
+	});
 	});
 });
 
