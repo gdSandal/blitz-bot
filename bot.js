@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const db = require('quick.db');
+const fs = require('fs');
 
 client.on('ready', () => {
  client.user.setPresence({
@@ -14,17 +14,6 @@ client.on('ready', () => {
 client.on('message', msg => {
  if (msg.guild.DMChannel) return;
  if (msg.author.bot) return;
-});
-
-//db
-client.on('message', msg => {
-	if (msg.content === "tt") {
-	let money = await db.fetch('money_${msg.author.id}');
-	if (money === null) {
-		money = 0;
-	}
-	msg.channel.send(money);
-	}
 });
 	
 
