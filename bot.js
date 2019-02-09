@@ -18,8 +18,10 @@ client.on('message', msg => {
 
 //db
 client.on('message', msg => {
-	let xp = db.add(xp, 1);
+	let user = msg.author;
+	let xp = await db.fetch('xp_${user.id}');
 	if (xp === null) xp = 0;
+	db.add('xp_${user.id}', add 1);
 	msg.channel.send(xp);
 });
 
