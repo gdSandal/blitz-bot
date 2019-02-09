@@ -18,21 +18,11 @@ client.on('message', msg => {
 
 //db
 client.on('message', msg => {
-	db.updateValue(msg.author.id, 1).then(i => {
-		let messages;
-	if(!isNaN(messages)) {
-		db.updateValue(1);
-	});
-	});
+	let xp = await db.fetch('xp_${user.id}');
+	if (xp === null) xp = 0;
+	msg.channel.send(xp);
 });
 
-client.on('message', msg => {
- if (msg.content === "s/credits") {
-	db.fetchObject(msg.author.id).then(i => {
-		msg.channel.send("= " + (i.value + 1);
- });
-});
-		
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/blackjack")) {
