@@ -19,8 +19,23 @@ client.on('message', msg => {
 });
 
 client.on("message", msg => {
-	if(msg.content === "spin"){
-		msg.channel.send("test")
+  if(msg.content === "s/adopt"){
+	let u = msg.author;
+		if(!coins[u.id]){
+	  coins[u.id] = {
+	    coins: 0
+	  }}
+		if(coins[u.id] < 100){
+			return msg.channel.send("not enough credits!");
+		}else {
+		 coins[u.id] = {
+	    coins: coins[u.id].coins - 100
+	  };
+	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
+	    if (err) console.log(err);
+	  });
+	msg.channel.send("-100");
+		}
 	}});
 		
 
