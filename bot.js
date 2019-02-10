@@ -28,7 +28,7 @@ client.on("message", msg => {
 		if(coins[u.id] < 100){
 			msg.channel.send("not enough credits!");
 			return;
-		}else {
+		}else if (coins[u.id] => 100) {
 		 coins[u.id] = {
 	    coins: coins[u.id].coins - 100
 	  };
