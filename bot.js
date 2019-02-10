@@ -48,7 +48,7 @@ client.on("message", msg => {
 			  value: "• Adopts a new pet! | **[**" + a + "**]**"
 		  },{
 			  name: "**s/catch** | Cost: 500¥",
-			  value: "• Catches a new pet | **[**" a + "-" + b + "-" + c + "**]**"
+			  value: "• Catches a new pet | **[**" + a + "-" + b + "-" + c + "**]**"
 		  },{
 			  name: "**s/hunt** | Cost: 1000¥",
 			  value: "• Hunts a new pet | **[**" + b + "-" + c + "-" + d + "**]**"
