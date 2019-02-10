@@ -852,13 +852,13 @@ client.on("message", message => {
 client.on("message", msg => {
 	if (msg.content.startsWith("s/gift")){
 		if(!msg.member.hasPermission("ADMINISTRATOR")) return;
-		let rmember = msg.mentions.members.first();
+		let u = msg.mentions.members.first();
 		let amt = msg.content.split(" ").slice(2);
 		if(!u) return;
 		if(!amt) return;
 		msg.channel.send({ embed: {
 			color: 15868795,
-			title: msg.author.username + " gifted " + rmember.user.username + " +" + amt + "¥ credits!"
+			title: msg.author.username + " gifted " + u.user.username + " +" + amt + "¥ credits!"
 		}});
 	}});
 	
