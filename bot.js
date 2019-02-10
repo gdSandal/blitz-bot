@@ -29,7 +29,7 @@ client.on("message", msg => {
 	}
 	  let uPet = pet[msg.author.id].pet;
 	  
-	  if(!pet[msg.author.id]){
+	  if(uPet = "none"){
 	  msg.channel.send({embed: {
 		  title: msg.author.username + " - None",
 		  description: "You don't have a pet! \n Use any of the following commands to obtain a new pet:",
