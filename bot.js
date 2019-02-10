@@ -867,7 +867,7 @@ client.on("message", msg => {
 	  }
 	}
 		 coins[u.id] = {
-	    coins: coins[u.id].coins + amt.toInt()
+	    coins: coins[u.id].coins + parseInt(amt)
 	  };
 		
 	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
