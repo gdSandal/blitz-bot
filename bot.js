@@ -17,11 +17,6 @@ client.on('message', msg => {
  if (msg.guild.DMChannel) return;
  if (msg.author.bot) return;
 });
-
-client.on("message", msg => {
-	if(msg.content === "s/hunt"){
-		msg.channel.send("hunt test");
-	}});
 		
 
 client.on("message", msg => {
@@ -55,8 +50,8 @@ client.on("message", msg => {
 	         title: msg.author.username + "’s Pet",
 		  description: uPet + " pet"
 	  }});
-}
-});
+	  }
+}});
 
 
 
