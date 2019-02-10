@@ -19,6 +19,12 @@ client.on('message', msg => {
 });
 
 client.on("message", msg => {
+	if(msg.content === "s/hunt"){
+		msg.channel.send("hunt test");
+	}});
+		
+
+client.on("message", msg => {
   if(msg.content === "s/pet"){
   
 	  if(!pet[msg.author.id]){
@@ -28,8 +34,25 @@ client.on("message", msg => {
 	}
 	  let uPet = pet[msg.author.id].pet;
 	  
+	  if(pet = "none"){
 	  msg.channel.send({embed: {
-		  title: msg.author.username + "’s Pet",
+		  title: msg.author.username + " - None",
+		  description: "You don't have a pet! \n Use any of the following commands to obtain a new pet:",
+		  fields: [{
+			  name: "**s/adopt** | Cost: 100¥",
+			  value: "• Adopts a new __common__ pet!"
+		  },{
+			  name: "**s/catch** | Cost: 500¥",
+			  value: "• Catches a new __uncommon__ pet"
+		  },{
+			  name: "**s/hunt** | Cost: 1000¥",
+			  value: "• Hunts a new __rare__ pet"
+		  },
+	          ],
+	  }});
+	  } else{
+	  msg.channel.send({embed: {
+	         title: msg.author.username + "’s Pet",
 		  description: uPet
 	  }});
 }
