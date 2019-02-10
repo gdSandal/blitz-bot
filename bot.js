@@ -852,7 +852,7 @@ client.on("message", message => {
 client.on("message", msg => {
 	if (msg.content.startsWith("s/gift")){
 		if(!msg.member.hasPermission("ADMINISTRATOR")) return;
-		let rmember = msg.mentions.members.first;
+		let rmember = msg.mentions.members.first();
 		let amt = msg.content.split(" ").slice(2);
 		if(!u) return;
 		if(!amt) return;
