@@ -854,7 +854,7 @@ client.on("message", msg => {
 		if(!msg.author.hasPermission("ADMINISTRATOR")) return;
 		let u = msg.mentions.members.first;
 		if(!u) return;
-		let amt = msg.content.split(" ").slice(1);
+		let amt = msg.content.split(" ").slice(2);
 		if(!amt) return;
 		msg.channel.send(u.username + amt);
 	}});
