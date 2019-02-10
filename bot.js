@@ -15,7 +15,7 @@ client.on('message', msg => {
  if (msg.guild.DMChannel) return;
  if (msg.author.bot) return;
 });
-	
+
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/blackjack")) {
@@ -50,15 +50,6 @@ client.on('message', msg => {
   });
   });
  }});
-   
-  client.on('message', msg => {
- if (msg.content === "s/dance") {
-  const a = client.emojis.find(emoji => emoji.name === "dance1");
-  const b = client.emojis.find(emoji => emoji.name === "dance2");
-  const c = client.emojis.find(emoji => emoji.name === "dance3");
-  const d = client.emojis.find(emoji => emoji.name === "dance4");
-  msg.channel.send(a + b + "\n" + c + d);
- }});
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/entrust")) {
@@ -90,14 +81,12 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content.startsWith("dv8")) {
   msg.delete;
-  const a = client.emojis.find(emoji => emoji.name === "r1");
-  const b = client.emojis.find(emoji => emoji.name === "r2");
-  const c = client.emojis.find(emoji => emoji.name === "r3");
+  const a = client.emojis.find(emoji => emoji.name === "div");
   let x = msg.content.split("-").slice(1);
   msg.channel.send({ embed: {
    color: 15868795,
    title: x[0],
-   description: a + b + b + b + b + b + c + "\n" + x[1]
+   description: a + a + a + a + a + a + a + a + a + a + a + a + a + "\n" + x[1]
    }});
  }});
 
