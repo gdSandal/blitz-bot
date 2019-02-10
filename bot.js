@@ -851,10 +851,10 @@ client.on("message", message => {
 
 client.on("message", msg => {
 	if (msg.content.startsWith("s/gift")){
-		if(!msg.author.hasPermission("ADMINISTRATOR")) return;
+		if(!msg.member.hasPermission("ADMINISTRATOR")) return;
 		let u = msg.mentions.members.first;
-		if(!u) return;
 		let amt = msg.content.split(" ").slice(2);
+		if(!u) return;
 		if(!amt) return;
 		msg.channel.send(u.username + amt);
 	}});
