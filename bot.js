@@ -17,6 +17,24 @@ client.on('message', msg => {
  if (msg.author.bot) return;
 });
 
+client.on("message", msg => {
+  if(msg.content === "s/pet"){
+  
+	  if(!pet[msg.author.id]){
+	  pet[msg.author.id] = {
+	    pet: "none"
+	  }
+	}
+	  let uPet = pet[msg.author.id].pet;
+	  
+	  msg.channel.send({embed: {
+		  title: msg.author.username + "’s Pet",
+		  description: uPet
+	  }});
+}
+});
+
+
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/blackjack")) {
