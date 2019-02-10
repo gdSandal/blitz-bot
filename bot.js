@@ -860,9 +860,20 @@ client.on("message", msg => {
 			color: 15868795,
 			title: msg.author.username + " gifted " + u.user.username + " +" + amt + "¥ credits!"
 		}});
-		 coins[msg.u.id] = {
-	    coins: coins[msg.u.id].coins + amt
+		
+		if(!coins[u.id]){
+	  coins[u.id] = {
+	    coins: 0
+	  }
+	}
+		 coins[u.id] = {
+	    coins: coins[u.id].coins + amt
 	  };
+		
+	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
+	    if (err) console.log(err);
+	  });
+		
 	}});
 	
 
