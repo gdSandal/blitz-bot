@@ -45,13 +45,13 @@ client.on("message", msg => {
 		  description: "**You don't have a pet!** \nUse any of the following commands to obtain a new pet:",
 		  fields: [{
 			  name: "**s/adopt** | Cost: 100¥",
-			  value: "• Adopts a new pet! | **[**" + a + "**]**"
+			  value: "• Adopts a new pet!\n  `Rarity poil:` **[**" + a + "**]**"
 		  },{
 			  name: "**s/catch** | Cost: 500¥",
-			  value: "• Catches a new pet | **[**" + a + "-" + b + "-" + c + "**]**"
+			  value: "• Catches a new pet\n  `Rarity pool:` **[**" + a + "-" + b + "-" + c + "**]**"
 		  },{
 			  name: "**s/hunt** | Cost: 1000¥",
-			  value: "• Hunts a new pet | **[**" + b + "-" + c + "-" + d + "**]**"
+			  value: "• Hunts a new pet\n  `Rarity pool:` **[**" + b + "-" + c + "-" + d + "**]**"
 		  },
 	          ],
 	  }});
