@@ -45,18 +45,15 @@ client.on("message", msg => {
 		  description: "**You don't have a pet!** \nUse any of the following commands to obtain a new pet:",
 		  fields: [{
 			  name: "**s/adopt** | Cost: 100¥",
-			  value: "• Adopts a new pet! | []"
+			  value: "• Adopts a new pet! | [" + a + "]"
 		  },{
 			  name: "**s/catch** | Cost: 500¥",
-			  value: "• Catches a new pet | []"
+			  value: "• Catches a new pet | [" + b + "," + c + "]"
 		  },{
 			  name: "**s/hunt** | Cost: 1000¥",
-			  value: "• Hunts a new pet | []"
+			  value: "• Hunts a new pet | [" + c + "," + d + "]"
 		  },
 	          ],
-		  footer: {
-		  text: "Key:" + a + " - Common " + b + " - Uncommon " + c + " - Rare " + d + " - Mythic"
-		  }
 	  }});
 	  } else{
 	  msg.channel.send({embed: {
