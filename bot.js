@@ -860,6 +860,9 @@ client.on("message", msg => {
 			color: 15868795,
 			title: msg.author.username + " gifted " + u.user.username + " +" + amt + "¥ credits!"
 		}});
+		 coins[msg.u.id] = {
+	    coins: coins[msg.u.id].coins + amt
+	  };
 	}});
 	
 
