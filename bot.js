@@ -73,7 +73,7 @@ client.on('message', msg => {
   msg.channel.send({ embed: {
    color: 15868795,
    image: {
-   url: "https://cdn.discordapp.com/attachments/470359851227414532/540288394652155940/image0.png"
+   url: "https://cdn.discordapp.com/attachments/470359851227414532/543975252527677441/image0.png"
    }
    }});
  }});
