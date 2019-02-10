@@ -848,6 +848,16 @@ client.on("message", message => {
 	          }});
 	      }
 	  });
+
+client.on("message", msg => {
+	if (msg.content.startsWith("s/gift")){
+		if(!msg.author.hasPermission("ADMINISTRATOR")) return;
+		let u = msg.mentions.members.first;
+		if(!u) return;
+		let amt = msg.content.split(" ").slice(3);
+		if(!amt) return;
+		msg.channel.send(u + amt);
+	}});
 	
 
 
