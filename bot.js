@@ -45,7 +45,7 @@ client.on("message", msg => {
 		  description: "**You don't have a pet!** \nUse any of the following commands to obtain a new pet:",
 		  fields: [{
 			  name: "**s/adopt** | Cost: 100¥",
-			  value: "• Adopts a new pet!\n  `Rarity poil:` **[**" + a + "**]**"
+			  value: "• Adopts a new pet!\n  `Rarity pool:` **[**" + a + "**]**"
 		  },{
 			  name: "**s/catch** | Cost: 500¥",
 			  value: "• Catches a new pet\n  `Rarity pool:` **[**" + a + "-" + b + "-" + c + "**]**"
