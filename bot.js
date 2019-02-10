@@ -32,7 +32,7 @@ client.on("message", msg => {
 	  if(uPet = "none"){
 	  msg.channel.send({embed: {
 		  title: msg.author.username + " - None",
-		  description: "You don't have a pet! \n Use any of the following commands to obtain a new pet:",
+		  description: "**You don't have a pet!** \nUse any of the following commands to obtain a new pet:",
 		  fields: [{
 			  name: "**s/adopt** | Cost: 100¥",
 			  value: "• Adopts a new __common__ pet!"
