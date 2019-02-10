@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const pet = require('./pets.json');
-const xp = require('./xp.json');
+const coins = require('./xp.json');
 
 client.on('ready', () => {
  client.user.setPresence({
