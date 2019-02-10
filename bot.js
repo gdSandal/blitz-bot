@@ -856,7 +856,7 @@ client.on("message", msg => {
 		let amt = msg.content.split(" ").slice(2);
 		if(!u) return;
 		if(!amt) return;
-		msg.channel.send(u.username + amt);
+		msg.channel.send(u.user.username + amt);
 	}});
 	
 
