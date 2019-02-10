@@ -17,10 +17,20 @@ client.on('message', msg => {
  if (msg.guild.DMChannel) return;
  if (msg.author.bot) return;
 });
+
+client.on("message", msg => {
+	if(msg.content === "spin"){
+		msg.channel.send("test")
+	}});
 		
 
 client.on("message", msg => {
   if(msg.content === "s/pet"){
+	  
+  const a = client.emojis.find(emoji => emoji.name === "common");	  
+  const b = client.emojis.find(emoji => emoji.name === "uncommon");
+  const c = client.emojis.find(emoji => emoji.name === "rare");
+  const d = client.emojis.find(emoji => emoji.name === "mythic");
   
 	  if(!pet[msg.author.id]){
 	  pet[msg.author.id] = {
@@ -35,15 +45,18 @@ client.on("message", msg => {
 		  description: "**You don't have a pet!** \nUse any of the following commands to obtain a new pet:",
 		  fields: [{
 			  name: "**s/adopt** | Cost: 100¥",
-			  value: "• Adopts a new __common__ pet!"
+			  value: "• Adopts a new pet! | []"
 		  },{
 			  name: "**s/catch** | Cost: 500¥",
-			  value: "• Catches a new __uncommon__ pet"
+			  value: "• Catches a new pet | []"
 		  },{
 			  name: "**s/hunt** | Cost: 1000¥",
-			  value: "• Hunts a new __rare__ pet"
+			  value: "• Hunts a new pet | []"
 		  },
 	          ],
+		  footer: {
+		  text: "Key:" + a + " - Common " + b + " - Uncommon " + c + " - Rare " + d + " - Mythic"
+		  }
 	  }});
 	  } else{
 	  msg.channel.send({embed: {
