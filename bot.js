@@ -18,6 +18,7 @@ client.on('message', msg => {
  if (msg.author.bot) return;
 });
 
+
 client.on("message", msg => {
   if(msg.content === "s/adopt"){
 	  let p = ["dog", "cat", "fish"];
@@ -90,6 +91,8 @@ client.on("message", msg => {
 		  },
 	          ],
 	  }});
+	  } else if (uPet = "new"){
+		  msg.channel.send(uPet);
 	  } else{
 	  msg.channel.send({embed: {
 	         title: msg.author.username + "’s Pet",
