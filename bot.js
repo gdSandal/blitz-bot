@@ -52,7 +52,7 @@ client.on("message", msg => {
 	    if (err) console.log(err);
 	  });
 	msg.channel.send({ embed: {
-		title: u.username + " adopted a " + p[pi] + " | " + pet[u.id].pet
+		title: u.username + " adopted a " + p[pi] + " | " + pet[u.id].pet,
 		description: "Congratulations " + u.username + "!"
 	}});
 		}
