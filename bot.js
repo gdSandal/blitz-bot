@@ -42,7 +42,7 @@ client.on("message", msg => {
 	    coins: coins[u.id].coins - 100
 	  };
 		pet[u.id] = {
-	    pet: p[pi].toString
+	    pet: "test"
 	  };
 			
 	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
@@ -52,7 +52,7 @@ client.on("message", msg => {
 	    if (err) console.log(err);
 	  });
 	msg.channel.send({ embed: {
-		title: u.username + " adopted a " + p[pi],
+		title: u.username + " adopted a " + p[pi] + " | " + pet[u.id].pet
 		description: "Congratulations " + u.username + "!"
 	}});
 		}
