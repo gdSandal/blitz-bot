@@ -26,7 +26,10 @@ client.on("message", msg => {
 	    coins: 0
 	  }}
 		if(coins[u.id].coins < 100){
-			msg.channel.send("not enough credits!");
+			msg.channel.send({ embed: {
+				title: "Not enough credits!",
+				description: "You need **100¥** to adopt a pet!"
+			}});
 			return;
 		}else {
 		 coins[u.id] = {
@@ -35,7 +38,10 @@ client.on("message", msg => {
 	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
 	    if (err) console.log(err);
 	  });
-	msg.channel.send("-100");
+	msg.channel.send({ embed: {
+		title: u.username + " adopted a ",
+		description: "Congradulations! " + u.username
+	}});
 		}
 	}});
 		
