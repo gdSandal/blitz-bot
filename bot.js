@@ -75,7 +75,7 @@ client.on("message", msg => {
 	}
 	  let uPet = pet[msg.author.id].pet;
 	  
-	  if(uPet = "none"){
+	  if(uPet === "none"){
 	  msg.channel.send({embed: {
 		  title: msg.author.username + " - None",
 		  description: "**You don't have a pet!** \nUse any of the following commands to obtain a new pet:",
@@ -91,7 +91,7 @@ client.on("message", msg => {
 		  },
 	          ],
 	  }});
-	  } else if (uPet = "new"){
+	  } else if (uPet === "new"){
 		  msg.channel.send(uPet);
 	  } else{
 	  msg.channel.send({embed: {
