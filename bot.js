@@ -20,10 +20,16 @@ client.on('message', msg => {
 
 client.on("message", msg => {
   if(msg.content === "s/adopt"){
+	  let p = ["dog", "cat", "fish"];
+	  let pi = Math.floor(Math.random() * p.length);
 	let u = msg.author;
 		if(!coins[u.id]){
 	  coins[u.id] = {
 	    coins: 0
+	  }}
+	  	if(!pet[u.id]){
+	  pet[u.id] = {
+	    pet: "none"
 	  }}
 		if(coins[u.id].coins < 100){
 			msg.channel.send({ embed: {
@@ -35,12 +41,19 @@ client.on("message", msg => {
 		 coins[u.id] = {
 	    coins: coins[u.id].coins - 100
 	  };
+		pet[u.id] = {
+	  coins[u.id] = {
+	    pet: pi
+	  };
 	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
 	    if (err) console.log(err);
 	  });
+	  fs.writeFile("./pets.json", JSON.stringify (pet), (err) => {
+	    if (err) console.log(err);
+	  });
 	msg.channel.send({ embed: {
-		title: u.username + " adopted a ",
-		description: "Congradulations! " + u.username
+		title: u.username + " adopted a " + pi,
+		description: "Congratulations " + u.username + "!"
 	}});
 		}
 	}});
