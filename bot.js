@@ -43,7 +43,7 @@ client.on("message", msg => {
 	    coins: coins[u.id].coins - 100
 	  };
 	  pet[u.id] = {
-	    pet: "new"
+	    pet: p[pi]
 	  };
 			
 	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
@@ -91,8 +91,6 @@ client.on("message", msg => {
 		  },
 	          ],
 	  }});
-	  } else if (uPet === "new"){
-		  msg.channel.send(uPet);
 	  } else{
 	  msg.channel.send({embed: {
 	         title: msg.author.username + "’s Pet",
