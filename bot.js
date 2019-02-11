@@ -42,8 +42,7 @@ client.on("message", msg => {
 	    coins: coins[u.id].coins - 100
 	  };
 		pet[u.id] = {
-	  coins[u.id] = {
-	    pet: pi
+	    pet: pet[u.id] + pi
 	  };
 	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
 	    if (err) console.log(err);
