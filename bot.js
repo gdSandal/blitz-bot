@@ -156,6 +156,7 @@ client.on("message", msg => {
 		 },
 		  footer: {
 			  text: "s/feed: [15¥] | s/rename: [30¥]"
+		  },
 	  }});
 	  }
 }});
