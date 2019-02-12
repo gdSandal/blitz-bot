@@ -88,37 +88,6 @@ client.on("message", msg => {
 	  
 	  let uPet = pet[msg.author.id].pet;
 	  
-	  if(uPet === "Lab "+a){
-		  let y = "";
-	  }
-	    if(uPet === "Wolf "+a){
-		  let y = "";
-	  }
-	    if(uPet === "Brown Cat "+a){
-		  let y = "";
-	  }
-	    if(uPet === "White Cat "+a){
-		  let y = "";
-	  }
-	    if(uPet === "Striped Cat "+a){
-		  let y = "";
-	  }
-	    if(uPet === "Monkey "+a){
-		  let y = "";
-	  }
-	    if(uPet === "Turtle "+a){
-		  let y = "";
-	  }
-	    if(uPet === "Bunny "+a){
-		  let y = "";
-	  }
-	    if(uPet === "Blue Fish "+a){
-		  let y = "";
-	  }
-	    if(uPet === "Red Fish"+a){
-		  let y = "";
-	  }
-	  
 	  if(uPet === "none"){
 	  msg.channel.send({embed: {
 		  title: msg.author.username + " - None",
@@ -136,9 +105,42 @@ client.on("message", msg => {
 	          ],
 	  }});
 	  } else{
+	  if(uPet === "Lab "+a){
+		  let y = "https://cdn.discordapp.com/attachments/470359851227414532/544678783081250816/image0.gif";
+	  }
+	    if(uPet === "Wolf "+a){
+		  let y = "https://cdn.discordapp.com/attachments/470359851227414532/544678807936827392/image0.gif";
+	  }
+	    if(uPet === "Brown Cat "+a){
+		  let y = "https://cdn.discordapp.com/attachments/470359851227414532/544678835182895107/image0.gif";
+	  }
+	    if(uPet === "White Cat "+a){
+		  let y = "https://cdn.discordapp.com/attachments/470359851227414532/544678857706438674/image0.gif";
+	  }
+	    if(uPet === "Striped Cat "+a){
+		  let y = "https://cdn.discordapp.com/attachments/470359851227414532/544678879500042251/image0.gif";
+	  }
+	    if(uPet === "Monkey "+a){
+		  let y = "https://cdn.discordapp.com/attachments/470359851227414532/544679134639685632/image0.gif";
+	  }
+	    if(uPet === "Turtle "+a){
+		  let y = "https://cdn.discordapp.com/attachments/470359851227414532/544679173017567262/image0.gif";
+	  }
+	    if(uPet === "Bunny "+a){
+		  let y = "https://cdn.discordapp.com/attachments/470359851227414532/544679151861235712/image0.gif";
+	  }
+	    if(uPet === "Blue Fish "+a){
+		  let y = "https://cdn.discordapp.com/attachments/470359851227414532/544679071573868546/image0.gif";
+	  }
+	    if(uPet === "Red Fish"+a){
+		  let y = "https://cdn.discordapp.com/attachments/470359851227414532/544679052875792407/image0.gif";
+	  }
+		  
 	  msg.channel.send({embed: {
 	         title: msg.author.username + "’s " + uPet,
-		  description: "pet"
+		 image: {
+			 url: y
+		 }
 	  }});
 	  }
 }});
