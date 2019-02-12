@@ -171,7 +171,10 @@ client.on("message", msg => {
 	  };
 	  let uPet = pet[msg.author.id].pet;
 	  let uXp = pet[msg.author.id].exp;
+          let uName = pet[msg.author.id].name;
 	   pet[msg.author.id] = {
+	    pet: uPet,
+	    name: uName,
 	    exp: uXp + r
 	  };
 		msg.channel.send({ embed: {
