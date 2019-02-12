@@ -21,7 +21,7 @@ client.on('message', msg => {
 
 client.on("message", msg => {
   if(msg.content === "s/adopt"){
-	  let p = ["dog", "cat", "fish"];
+	  let p = ["Lab", "Wolf", "Brown Cat", "White Cat", "Grey Cat", "Monkey", "Bunny", "Red Fish", "Blue Fish", "Turtle"];
 	  let pi = Math.floor(Math.random() * p.length);
 	let u = msg.author;
 		if(!coins[u.id]){
@@ -34,6 +34,7 @@ client.on("message", msg => {
 	  }}
 		if(coins[u.id].coins < 100){
 			msg.channel.send({ embed: {
+				color: 15868795,
 				title: "Not enough credits!",
 				description: "You need **100¥** to adopt a pet!"
 			}});
@@ -53,6 +54,7 @@ client.on("message", msg => {
 	    if (err) console.log(err);
 	  });
 	msg.channel.send({ embed: {
+		color: 15868795,
 		title: u.username + " adopted a " + pet[u.id].pet,
 		description: "Congratulations " + u.username + "!"
 	}});
