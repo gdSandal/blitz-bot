@@ -225,6 +225,30 @@ client.on("message", msg => {
 	}
 }});
 	
+client.on("message", msg => {
+  if (msg.content.startsWith("s/release")){
+	 if(!pet[msg.author.id]){
+		 return;
+	} else{
+	  let uPet = "none";
+	  let uXp = 0;
+          let uName = "unnamed";
+		
+		coins[msg.author.id] = {
+	    coins: coins[msg.author.id].coins + 20
+	  };
+		
+	   pet[msg.author.id] = {
+	    pet: uPet,
+	    name: uName,
+	    exp: uXp
+	  };
+		msg.channel.send({ embed: {
+			title: msg.author.username + ", You released your pet back into its natural habitat!",
+			description: "You have been rewarded +20¥ credits!"
+		}});
+	}
+}});
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/blackjack")) {
