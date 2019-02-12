@@ -4,6 +4,7 @@ const fs = require('fs');
 const pet = require('./pets.json');
 const coins = require('./xp.json');
 
+
 client.on('ready', () => {
  client.user.setPresence({
     game: {
@@ -21,7 +22,8 @@ client.on('message', msg => {
 
 client.on("message", msg => {
   if(msg.content === "s/adopt"){
-	  let p = ["Lab", "Wolf", "Brown Cat", "White Cat", "Grey Cat", "Monkey", "Bunny", "Red Fish", "Blue Fish", "Turtle"];
+ const a = client.emojis.find(emoji => emoji.name === "common");	  
+	  let p = ["Lab " + a, "Wolf " + a, "Brown Cat " + a, "White Cat " + a, "Grey Cat " + a, "Monkey " + a, "Bunny " + a, "Red Fish " + a, "Blue Fish " + a, "Turtle " + a];
 	  let pi = Math.floor(Math.random() * p.length);
 	let u = msg.author;
 		if(!coins[u.id]){
@@ -56,21 +58,26 @@ client.on("message", msg => {
 	msg.channel.send({ embed: {
 		color: 15868795,
 		title: u.username + " adopted a " + pet[u.id].pet,
-		description: "Congratulations " + u.username + "!"
+		description: "Congratulations " + u.username + "!",
+		fields: [{
+			name: "Notice:",
+			value: "If you previously had a pet
+		},
+		 ],
 	}});
 		}
 	}});
 		
 
 client.on("message", msg => {
-  if(msg.content === "s/pet"){
-	  
+  if(msg.content === "s/pet"){  
+	  if(!pet[msg.author.id]){
+		  
   const a = client.emojis.find(emoji => emoji.name === "common");	  
   const b = client.emojis.find(emoji => emoji.name === "uncommon");
   const c = client.emojis.find(emoji => emoji.name === "rare");
   const d = client.emojis.find(emoji => emoji.name === "mythic");
-  
-	  if(!pet[msg.author.id]){
+
 	  pet[msg.author.id] = {
 	    pet: "none"
 	  }
@@ -95,8 +102,8 @@ client.on("message", msg => {
 	  }});
 	  } else{
 	  msg.channel.send({embed: {
-	         title: msg.author.username + "’s Pet",
-		  description: uPet + " pet"
+	         title: msg.author.username + "’s " + uPet,
+		  description: "pet"
 	  }});
 	  }
 }});
@@ -167,12 +174,12 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content.startsWith("dv8")) {
   msg.delete;
-  const a = client.emojis.find(emoji => emoji.name === "div");
+  const z = client.emojis.find(emoji => emoji.name === "div");
   let x = msg.content.split("-").slice(1);
   msg.channel.send({ embed: {
    color: 15868795,
    title: x[0],
-   description: a + a + a + a + a + a + a + a + a + a + a + a + a + "\n" + x[1]
+   description: z +z +z +z +z +z +z +z +z +z + "\n" + x[1]
    }});
  }});
 
