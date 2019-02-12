@@ -161,7 +161,8 @@ client.on("message", msg => {
 }});
 client.on("message", msg => {
   if (msg.content.startsWith("s/feed")){
-	 if(!pet[msg.author.id] || !coins[msg.author.id]) return msg.channel.send(msg.author.username + ", you do not have a pet! (or have insufficient credits)\n Type **s/pet** to obtain a new pet!")
+	 if((!pet[msg.author.id]) || (coins[msg.author.id] < 15)){
+		 return;
 	} else {
 	let r = Math.floor(Math.random() * 10 + 5);
 		coins[msg.author.id] = {
@@ -172,6 +173,10 @@ client.on("message", msg => {
 	   pet[msg.author.id] = {
 	    exp: uXp + r
 	  };
+		msg.channel.send({ embed: {
+			title: "You fed your pet for 15¥!",
+			description: msg.author.username + "! your " + uPet + " gained " + r + " XP!"
+		}});
 	}
 }});
 	
