@@ -74,17 +74,18 @@ client.on("message", msg => {
 
 client.on("message", msg => {
   if(msg.content === "s/pet"){  
+	  
 	  if(!pet[msg.author.id]){
-		  
-  const a = client.emojis.find(emoji => emoji.name === "common");	  
-  const b = client.emojis.find(emoji => emoji.name === "uncommon");
-  const c = client.emojis.find(emoji => emoji.name === "rare");
-  const d = client.emojis.find(emoji => emoji.name === "mythic");
-
 	  pet[msg.author.id] = {
 	    pet: "none"
 	  }
 	}
+	  
+  const a = client.emojis.find(emoji => emoji.name === "common");	  
+  const b = client.emojis.find(emoji => emoji.name === "uncommon");
+  const c = client.emojis.find(emoji => emoji.name === "rare");
+  const d = client.emojis.find(emoji => emoji.name === "mythic");
+	  
 	  let uPet = pet[msg.author.id].pet;
 	  
 	  if(uPet === "none"){
