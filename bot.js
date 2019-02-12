@@ -23,7 +23,7 @@ client.on('message', msg => {
 client.on("message", msg => {
   if(msg.content === "s/adopt"){
  const a = client.emojis.find(emoji => emoji.name === "common");	  
-	  let p = ["Lab " + a, "Wolf " + a, "Brown Cat " + a, "White Cat " + a, "Grey Cat " + a, "Monkey " + a, "Bunny " + a, "Red Fish " + a, "Blue Fish " + a, "Turtle " + a];
+	  let p = ["Lab " + a, "Wolf " + a, "Brown Cat " + a, "White Cat " + a, "Striped Cat " + a, "Monkey " + a, "Bunny " + a, "Red Fish " + a, "Blue Fish " + a, "Turtle " + a];
 	  let pi = Math.floor(Math.random() * p.length);
 	let u = msg.author;
 		if(!coins[u.id]){
@@ -87,6 +87,37 @@ client.on("message", msg => {
   const d = client.emojis.find(emoji => emoji.name === "mythic");
 	  
 	  let uPet = pet[msg.author.id].pet;
+	  
+	  if(uPet === "Lab "+a){
+		  let y = "";
+	  }
+	    if(uPet === "Wolf "+a){
+		  let y = "";
+	  }
+	    if(uPet === "Brown Cat "+a){
+		  let y = "";
+	  }
+	    if(uPet === "White Cat "+a){
+		  let y = "";
+	  }
+	    if(uPet === "Striped Cat "+a){
+		  let y = "";
+	  }
+	    if(uPet === "Monkey "+a){
+		  let y = "";
+	  }
+	    if(uPet === "Turtle "+a){
+		  let y = "";
+	  }
+	    if(uPet === "Bunny "+a){
+		  let y = "";
+	  }
+	    if(uPet === "Blue Fish "+a){
+		  let y = "";
+	  }
+	    if(uPet === "Red Fish"+a){
+		  let y = "";
+	  }
 	  
 	  if(uPet === "none"){
 	  msg.channel.send({embed: {
