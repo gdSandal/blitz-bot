@@ -61,9 +61,12 @@ client.on("message", msg => {
 		description: "Congratulations " + u.username + "!",
 		fields: [{
 			name: "Notice:",
-			value: "If you previously had a pet
+			value: "If you previously had a pet, a new adoption sets free and replaces the previous pet"
 		},
 		 ],
+		footer: {
+			text: "You now own a pet! Type: ‘s/pet’ to view"
+		}
 	}});
 		}
 	}});
