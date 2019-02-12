@@ -144,10 +144,27 @@ client.on("message", msg => {
 		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544679052875792407/image0.gif";
 	  }
 		  
+		  //levels
+		  if(uXp < 51){
+			  var l = 1;
+		  }
+		  if((uXp > 50) && (uXp < 101)){
+			  var l = 2;
+		  }
+		  if((uXp > 100) && (uXp < 251)){
+			  var l = 3;
+		  }
+		  if((uXp > 250) && (uXp < 301)){
+			  var l = 4;
+		  }
+		  if ((uXp > 300)){
+			  var l = "MAX";
+		  }
+		  
 	  msg.channel.send({embed: {
 	         title: msg.author.username + "’s " + uPet,
 		  fields: [{
-			  name: "**XP:** " + uXp,
+			  name: "**LVL:** " + l + " | **XP:** " + uXp,
 			  value: "**Pet name:** " + uName
 		  },
 	          ],
@@ -180,6 +197,30 @@ client.on("message", msg => {
 		msg.channel.send({ embed: {
 			title: msg.author.username + ", You fed your pet for 15¥!",
 			description: "Your " + uPet + " gained " + r + " XP!"
+		}});
+	}
+}});
+
+client.on("message", msg => {
+  if (msg.content.startsWith("s/rename")){
+	 if((!pet[msg.author.id]) || (coins[msg.author.id] < 30)){
+		 return;
+	} else {
+	let n = msg.content.split(" ").slice(1);
+		coins[msg.author.id] = {
+	    coins: coins[msg.author.id].coins - 30
+	  };
+	  let uPet = pet[msg.author.id].pet;
+	  let uXp = pet[msg.author.id].exp;
+          let uName = pet[msg.author.id].name;
+	   pet[msg.author.id] = {
+	    pet: uPet,
+	    name: n,
+	    exp: uXp
+	  };
+		msg.channel.send({ embed: {
+			title: msg.author.username + ", You renamed your pet for 30¥!",
+			description: "Your " + uPet + " is now named " + uName + "!"
 		}});
 	}
 }});
