@@ -155,7 +155,7 @@ client.on("message", msg => {
 			 url: y
 		 },
 		  footer: {
-			  text: "s/feed: [15¥] | s/rename: [30¥]"
+			  text: "s/feed: [15¥] | s/rename: [30¥] | s/release: [0¥]"
 		  },
 	  }});
 	  }
@@ -178,8 +178,8 @@ client.on("message", msg => {
 	    exp: uXp + r
 	  };
 		msg.channel.send({ embed: {
-			title: "You fed your pet for 15¥!",
-			description: msg.author.username + "! your " + uPet + " gained " + r + " XP!"
+			title: msg.author.username + ", You fed your pet for 15¥!",
+			description: "Your " + uPet + " gained " + r + " XP!"
 		}});
 	}
 }});
