@@ -23,7 +23,7 @@ client.on('message', msg => {
 client.on("message", msg => {
   if(msg.content === "s/adopt"){
  const a = client.emojis.find(emoji => emoji.name === "common");	  
-	  let p = ["Lab " + a, "Wolf " + a, "Brown Cat " + a, "White Cat " + a, "Striped Cat " + a, "Monkey " + a, "Bunny " + a, "Red Fish " + a, "Blue Fish " + a, "Turtle " + a];
+	  let p = ["Hedgehog " + a, "Lab " + a, "Wolf " + a, "Brown Cat " + a, "White Cat " + a, "Striped Cat " + a, "Monkey " + a, "Bunny " + a, "Red Fish " + a, "Blue Fish " + a, "Turtle " + a];
 	  let pi = Math.floor(Math.random() * p.length);
 	let u = msg.author;
 		if(!coins[u.id]){
@@ -142,6 +142,9 @@ client.on("message", msg => {
 	  }
 	    if(uPet === "Red Fish"+a){
 		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544679052875792407/image0.gif";
+	  }
+	    if(uPet === "Hedgehog"+a){
+		    var y = "https://cdn.discordapp.com/attachments/470359851227414532/544980897917566986/image0.gif";
 	  }
 		  
 		  //levels
