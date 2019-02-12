@@ -48,7 +48,9 @@ client.on("message", msg => {
 	    coins: coins[u.id].coins - 100
 	  };
 	  pet[u.id] = {
-	    pet: p[pi]
+	    pet: p[pi],
+            name: "unnamed",
+	    exp: 0
 	  };
 			
 	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
@@ -79,7 +81,9 @@ client.on("message", msg => {
 	  
 	  if(!pet[msg.author.id]){
 	  pet[msg.author.id] = {
-	    pet: "none"
+	    pet: "none",
+	    name: "unnamed",
+	    exp: 0
 	  }
 	}
 	  
@@ -89,8 +93,8 @@ client.on("message", msg => {
   const d = client.emojis.find(emoji => emoji.name === "mythic");
 	  
 	  let uPet = pet[msg.author.id].pet;
-	  let uName = pet.[msg.author.id].name;
-	  let uXp = pet.[msg.author.id].exp;
+	  let uName = pet[msg.author.id].name;
+	  let uXp = pet[msg.author.id].exp;
 	  
 	  if(uPet === "none"){
 	  msg.channel.send({embed: {
