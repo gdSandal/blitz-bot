@@ -220,7 +220,7 @@ client.on("message", msg => {
 	  };
 		msg.channel.send({ embed: {
 			title: msg.author.username + ", You renamed your pet for 30¥!",
-			description: "Your " + uPet + " is now named " + uName + "!"
+			description: "Your " + uPet + " is now named " + n + "!"
 		}});
 	}
 }});
