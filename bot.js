@@ -148,20 +148,33 @@ client.on("message", msg => {
 	         title: msg.author.username + "’s " + uPet,
 		  fields: [{
 			  name: "**XP:** " + uXp,
-			  value: "Type: **s/feed** to level up your pet!\n `Cost: 25¥`"
-		  },{
-			  name: "Name: " + uName,
-			  value: "Type: **s/name** to rename your pet!\n `Cost: 30¥`"
+			  value: "**Pet name:** " + uName
 		  },
 	          ],
 		 image: {
 			 url: y
-		 }
+		 },
+		  footer: {
+			  text: "s/feed: [15¥] | s/rename: [30¥]"
 	  }});
 	  }
 }});
-
-
+client.on("message", msg => {
+  if (msg.content.startsWith("s/feed")){
+	 if(!pet[msg.author.id] || !coins[msg.author.id]) return msg.channel.send(msg.author.username + ", you do not have a pet! (or have insufficient credits)\n Type **s/pet** to obtain a new pet!")
+	} else {
+	let r = Math.floor(Math.random() * 10 + 5);
+		coins[msg.author.id] = {
+	    coins: coins[msg.author.id].coins - 15
+	  };
+	  let uPet = pet[msg.author.id].pet;
+	  let uXp = pet[msg.author.id].exp;
+	   pet[msg.author.id] = {
+	    exp: uXp + r
+	  };
+	}
+}});
+	
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/blackjack")) {
