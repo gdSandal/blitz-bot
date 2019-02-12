@@ -32,7 +32,9 @@ client.on("message", msg => {
 	  }}
 	  	if(!pet[u.id]){
 	  pet[u.id] = {
-	    pet: "none"
+	    pet: "none",
+	    name: "unnamed",
+	    exp: 0
 	  }}
 		if(coins[u.id].coins < 100){
 			msg.channel.send({ embed: {
@@ -87,6 +89,8 @@ client.on("message", msg => {
   const d = client.emojis.find(emoji => emoji.name === "mythic");
 	  
 	  let uPet = pet[msg.author.id].pet;
+	  let uName = pet.[msg.author.id].name;
+	  let uXp = pet.[msg.author.id].exp;
 	  
 	  if(uPet === "none"){
 	  msg.channel.send({embed: {
@@ -138,6 +142,14 @@ client.on("message", msg => {
 		  
 	  msg.channel.send({embed: {
 	         title: msg.author.username + "’s " + uPet,
+		  fields: [{
+			  name: "**XP:** " + uXp,
+			  value: "Type: **s/feed** to level up your pet!\n `Cost: 25¥`"
+		  },{
+			  name: "Name: " + uName,
+			  value: "Type: **s/name** to rename your pet!\n `Cost: 30¥`"
+		  },
+	          ],
 		 image: {
 			 url: y
 		 }
