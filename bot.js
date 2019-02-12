@@ -233,18 +233,18 @@ client.on("message", msg => {
 	 if(!pet[msg.author.id]){
 		 return;
 	} else{
-	  let uPet = "none";
-	  let uXp = 0;
-          let uName = "unnamed";
+	  let uPet = pet[msg.author.id].pet;
+	  let uXp = pet[msg.author.id].exp;
+          let uName = pet[msg.author.id].name;
 		
 		coins[msg.author.id] = {
 	    coins: coins[msg.author.id].coins + 20
 	  };
 		
 	   pet[msg.author.id] = {
-	    pet: uPet,
-	    name: uName,
-	    exp: uXp
+	    pet: "none",
+	    name: "unnamed",
+	    exp: 0
 	  };
 		msg.channel.send({ embed: {
 			title: msg.author.username + ", You released your pet back into its natural habitat!",
