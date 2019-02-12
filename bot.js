@@ -140,10 +140,10 @@ client.on("message", msg => {
 	    if(uPet === "Blue Fish "+a){
 		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544679071573868546/image0.gif";
 	  }
-	    if(uPet === "Red Fish"+a){
+	    if(uPet === "Red Fish "+a){
 		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544679052875792407/image0.gif";
 	  }
-	    if(uPet === "Hedgehog"+a){
+	    if(uPet === "Hedgehog "+a){
 		    var y = "https://cdn.discordapp.com/attachments/470359851227414532/544980897917566986/image0.gif";
 	  }
 		  
