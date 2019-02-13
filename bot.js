@@ -113,40 +113,40 @@ client.on("message", msg => {
 	          ],
 	  }});
 	  } else{
+			  
 	  if(uPet === "Lab "+a){
-		  var y = "http://i.imgur.com/HQQSKSO.png";
+		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544678783081250816/image0.gif";
 	  }
 	    if(uPet === "Wolf "+a){
-		  var y = "http://i.imgur.com/7zHH56f.jpg";
+		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544678807936827392/image0.gif";
 	  }
 	    if(uPet === "Brown Cat "+a){
-		  var y = "http://i.imgur.com/GcoIPyd.jpg";
+		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544678835182895107/image0.gif";
 	  }
 	    if(uPet === "White Cat "+a){
-		  var y = "http://i.imgur.com/sEfQDDO.jpg";
+		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544678857706438674/image0.gif";
 	  }
 	    if(uPet === "Striped Cat "+a){
-		  var y = "http://i.imgur.com/oFXZLPC.jpg";
+		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544678879500042251/image0.gif";
 	  }
 	    if(uPet === "Monkey "+a){
-		  var y = "http://i.imgur.com/l5E0jfF.jpg";
+		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544679134639685632/image0.gif";
 	  }
 	    if(uPet === "Turtle "+a){
-		  var y = "http://i.imgur.com/d361ijy.jpg";
+		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544679173017567262/image0.gif";
 	  }
 	    if(uPet === "Bunny "+a){
-		  var y = "http://i.imgur.com/aMudQ66.jpg";
+		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544679151861235712/image0.gif";
 	  }
 	    if(uPet === "Blue Fish "+a){
-		  var y = "http://i.imgur.com/sIE9WJS.jpg";
+		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544679071573868546/image0.gif";
 	  }
 	    if(uPet === "Red Fish "+a){
-		  var y = "http://i.imgur.com/caA0A7L.jpg";
+		  var y = "https://cdn.discordapp.com/attachments/470359851227414532/544679052875792407/image0.gif";
 	  }
 	    if(uPet === "Hedgehog "+a){
-		    var y = "";
+		    var y = "https://cdn.discordapp.com/attachments/470359851227414532/544980897917566986/image0.gif";
 	  }
-		  
 		  //levels
 		  if(uXp < 51){
 			  var l = 1;
