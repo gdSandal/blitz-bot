@@ -114,7 +114,7 @@ client.on("message", msg => {
 	  }});
 	  } else{
 	  if(uPet === "Lab "+a){
-		  var y = "http://i.imgur.com/HQQSKSO.jpg";
+		  var y = "http://i.imgur.com/HQQSKSO.png";
 	  }
 	    if(uPet === "Wolf "+a){
 		  var y = "http://i.imgur.com/7zHH56f.jpg";
@@ -144,7 +144,7 @@ client.on("message", msg => {
 		  var y = "http://i.imgur.com/caA0A7L.jpg";
 	  }
 	    if(uPet === "Hedgehog "+a){
-		    var y = "http://i.imgur.com/9kQqCWb.jpg";
+		    var y = "";
 	  }
 		  
 		  //levels
