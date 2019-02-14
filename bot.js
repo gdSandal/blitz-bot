@@ -29,8 +29,9 @@ if(msg.content === "s/daily"){
   if (tr.has(msg.author.id)) {
   msg.channel.send("You already claimed your daily rewards!");
     } else {
+	    let r = Math.floor(Math.random() * 10 + 45);
 	 coins[msg.author.id] = {
-	    coins: coins[msg.author.id].coins + 50
+	    coins: coins[msg.author.id].coins + r
 	  };
 	msg.channel.send({ embed: {
 		color: 15868795,
