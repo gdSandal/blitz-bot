@@ -27,7 +27,10 @@ if(msg.content === "s/daily"){
 	    coins: 0
 	  }}
   if (tr.has(msg.author.id)) {
-  msg.channel.send("You already claimed your daily rewards!");
+  msg.channel.send({ embed: {
+	  title: msg.author.username + " No credits awarded.",
+	  description: "You already claimed your daily rewards!"
+  }});
     } else {
 	    let r = Math.floor(Math.random() * 10 + 45);
 	 coins[msg.author.id] = {
