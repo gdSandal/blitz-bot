@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const fs = require('fs');
 const pet = require('./pets.json');
 const coins = require('./xp.json');
+const tr = new Set();
 
 
 client.on('ready', () => {
@@ -19,6 +20,29 @@ client.on('message', msg => {
  if (msg.author.bot) return;
 });
 
+client.on("message", msg => {
+if(msg.content === "s/daily"){
+	if(!coins[msg.author.id]){
+	  coins[u.id] = {
+	    coins: 0
+	  }}
+  if (tr.has(msg.author.id)) {
+  msg.channel.send("You already claimed your daily rewards!");
+    } else {
+	 coins[msg.author.id] = {
+	    coins: coins[msg.author.id].coins + 50
+	  };
+	msg.channel.send({ embed: {
+		color: 15868795,
+		title: msg.author.username + "! You claimed your daily reward!",
+		description: "You have recieved **+50¥** credits!"
+	}});
+tr.add(msg.author.id);
+        setTimeout(() => {
+          tr.delete(msg.author.id);
+        }, 43200000);
+    }
+}});
 
 client.on("message", msg => {
   if(msg.content === "s/adopt"){
