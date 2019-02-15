@@ -332,17 +332,16 @@ client.on('message', msg => {
 
 client.on('message', msg => {
  if (msg.content.toLowerCase() === "s/join") {
-  let rmember = msg.author;
+  let r = msg.author;
   let role = msg.guild.roles.find(r => r.name === "Access");
-  if (!rmember) return;
   msg.channel.send({ embed: {
    color: 15868795,
-   title: rmember.user.username + " You now have access to #『bot』",
+   title: r.user.username + " You now have access to #『bot』",
    description: "Type **s/join** to remove yourself from this role"
   }});
-  rmember.addRole(role);
-if (rmember.roles.has("Access")){
-    rmember.removeRoles("Access");
+  r.addRole(role);
+if (r.roles.has(role)){
+    r.removeRole(role);
  }}
 });
 
