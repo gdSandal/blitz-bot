@@ -334,7 +334,7 @@ client.on('message', msg => {
  if (msg.content === "s/join") {
   let h = msg.author;
   let role = msg.guild.roles.find(r => r.name === "Access");
-	 if (!h.roles.find("Access")){
+	 if (!h.roles.find(role)){
   msg.channel.send({ embed: {
    color: 15868795,
    title: h.username + " You now have access to #『bot』",
