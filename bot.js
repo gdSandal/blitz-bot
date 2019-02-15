@@ -23,7 +23,7 @@ client.on('message', msg => {
 client.on("message", msg => {
 if(msg.content === "s/daily"){
 	if(!coins[msg.author.id]){
-	  coins[u.id] = {
+	  coins[msg.author.id] = {
 	    coins: 0
 	  }}
   if (tr.has(msg.author.id)) {
@@ -39,7 +39,7 @@ if(msg.content === "s/daily"){
 	msg.channel.send({ embed: {
 		color: 15868795,
 		title: msg.author.username + "! You claimed your daily reward!",
-		description: "You have recieved **+50¥** credits!"
+		description: "You have recieved **" + r + "¥** credits!"
 	}});
 tr.add(msg.author.id);
         setTimeout(() => {
