@@ -303,16 +303,16 @@ client.on('message', msg => {
 	 if (!h.roles.has(role.id)){
   msg.channel.send({ embed: {
    color: 15868795,
-   title: h.username + " You now have access to #『bot』",
-   description: "Type **s/join** to remove yourself from this role"
+   title: msg.author.username + " you now have access to #『bot』",
+   description: "Type **s/join** to revoke this access"
   }});
   h.addRole(role);
  }else {
     h.removeRole(role);
 	msg.channel.send({ embed: {
    color: 15868795,
-   title: h.username + " You no longer have access to #『bot』",
-   description: "Type **s/join** to get this role again"
+   title: msg.authorusername + " you no longer have access to #『bot』",
+   description: "Type **s/join** to get access again"
 	}});
  }}
 });
