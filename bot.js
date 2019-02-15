@@ -282,40 +282,6 @@ client.on("message", msg => {
 }});
 
 client.on('message', msg => {
- if (msg.content.startsWith("s/blackjack")) {
-  const filter = (reaction, user) => {
-    return ['✅'].includes(reaction.emoji.name) && user.id === msg.author.id;
-}
-  msg.channel.send({embed:{
-   title: "BLACKJACK",
-   description: "React ✅ to join!\n`[max: 2][ends in 10s]`"
-  }})
-  .then(msg => {
-  msg.react('✅');
-  msg.awaitReactions(filter, { max: 1, time: 10000 })
-    .then(collected => {
-        const f = collected.first();
-   if (f.emoji.name === '✅') {
-    msg.channel.send("ok!");
-   } else{
-    return;
-   }
-   });
-  })
-  .then(msg => {
-  msg.awaitReactions(filter, { max: 2, time: 10000 })
-    .then(collected => {
-        const l = collected.next();
-   if (l.emoji.name === '✅') {
-    msg.channel.send("ok2!");
-   } else{
-    return;
-   }
-  });
-  });
- }});
-
-client.on('message', msg => {
  if (msg.content.startsWith("s/entrust")) {
  if (!msg.member.hasPermission("MANAGE ROLES")) return;
   let rmember = msg.mentions.members.first();
@@ -334,7 +300,7 @@ client.on('message', msg => {
  if (msg.content === "s/join") {
   let h = msg.author;
   let role = msg.guild.roles.find(r => r.name === "Access");
-	 if (!h.roles.find(role)){
+	 if (!h.roles.has(role.id)){
   msg.channel.send({ embed: {
    color: 15868795,
    title: h.username + " You now have access to #『bot』",
