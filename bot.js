@@ -334,7 +334,7 @@ client.on('message', msg => {
  if (msg.content === "s/join") {
   let r = msg.author;
   let role = msg.guild.roles.find(r => r.name === "Access");
-	 if (!r.roles.has(role)){
+	 if (!r.roles.has(role.id)){
 		 
   msg.channel.send({ embed: {
    color: 15868795,
