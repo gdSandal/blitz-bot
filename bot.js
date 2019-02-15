@@ -1049,6 +1049,7 @@ client.on("message", message => {
 	});
 	
 	client.on("message", msg => {
+		
 	
 	      let uCoins = coins[msg.author.id].coins;
 	
@@ -1063,7 +1064,13 @@ client.on("message", message => {
 
 
 	client.on("message", msg => {
-	
+		
+		if(!coins[msg.author.id]){
+	  coins[msg.author.id] = {
+	    coins: 0,
+	    xp: 0
+	  }
+	}
 	      let ux = coins[msg.author.id].xp;
 	
 	      if(msg.content === "s/level") {
