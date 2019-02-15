@@ -24,7 +24,8 @@ client.on("message", msg => {
 if(msg.content === "s/daily"){
 	if(!coins[msg.author.id]){
 	  coins[msg.author.id] = {
-	    coins: 0
+	    coins: 0,
+	    xp: 0
 	  }}
   if (tr.has(msg.author.id)) {
   msg.channel.send({ embed: {
@@ -56,7 +57,8 @@ client.on("message", msg => {
 	let u = msg.author;
 		if(!coins[u.id]){
 	  coins[u.id] = {
-	    coins: 0
+	    coins: 0,
+	    xp: 0
 	  }}
 	  	if(!pet[u.id]){
 	  pet[u.id] = {
@@ -1050,7 +1052,12 @@ client.on("message", message => {
 	
 	client.on("message", msg => {
 		
-	
+	if(!coins[msg.author.id]){
+	  coins[msg.author.id] = {
+	    coins: 0,
+	    xp: 0
+	  }
+	}
 	      let uCoins = coins[msg.author.id].coins;
 	
 	      if(msg.content === "s/credits") {
@@ -1071,13 +1078,72 @@ client.on("message", message => {
 	    xp: 0
 	  }
 	}
-	      let ux = coins[msg.author.id].xp;
+		
+	      let uXp = coins[msg.author.id].xp;
+		
+			  if(uXp < 51){
+			  var l = 1;
+		  }
+		  if((uXp > 50) && (uXp < 101)){
+			  var l = 2;
+		  }
+		  if((uXp > 100) && (uXp < 251)){
+			  var l = 3;
+		  }
+		  if((uXp > 250) && (uXp < 301)){
+			  var l = 4;
+		  }
+		  if ((uXp > 300) && (uXp < 351)){
+			  var l = 5;
+		  }
+		if ((uXp > 350) && (uXp < 401)){
+			  var l = 6
+		  }
+		if ((uXp > 400) && (uXp < 451)){
+			  var l = 7;
+		  }
+		if ((uXp > 450) && (uXp < 501)){
+			  var l = 8;
+		  }
+		if ((uXp > 500) && (uXp < 601)){
+			  var l = 9;
+		  }
+		if ((uXp > 600) && (uXp < 701)){
+			  var l = 10;
+		  }
+		if ((uXp > 700) && (uXp < 801)){
+			  var l = 11;
+		  }
+		if ((uXp > 800) && (uXp < 901)){
+			  var l = 12;
+		  }
+		if ((uXp > 900) && (uXp < 1001)){
+			  var l = 13;
+		}
+		if ((uXp > 1000) && (uXp < 1201)){
+			  var l = 14;
+		}
+		if ((uXp > 1200) && (uXp < 1401)){
+			  var l = 15;
+		  }
+		if ((uXp > 1400) && (uXp < 1601)){
+			  var l = 16;
+		  }
+		if ((uXp > 1600) && (uXp < 1801)){
+			  var l = 17;
+		  }
+		if ((uXp > 1800) && (uXp < 2001)){
+			  var l = 18;
+		  }
+		if ((uXp > 200) && (uXp < 99999)){
+			  var l = "MAX";
+		  }
 	
 	      if(msg.content === "s/level") {
 	          msg.channel.send({ embed: {
 	            color: 15868795,
-	            title: msg.author.username + ", Level - ",
-	            description: "XP: " + ux
+	            title: msg.author.username + " | Level - " + l,
+	            description: "**XP:** " + uXp
 	          }});
 	      }
 	  });
@@ -1097,7 +1163,8 @@ client.on("message", msg => {
 		
 		if(!coins[u.id]){
 	  coins[u.id] = {
-	    coins: 0
+	    coins: 0,
+		xp: 0
 	  }
 	}
 		 coins[u.id] = {
