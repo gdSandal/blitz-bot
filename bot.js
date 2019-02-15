@@ -42,6 +42,9 @@ if(msg.content === "s/daily"){
 		title: msg.author.username + "! You claimed your daily reward!",
 		description: "You have recieved **" + r + "¥** credits!"
 	}});
+	      fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
+	    if (err) console.log(err);
+	  });
 tr.add(msg.author.id);
         setTimeout(() => {
           tr.delete(msg.author.id);
@@ -1026,6 +1029,9 @@ client.on("message", message => {
 	    xp: 0
 	  }
 	}
+	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
+	    if (err) console.log(err);
+	  });
 });
 	
 client.on("message", message => {
