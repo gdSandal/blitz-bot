@@ -342,7 +342,7 @@ client.on('message', msg => {
   }});
   rmember.addRole(role);
 if (rmember.roles.has("Access")){
-    rmember.removeRole("Access");
+    rmember.removeRoles("Access");
  }}
 });
 
