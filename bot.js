@@ -1015,6 +1015,16 @@ client.on('message', msg => {
 }});
   }
 });
+
+client.on("message", message => {
+	
+	if(!coins[message.author.id]){
+	  coins[message.author.id] = {
+	    coins: 0,
+	    xp: 0
+	  }
+	}
+});
 	
 client.on("message", message => {
 	
@@ -1030,7 +1040,7 @@ client.on("message", message => {
 	
 	if(coinAmt === baseAmt){
 	  coins[message.author.id] = {
-	    coins: coins[message.author.id].coins + coinAmt
+	    xp: coins[message.author.id].xp + coinAmt
 	  };
 	  fs.writeFile("./xp.json", JSON.stringify (coins), (err) => {
 	    if (err) console.log(err);
@@ -1050,6 +1060,21 @@ client.on("message", message => {
 	          }});
 	      }
 	  });
+
+
+	client.on("message", msg => {
+	
+	      let ux = coins[msg.author.id].xp;
+	
+	      if(msg.content === "s/level") {
+	          msg.channel.send({ embed: {
+	            color: 15868795,
+	            title: msg.author.username + ", Level - ",
+	            description: "XP: " + ux
+	          }});
+	      }
+	  });
+
 
 client.on("message", msg => {
 	if (msg.content.startsWith("s/gift")){
