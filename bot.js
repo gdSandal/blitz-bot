@@ -331,7 +331,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
- if (msg.content.toLowerCase === "s/join") {
+ if (msg.content === "s/join") {
   let r = msg.author;
   let role = msg.guild.roles.find(r => r.name === "Access");
   msg.channel.send({ embed: {
