@@ -311,7 +311,7 @@ client.on('message', msg => {
     h.removeRole(role);
 	msg.channel.send({ embed: {
    color: 15868795,
-   title: msg.author.username + " you no longer have access to #『bot』",
+   title: msg.author.username + " you lost access to #『bot』",
    description: "Type **s/join** to get access again"
 	}});
  }}
