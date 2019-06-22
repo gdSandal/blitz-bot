@@ -16,7 +16,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
- if (msg.content.startsWith('s/1')) {
+ if (msg.content.startsWith('sa/1')) {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
@@ -56,7 +56,7 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    title: "Rules",
-   description: "**{1}** No Spam\n**{2}** No coercive arguments\n**{3}** Do not leak chats\n**{4}** Stay topical",
+   description: "**{1}** `No Spam`\n**{2}** `No coercive arguments`\n**{3}** `Do not leak chats`\n**{4}** `Stay topical`",
 }});
  }
 });
@@ -79,7 +79,7 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    title: "ROLES",
-   description: "Assign color in #",
+   description: "`Assign color in:` #『role-shrine』\nReach *level 10* to unlock more colors.\n**Capo** is a moderator role entrusted by Sandal only.",
 }});
  }
 });
@@ -102,7 +102,7 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    title: "GUIDE",
-   description: "Here is a channel map:\n",
+   description: "**Map of Channels**:\n#『sanctum』 ~ `Main chat`\n#『topic』 ~ `Alternative chat`\n#『qotd』 ~ `Question of the day`\n#『role-shrine』 ~ `Roles here`",
 }});
  }
 });
@@ -125,7 +125,7 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    title: "Information",
-   description: "Type `s/sub` to Subscribe to the new **Sanctum Newsletter!**\nThis is a private server for Sandal's friends and acquaintances, Please be calm and respectful to others.\n**THANK YOU CAPOS!**\n```Since 7/20/18    <3```",
+   description: "Type `s/sub` to Subscribe to the new **Sanctum Newsletter!**\nThis is a private server for Sandal's friends and acquaintances, Please be calm and respectful to others.\n**s/help** for commands list\n`Since 7/20/18    <3`",
 }});
  }
 });
