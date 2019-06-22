@@ -21,13 +21,13 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    title: "Welcome to Sanctum!",
-   description: "`Thanks for joining my private server! - Sandal`\n**Socials Hyperlink:** http://note.ly/sanctum/n__Look over the rules before talking.__",
+   description: "`Thanks for joining my private server! - Sandal`\n**Socials Hyperlink:** http://note.ly/sanctum\n__Look over the rules before talking.__",
 }});
  }
 });
 	 
 client.on('message', msg => {
- if (msg.content.startsWith('s/0')) {
+ if (msg.content.startsWith('sa/0')) {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
@@ -39,7 +39,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
- if (msg.content.startsWith('s/2')) {
+ if (msg.content.startsWith('sa/2')) {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
@@ -51,29 +51,85 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
- if (msg.content.startsWith('s/3')) {
+ if (msg.content.startsWith('sa/3')) {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
    title: "Rules",
-   description: "**{1}** No Spam/n**{2}** No coercive arguments\n**{3}** Do not leak chats\n**{4}** Stay topical",
+   description: "**{1}** No Spam\n**{2}** No coercive arguments\n**{3}** Do not leak chats\n**{4}** Stay topical",
 }});
  }
 });
 
 client.on('message', msg => {
- if (msg.content.startsWith('s/4')) {
+ if (msg.content.startsWith('sa/4')) {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
    image: {
-   url: "",
+   url: "https://media.discordapp.net/attachments/470359851227414532/592069419413536779/image0.png",
    },
-   title: "Welcome to Sanctum!",
-   description: "",
 }});
  }
 });
+
+client.on('message', msg => {
+ if (msg.content.startsWith('sa/5')) {
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   title: "ROLES",
+   description: "Assign color in #",
+}});
+ }
+});
+
+client.on('message', msg => {
+ if (msg.content.startsWith('sa/6')) {
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   image: {
+   url: "https://media.discordapp.net/attachments/470359851227414532/592069402078216222/image0.png",
+   },
+}});
+ }
+});
+
+client.on('message', msg => {
+ if (msg.content.startsWith('sa/7')) {
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   title: "GUIDE",
+   description: "Here is a channel map:\n",
+}});
+ }
+});
+
+client.on('message', msg => {
+ if (msg.content.startsWith('sa/8')) {
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   image: {
+   url: "https://media.discordapp.net/attachments/470359851227414532/592069436807053321/image0.png",
+   },
+}});
+ }
+});
+
+client.on('message', msg => {
+ if (msg.content.startsWith('sa/9')) {
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   title: "Information",
+   description: "Type `s/sub` to Subscribe to the new **Sanctum Newsletter!**\nThis is a private server for Sandal's friends and acquaintances, Please be calm and respectful to others.\n**THANK YOU CAPOS!**\n```Since 7/20/18    <3```",
+}});
+ }
+});
+
 
 
 client.on('message', msg => {
@@ -92,22 +148,22 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
- if (msg.content === "s/join") {
+ if (msg.content === "s/sub") {
   let h = msg.member;
-  let role = msg.guild.roles.find(r => r.name === "Access");
+  let role = msg.guild.roles.find(r => r.name === "Newsletter");
 	 if (!h.roles.has(role.id)){
   msg.channel.send({ embed: {
    color: 15868795,
-   title: msg.author.username + " you now have access to #『bot』",
-   description: "Type **s/join** to revoke this access"
+   title: msg.author.username + ", You are now **subscribed** to the Sanctum newsletter!",
+   description: "Type **s/sub** to revoke this access"
   }});
   h.addRole(role);
  }else {
     h.removeRole(role);
 	msg.channel.send({ embed: {
    color: 15868795,
-   title: msg.author.username + " you lost access to #『bot』",
-   description: "Type **s/join** to get access again"
+   title: msg.author.username + ", You are now **unsubsribed** from the Sanctum newsletter.",
+   description: "Type **s/sub** to get access again"
 	}});
  }}
 });
