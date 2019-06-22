@@ -21,7 +21,7 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    image: {
-   url: "
+    url: "https://media.discordapp.net/attachments/470359851227414532/591844595642400769/image0.png"
    },
    title: "Welcome to Sanctum!",
    description: "`Thanks for joining my private server!\n - Sandal`\n" + "**Socials Hyperlink:** http://note.ly/sanctum" + "/n" + "Look over the rules before talking.";
@@ -35,10 +35,10 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    image: {
-   url: "
+   url: "",
    },
    title: "Welcome to Sanctum!",
-   description: 
+   description: "",
 }});
  }
 });
@@ -49,10 +49,10 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    image: {
-   url: "
+   url: "",
    },
    title: "Welcome to Sanctum!",
-   description: 
+   description: "",
 }});
  }
 });
@@ -63,10 +63,10 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    image: {
-   url: "
+   url: "",
    },
    title: "Welcome to Sanctum!",
-   description: 
+   description: "",
 }});
  }
 });
@@ -77,10 +77,10 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
    image: {
-   url: "
+   url: "",
    },
    title: "Welcome to Sanctum!",
-   description: 
+   description: "",
 }});
  }
 });
