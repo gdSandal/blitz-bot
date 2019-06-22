@@ -15,6 +15,76 @@ client.on('message', msg => {
  if (msg.author.bot) return;
 });
 
+client.on('message', msg => {
+ if (msg.content.startsWith('s/1')) {
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   image: {
+   url: "
+   },
+   title: "Welcome to Sanctum!",
+   description: "`Thanks for joining my private server!\n - Sandal`\n" + "**Socials Hyperlink:** http://note.ly/sanctum" + "/n" + "Look over the rules before talking.";
+}});
+ }
+});
+	 
+client.on('message', msg => {
+ if (msg.content.startsWith('s/2')) {
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   image: {
+   url: "
+   },
+   title: "Welcome to Sanctum!",
+   description: 
+}});
+ }
+});
+
+client.on('message', msg => {
+ if (msg.content.startsWith('s/3')) {
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   image: {
+   url: "
+   },
+   title: "Welcome to Sanctum!",
+   description: 
+}});
+ }
+});
+
+client.on('message', msg => {
+ if (msg.content.startsWith('s/4')) {
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   image: {
+   url: "
+   },
+   title: "Welcome to Sanctum!",
+   description: 
+}});
+ }
+});
+
+client.on('message', msg => {
+ if (msg.content.startsWith('s/5')) {
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+   image: {
+   url: "
+   },
+   title: "Welcome to Sanctum!",
+   description: 
+}});
+ }
+});
+
 
 client.on('message', msg => {
  if (msg.content.startsWith("s/entrust")) {
