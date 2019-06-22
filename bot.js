@@ -20,25 +20,32 @@ client.on('message', msg => {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
-   image: {
-    url: "https://media.discordapp.net/attachments/470359851227414532/591844595642400769/image0.png",
-   },
    title: "Welcome to Sanctum!",
-   description: "`Thanks for joining my private server!\n - Sandal`\n" + "**Socials Hyperlink:** http://note.ly/sanctum" + "/n" + "Look over the rules before talking.",
+   description: "`Thanks for joining my private server! - Sandal`\n**Socials Hyperlink:** http://note.ly/sanctum/n__Look over the rules before talking.__",
 }});
  }
 });
 	 
+client.on('message', msg => {
+ if (msg.content.startsWith('s/0')) {
+  msg.delete();
+  msg.channel.send({embed: {
+   color: 15868795,
+    image: {
+    url: "https://media.discordapp.net/attachments/470359851227414532/591844595642400769/image0.png",
+   },
+}});
+ }
+});
+
 client.on('message', msg => {
  if (msg.content.startsWith('s/2')) {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
    image: {
-   url: "",
+   url: "https://media.discordapp.net/attachments/470359851227414532/592069380645322752/image0.png",
    },
-   title: "Welcome to Sanctum!",
-   description: "",
 }});
  }
 });
@@ -48,31 +55,14 @@ client.on('message', msg => {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
-   image: {
-   url: "",
-   },
-   title: "Welcome to Sanctum!",
-   description: "",
+   title: "Rules",
+   description: "**{1}** No Spam/n**{2}** No coercive arguments\n**{3}** Do not leak chats\n**{4}** Stay topical",
 }});
  }
 });
 
 client.on('message', msg => {
  if (msg.content.startsWith('s/4')) {
-  msg.delete();
-  msg.channel.send({embed: {
-   color: 15868795,
-   image: {
-   url: "",
-   },
-   title: "Welcome to Sanctum!",
-   description: "",
-}});
- }
-});
-
-client.on('message', msg => {
- if (msg.content.startsWith('s/5')) {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
