@@ -18,13 +18,13 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content.startsWith('sa/news')) {
 
-const args = message.content.split(" ");
+const args = msg.content.split(" ");
 const mg = args.slice(1)
-const role = message.guild.roles.find(role => role.name === "Newsletter");
+const role = msg.guild.roles.find(role => role.name === "Newsletter");
 
-for (let i = 0; i < message.guild.members.size; i++) {
-    if (message.guild.members[i].roles.has(role.id)) {
-        message.guild.members[i].user.send(mg.join(" "));
+for (let i = 0; i < msg.guild.members.size; i++) {
+    if (msg.guild.members[i].roles.has(role.id)) {
+        msg.guild.members[i].user.send(mg.join(" "));
     }}
 }});
 
@@ -507,9 +507,9 @@ title: '6',
 setTimeout(function(){
 msg.edit({ embed: {
 color: '15868795',
-title: '7',
+title: ':)',
 }});
-}, 1800);
+}, 2000);
 });
 }});
 
