@@ -19,8 +19,6 @@ client.on('message', msg => {
  if (msg.content.startsWith('sa/news')) {
    let membersWithRole = message.guild.members.filter(member => { 
         return member.roles.find("Newsletter", roleName);
-    }).map(member => {
-        return member.user.username;
     });
 membersWithRole.send(“test”);
 }});
