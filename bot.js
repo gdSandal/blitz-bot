@@ -15,13 +15,7 @@ client.on('message', msg => {
  if (msg.author.bot) return;
 });
 
-client.on('message', msg => {
- if (msg.content.startsWith('sa/news')) {
-   let membersWithRole = message.guild.members.filter(member => { 
-        return member.roles.find("Newsletter", roleName);
-    });
-membersWithRole.send(“test”);
-}});
+
 
 
 client.on('message', msg => {
