@@ -26,7 +26,7 @@ const role = message.guild.roles.find(role => role.name === “Newsletter”);
 for (let i = 0; i < message.guild.members.size; i++) {
     if (message.guild.members[i].roles.has(role.id)) {
         message.guild.members[i].user.send(mg.join(" "));
-    }});
+    }}
 }});
 
 client.on('message', msg => {
