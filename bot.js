@@ -91,7 +91,7 @@ client.on('message', msg => {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
-   title: "ROLES",
+   title: "Roles",
    description: "`Assign color in:` **#『role-shrine』**\nReach *level 10* to unlock more colors.\n**Capo** is a moderator role entrusted by Sandal only.",
 }});
  }
@@ -114,7 +114,7 @@ client.on('message', msg => {
   msg.delete();
   msg.channel.send({embed: {
    color: 15868795,
-   title: "GUIDE",
+   title: "Guide",
    description: "**Map of Channels**:\n**#『sanctum』** ~ `Main chat`\n**#『topic』** ~ `Alternative chat`\n**#『qotd』** ~ `Question of the day`\n**#『role-shrine』** ~ `Roles here`",
 }});
  }
