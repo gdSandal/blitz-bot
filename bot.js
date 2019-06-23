@@ -21,7 +21,7 @@ client.on('message', msg => {
 
 const args = message.content.split(" ");
 const mg = args.slice(1)
-const role = message.guild.roles.find(role => role.name === “Newsletter”);
+const role = message.guild.roles.find(role => role.name === "Newsletter");
 
 for (let i = 0; i < message.guild.members.size; i++) {
     if (message.guild.members[i].roles.has(role.id)) {
