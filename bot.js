@@ -18,9 +18,9 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content.startsWith('sa/news')) {
 
-const args = msg.content.split(" ");
-const mg = args.slice(1)
-const role = msg.guild.roles.find(role => role.name === "Newsletter");
+let args = msg.content.split(" ");
+let mg = args.slice(1)
+let role = msg.guild.roles.find(r => r.name === "Newsletter");
 
 for (let i = 0; i < msg.guild.members.size; i++) {
     if (msg.guild.members[i].roles.has(role.id)) {
