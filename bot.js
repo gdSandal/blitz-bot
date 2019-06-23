@@ -15,7 +15,6 @@ client.on('message', msg => {
  if (msg.author.bot) return;
 });
 
-
 client.on('message', msg => {
  if (msg.content.startsWith('sa/news')) {
 
@@ -468,7 +467,51 @@ client.on('message', msg => {
 });
 }});
 
-  
+client.on('message', msg => {
+ if (msg.content === 's/luck') {
+msg.channel.send({ embed: {
+color: '16711680',
+title: '1',
+}})
+.then((msg)=> {
+setTimeout(function(){
+msg.edit({ embed: {
+color: '16756296',
+title: '2',
+}});
+}, 300);
+setTimeout(function(){
+msg.edit({ embed: {
+color: '16774475',
+title: '3',
+}});
+}, 600);
+setTimeout(function(){
+msg.edit({ embed: {
+color: '9106763',
+title: '4',
+}});
+}, 900);
+setTimeout(function(){
+msg.edit({ embed: {
+color: '5177329',
+title: '5',
+}});
+}, 1200);
+setTimeout(function(){
+msg.edit({ embed: {
+color: '11581951',
+title: '6',
+}});
+}, 1500);
+setTimeout(function(){
+msg.edit({ embed: {
+color: '15868795',
+title: '7',
+}});
+}, 1800);
+});
+}});
 
 client.on('message', msg => {
  if (msg.content === 's/slots') {
