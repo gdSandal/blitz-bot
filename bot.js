@@ -57,8 +57,7 @@ value: '•  Kick a user*\n•  `s/kick <@user>`',
 footer: {
 text: '* - Indicates permission restricted command',
 },
-}})
-	.then(msg => {
+}});
 msg.author.send({ embed: {
 color: 15868795,
 title: '**Requiem Help**\n`Page [2/3]`',
@@ -90,7 +89,6 @@ footer: {
 text: '* - Indicates permission restricted command',
 },
 }});
-}).then(msg => {
 msg.author.send({ embed: {
 color: 15868795,
 title: '**Requiem Help**\n`Page [3/3]`',
@@ -113,7 +111,6 @@ footer: {
 text: '* - Indicates permission restricted command',
 },
 }});
-});
 }});
 
 
