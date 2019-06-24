@@ -20,7 +20,7 @@ client.on('message', msg => {
 let role = msg.guild.roles.find(r => r.name === "Newsletter");
 
 for (let i = 0; i < msg.guild.members.size; i++) {
-    if (msg.guild.members[i].roles.has(role)) {
+    if (msg.guild.members[i].roles.has(role.name)) {
         msg.guild.members[i].user.send('test');
     }}
 }});
