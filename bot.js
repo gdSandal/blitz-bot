@@ -24,7 +24,7 @@ title: msg.author.displayName + ', Help has been sent in a DM!',
 msg.author.send({ embed: {
 color: 15868795,
 title: '**Requiem Help**\n`Page [1/3]`',
-description: '__Utility Commands__',
+description: '_Utility Commands__',
 fields:
 [{
 name: 's/ping',
@@ -86,7 +86,7 @@ fields:
 name: 's/heavensdoor',
 value: '•  Retrive a user’s info\n•  `s/heavensdoor <@user>`',
 }, {
-name: 's/moodyblues'
+name: 's/moodyblues',
 value: '•  Retrieve a user’s last message\n•  `s/moodyblues <@user>`',
 },{
 name: 's/theworld',
