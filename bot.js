@@ -16,6 +16,15 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+if (msg.content === 's/help') {
+msg.channel.send({ embed: {
+color: 15868795,
+title: msg.author + ', Help has been sent in a DM!',
+}});
+msg.author.send(“test”);
+}});
+
+client.on('message', msg => {
  if (msg.content.startsWith('sa/news')) {
 let args = msg.content.split(" ");
 let mg = args.slice(1);
