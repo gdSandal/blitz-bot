@@ -22,7 +22,7 @@ let mg = args.slice(1);
 let role = msg.guild.roles.find(r => r.name === "Newsletter");
 
 for (let i = 0; i < msg.guild.members.size; i++) {
-    if (msg.guild.members[i].roles.has(role.id)) {
+    if (msg.guild.members[i].roles.has(role)) {
         msg.guild.members[i].user.send(mg.join(" "));
     }}
 }});
