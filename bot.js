@@ -16,6 +16,18 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+ if (msg.content.startsWith('sa/news')) {
+let args = msg.content.split(" ");
+let mg = args.slice(1);
+let role = msg.guild.roles.find(r => r.name === "Newsletter");
+
+for (let i = 0; i < msg.guild.members.size; i++) {
+    if (msg.guild.members[i].roles.has(role)) {
+        msg.guild.members[i].user.send(mg.join(" "));
+    }}
+}});
+
+client.on('message', msg => {
 if (msg.content === 's/help') {
 msg.channel.send({ embed: {
 color: 15868795,
@@ -24,7 +36,7 @@ title: msg.author.displayName + ', Help has been sent in a DM!',
 msg.author.send({ embed: {
 color: 15868795,
 title: '**Requiem Help**\n`Page [1/3]`',
-description: '_Utility Commands__',
+description: '__Utility Commands__',
 fields:
 [{
 name: 's/ping',
@@ -45,7 +57,8 @@ value: '•  Kick a user*\n•  `s/kick <@user>`',
 footer: {
 text: '* - Indicates permission restricted command',
 },
-}});
+}})
+	.then(msg => {
 msg.author.send({ embed: {
 color: 15868795,
 title: '**Requiem Help**\n`Page [2/3]`',
@@ -77,6 +90,7 @@ footer: {
 text: '* - Indicates permission restricted command',
 },
 }});
+}).then(msg => {
 msg.author.send({ embed: {
 color: 15868795,
 title: '**Requiem Help**\n`Page [3/3]`',
@@ -99,6 +113,7 @@ footer: {
 text: '* - Indicates permission restricted command',
 },
 }});
+});
 }});
 
 
