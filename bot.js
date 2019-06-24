@@ -101,17 +101,6 @@ text: '* - Indicates permission restricted command',
 }});
 }});
 
-client.on('message', msg => {
- if (msg.content.startsWith('sa/news')) {
-let args = msg.content.split(" ");
-let mg = args.slice(1);
-let role = msg.guild.roles.find(r => r.name === "Newsletter");
-
-for (let i = 0; i < msg.guild.members.size; i++) {
-    if (msg.guild.members[i].roles.has(role)) {
-        msg.guild.members[i].user.send(mg.join(" "));
-    }}
-}});
 
 client.on('message', msg => {
  if (msg.content.startsWith('sa/1')) {
