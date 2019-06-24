@@ -16,6 +16,92 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+if (msg.content === 's/help') {
+msg.channel.send({ embed: {
+color: 15868795,
+title: msg.author.displayName + ', Help has been sent in a DM!',
+}});
+msg.author.send({ embed: {
+color: 15868795,
+title: '**Requiem Help**\n`Page [1/3]`',
+description: '__Utility Commands__',
+fields:
+[{
+name: 's/ping',
+value: '•  Retrieve bot latency',
+}, {
+name: 's/info',
+value: '•  Bot stats & source',
+},{
+name: 's/shout',
+value: '•  Direct message the Developer\n•  `s/shout <message>`',
+},{
+name: 's/role',
+value: '•  Apply a user to a role*\n•  `s/role <@user> <role>`',
+},{
+name: 's/kick',
+value: '•  Kick a user*\n•  `s/kick <@user>`',
+}],
+footer: {
+text: '* - Indicates permission restricted command',
+},
+}});
+msg.author.send({ embed: {
+color: 15868795,
+title: '**Requiem Help**\n`Page [2/3]`',
+description: '__Miscellaneous Commands__',
+fields:
+[{
+name: 's/say',
+value: '•  Force requiem to repeat a message',
+}, {
+name: 's/embedsay',
+value: '•  Repeat a message embedded',
+},{
+name: 's/slots',
+value: '•  Play casino slots',
+},{
+name: 's/roulette',
+value: '•  Play casino roulette',
+},{
+name: 's/rcolor',
+value: '•  Generate a random color',
+},{
+name: 's/rnumber',
+value: '•  Generate a random number',
+},{
+name: 's/coin',
+value: '•  Flip a coin',
+}],
+footer: {
+text: '* - Indicates permission restricted command',
+},
+}});
+msg.author.send({ embed: {
+color: 15868795,
+title: '**Requiem Help**\n`Page [3/3]`',
+description: '__Jojo Commands__',
+fields:
+[{
+name: 's/heavensdoor'
+value: '•  Retrive a user’s info\n•  `s/heavensdoor <@user>`',
+}, {
+name: 's/moodyblues'
+value: '•  Retrieve a user’s last message\n•  `s/moodyblues <@user>`',
+},{
+name: 's/theworld',
+value: '•  Freeze a channel for 10 seconds*',
+},{
+name: 's/rstand',
+value: '•  Generate random stand stats',
+}],
+footer: {
+text: '* - Indicates permission restricted command',
+},
+}});
+}});
+
+client.on('message', msg => {
  if (msg.content.startsWith('sa/news')) {
 let args = msg.content.split(" ");
 let mg = args.slice(1);
@@ -44,7 +130,10 @@ client.on('message', msg => {
   msg.channel.send({embed: {
    color: 15868795,
     image: {
-    url: "https://media.discordapp.net/attachments/470359851227414532/591844595642400769/image0.
+    url: "https://media.discordapp.net/attachments/470359851227414532/591844595642400769/image0.png",
+},
+}});
+}});
 
 client.on('message', msg => {
  if (msg.content.startsWith('sa/2')) {
