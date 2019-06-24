@@ -21,7 +21,7 @@ msg.channel.send({ embed: {
 color: 15868795,
 title: msg.author + ', Help has been sent in a DM!',
 }});
-msg.author.send(“test”);
+msg.author.send("test");
 }});
 
 client.on('message', msg => {
