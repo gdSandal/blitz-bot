@@ -83,7 +83,7 @@ title: '**Requiem Help**\n`Page [3/3]`',
 description: '__Jojo Commands__',
 fields:
 [{
-name: 's/heavensdoor'
+name: 's/heavensdoor',
 value: '•  Retrive a user’s info\n•  `s/heavensdoor <@user>`',
 }, {
 name: 's/moodyblues'
