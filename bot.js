@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const db = require('quick.db');
 
 client.on('ready', () => {
  client.user.setPresence({
@@ -14,6 +15,20 @@ client.on('message', msg => {
  if (msg.guild.DMChannel) return;
  if (msg.author.bot) return;
 });
+
+client.on('message', msg => {
+	if (msg.content === "s/balance") {
+		let user = msg.author;
+		let bal = await db.get('userBalance_${user.id}');
+		if (bal === null) {
+			bal = 0;
+		}
+		msg.channel.send({ embed: {
+			color: 15868795,
+			title: '${user.tag} Balance',
+			description: '$${bal}',
+		}});
+	}});
 
 client.on('message', msg => {
 if (msg.content === 's/help') {
