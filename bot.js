@@ -19,7 +19,7 @@ client.on('message', msg => {
 client.on('message', msg => {
 	if (msg.content === "s/balance") {
 		let user = msg.author;
-		let bal = await db.get('userBalance_${user.id}');
+		let bal = await db.get('money_${user.id}');
 		if (bal === null) {
 			bal = 0;
 		}
