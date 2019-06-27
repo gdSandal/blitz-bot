@@ -16,16 +16,6 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
- if (msg.content.startsWith('sa/news')) {
-let role = msg.guild.roles.find(r => r.name === "Newsletter");
-
-for (let i = 0; i < msg.guild.members.size; i++) {
-    if (msg.guild.members[i].roles.has(role.id)) {
-        msg.guild.members[i].user.send('test');
-    }}
-}});
-
-client.on('message', msg => {
 if (msg.content === 's/help') {
 msg.channel.send({ embed: {
 color: 15868795,
